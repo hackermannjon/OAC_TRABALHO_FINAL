@@ -6,7 +6,6 @@ entity PC is
     Port (
         clk : in STD_LOGIC;               -- Sinal de clock
         reset : in STD_LOGIC;             -- Sinal de reset
-		  pc_in : in std_logic_vector(31 downto 0); -- entrada de endereço do PC
         pc_out : out STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
         pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
     );
