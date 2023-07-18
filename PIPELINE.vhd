@@ -1,260 +1,348 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all; -- Add the numeric_std library for signed type
 
 entity PIPELINE is
-    Port (
-        clk : in STD_LOGIC;                                    -- Sinal de clock
-        reset : in STD_LOGIC;                                  -- Sinal de reset
-        pc_out : out STD_LOGIC_VECTOR(7 downto 0);             -- Saída do endereço do PC (8 bits)
-        pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8);        -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
-        instruction_out : out STD_LOGIC_VECTOR(31 downto 0);    -- Saída da instrução da memória de instruções (32 bits)
-        rs1 : out STD_LOGIC_VECTOR(4 downto 0);                -- Saída do registrador de origem 1 (5 bits)
-        rs2 : out STD_LOGIC_VECTOR(4 downto 0);                -- Saída do registrador de origem 2 (5 bits)
-        rd : out STD_LOGIC_VECTOR(4 downto 0);                 -- Saída do registrador de destino (5 bits)
-        imm32 : out signed(31 downto 0);                       -- Saída do valor imediato de 32 bits (signed)
-        ALUOp : out STD_LOGIC_VECTOR(1 downto 0);               -- Saída do sinal de controle da ALU (2 bits)
-        alu_result : out STD_LOGIC_VECTOR(31 downto 0);         -- Saída do resultado da ALU (32 bits)
-        zero : out STD_LOGIC                                  -- Saída do sinal de zero da ALU
-    );
 end PIPELINE;
 
 architecture behavioral of PIPELINE is
-    signal pc_reg : STD_LOGIC_VECTOR(7 downto 0);             -- Registrador para armazenar o valor atual do PC
-    signal pc_mem_out_reg : STD_LOGIC_VECTOR(31 downto 8);    -- Registrador para armazenar o valor do endereço do PC para a memória de instruções (24 bits ignorados)
-    signal instruction_out_reg : STD_LOGIC_VECTOR(31 downto 0);  -- Registrador para armazenar o valor da instrução da memória de instruções (32 bits)
-    signal rs1_reg : STD_LOGIC_VECTOR(4 downto 0);             -- Registrador para armazenar o valor do registrador de origem 1
-    signal rs2_reg : STD_LOGIC_VECTOR(4 downto 0);             -- Registrador para armazenar o valor do registrador de origem 2
-    signal rd_reg : STD_LOGIC_VECTOR(4 downto 0);              -- Registrador para armazenar o valor do registrador de destino
-    signal imm32_reg : signed(31 downto 0);                    -- Registrador para armazenar o valor imediato de 32 bits
-    signal ALUOp_reg : STD_LOGIC_VECTOR(1 downto 0);           -- Registrador para armazenar o sinal de controle da ALU
-    signal alu_result_reg : STD_LOGIC_VECTOR(31 downto 0);     -- Registrador para armazenar o resultado da ALU
-    signal zero_reg : STD_LOGIC;                               -- Registrador para armazenar o sinal de zero da ALU
 
-    -- Componentes internos
-    component FETCH is
-        Port (
-            clk : in STD_LOGIC;                                    -- Sinal de clock
-            reset : in STD_LOGIC;                                  -- Sinal de reset
-            pc_out : out STD_LOGIC_VECTOR(7 downto 0);             -- Saída do endereço do PC (8 bits)
-            pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8);        -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
-            instruction_out : out STD_LOGIC_VECTOR(31 downto 0)    -- Saída da instrução da memória de instruções (32 bits)
-        );
-    end component;
 
-    component DECODE is
-        Port (
-            clk : in STD_LOGIC;                                    -- Sinal de clock
-            reset : in STD_LOGIC;                                  -- Sinal de reset
-            instruction_in : in STD_LOGIC_VECTOR(31 downto 0);     -- Entrada da instrução do estágio Fetch (32 bits)
-            rs1 : out STD_LOGIC_VECTOR(4 downto 0);                -- Saída do registrador de origem 1 (5 bits)
-            rs2 : out STD_LOGIC_VECTOR(4 downto 0);                -- Saída do registrador de origem 2 (5 bits)
-            rd : out STD_LOGIC_VECTOR(4 downto 0);                 -- Saída do registrador de destino (5 bits)
-            imm32 : out signed(31 downto 0);                       -- Saída do valor imediato de 32 bits (signed)
-            ALUOp : out STD_LOGIC_VECTOR(1 downto 0)               -- Saída do sinal de controle da ALU (2 bits)
-        );
-    end component;
 
-    component EXECUTE is
-        Port (
-            clk : in STD_LOGIC;                              -- Sinal de clock
-            reset : in STD_LOGIC;                            -- Sinal de reset
-            ALUOp : in STD_LOGIC_VECTOR(1 downto 0);         -- Entrada do sinal de controle da ALU (2 bits)
-            rs1_data : in STD_LOGIC_VECTOR(31 downto 0);     -- Entrada dos dados do registrador de origem 1 (32 bits)
-            rs2_data : in STD_LOGIC_VECTOR(31 downto 0);     -- Entrada dos dados do registrador de origem 2 (32 bits)
-            imm32 : in signed(31 downto 0);                  -- Entrada do valor imediato de 32 bits (signed)
-            alu_result : out STD_LOGIC_VECTOR(31 downto 0);  -- Saída do resultado da ALU (32 bits)
-            zero : out STD_LOGIC                             -- Saída do sinal de zero da ALU
-        );
-    end component;
+component PC is
+    Port (
+        clk : in STD_LOGIC;               -- Sinal de clock
+        reset : in STD_LOGIC;             -- Sinal de reset
+		  pc_in : in std_logic_vector(31 downto 0); -- entrada de endereço do PC
+        pc_out : out STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
+        pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+    );
+end component;
 
-    component MEM is
-        Port (
-            clk : in STD_LOGIC;                                 -- Sinal de clock
-            reset : in STD_LOGIC;                               -- Sinal de reset
-            addr_in : in STD_LOGIC_VECTOR(31 downto 0);          -- Entrada do endereço da memória de dados (32 bits)
-            data_in : in STD_LOGIC_VECTOR(31 downto 0);          -- Entrada dos dados a serem escritos na memória de dados (32 bits)
-            read_en : in STD_LOGIC;                              -- Sinal de habilitação de leitura
-            write_en : in STD_LOGIC;                             -- Sinal de habilitação de escrita
-            data_out : out STD_LOGIC_VECTOR(31 downto 0)         -- Saída dos dados lidos da memória de dados (32 bits)
-        );
-    end component;
 
-    component WB is
-        Port (
-            clk : in STD_LOGIC;                             -- Sinal de clock
-            reset : in STD_LOGIC;                           -- Sinal de reset
-            rd : in STD_LOGIC_VECTOR(4 downto 0);           -- Entrada do registrador de destino (5 bits)
-            alu_result : in STD_LOGIC_VECTOR(31 downto 0);  -- Entrada do resultado da ALU (32 bits)
-            mem_data : in STD_LOGIC_VECTOR(31 downto 0);    -- Entrada dos dados lidos da memória (32 bits)
-            mem_to_reg : in STD_LOGIC;                      -- Sinal de controle para seleção dos dados a serem escritos no registrador
-            reg_data : out STD_LOGIC_VECTOR(31 downto 0)    -- Saída dos dados a serem escritos no registrador (32 bits)
-        );
-    end component;
+component X_REG is
+  port (
+    clk, wren  : in std_logic;
+    rs1, rs2, rd : in std_logic_vector(4 downto 0);
+    data : in std_logic_vector(31 downto 0);
+    ro1, ro2 : out std_logic_vector(31 downto 0)
+  );
+end component;
 
-    -- Instanciação dos componentes internos
-    component PC is
-        Port (
-            clk : in STD_LOGIC;               -- Sinal de clock
-            reset : in STD_LOGIC;             -- Sinal de reset
-            pc_out : out STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
-            pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
-        );
-    end component;
 
-    component MI is
-        Port (
-            clk : in STD_LOGIC;                                 -- Sinal de clock
-            reset : in STD_LOGIC;                               -- Sinal de reset
-            pc_mem_in : in STD_LOGIC_VECTOR(31 downto 8);        -- Entrada do endereço do PC para a memória de instruções (24 bits ignorados)
-            instruction_out : out STD_LOGIC_VECTOR(31 downto 0)  -- Saída da instrução da memória de instruções (32 bits)
-        );
-    end component;
+component MI is
+    Port (
+        clk : in STD_LOGIC;                                 -- Sinal de clock
+        reset : in STD_LOGIC;                               -- Sinal de reset
+        pc_mem_in : in STD_LOGIC_VECTOR(31 downto 8);        -- Entrada do endereço do PC para a memória de instruções (24 bits ignorados)
+        instruction_mi_out : out STD_LOGIC_VECTOR(31 downto 0);  -- Saída da instrução da memória de instruções (32 bits)
+        FIM : out STD_LOGIC;
+        pc_initial : out STD_LOGIC_VECTOR(31 downto 0)       -- Saída do valor inicial de pc_in
+    );
+end component;
 
-    signal rs1_data_reg : STD_LOGIC_VECTOR(31 downto 0);     -- Registrador para armazenar o valor dos dados do registrador de origem 1
-    signal rs2_data_reg : STD_LOGIC_VECTOR(31 downto 0);     -- Registrador para armazenar o valor dos dados do registrador de origem 2
-    signal addr_in_reg : STD_LOGIC_VECTOR(31 downto 0);      -- Registrador para armazenar o valor do endereço da memória de dados (32 bits)
-    signal data_in_reg : STD_LOGIC_VECTOR(31 downto 0);      -- Registrador para armazenar o valor dos dados a serem escritos na memória de dados (32 bits)
-    signal read_en_reg : STD_LOGIC;                          -- Registrador para armazenar o sinal de habilitação de leitura
-    signal write_en_reg : STD_LOGIC;                         -- Registrador para armazenar o sinal de habilitação de escrita
-    signal data_out_reg : STD_LOGIC_VECTOR(31 downto 0);     -- Registrador para armazenar o valor dos dados lidos da memória de dados (32 bits)
-    signal mem_to_reg_reg : STD_LOGIC;                       -- Registrador para armazenar o sinal de controle para seleção dos dados a serem escritos no registrador
-	 signal fetch_done, decode_done, execute_done,mem_done,wb_done : STD_LOGIC; -- sinais de controle pipelines
-    -- Instanciação dos componentes internos
-   FETCH_inst: FETCH
-    port map(
-        clk => clk,
-        reset => reset,
-        pc_out => pc_reg,
-        pc_mem_out => pc_mem_out_reg,
-        instruction_out => instruction_out_reg
+
+
+
+component ULA is
+	port (
+		opcode : in std_logic_vector(3 downto 0);
+		A, B : in std_logic_vector(31 downto 0);
+		Z : out std_logic_vector(31 downto 0);
+		zero : out std_logic);
+end component;
+
+component Somador8bits is
+    Port (
+        asoma : in STD_LOGIC_VECTOR(7 downto 0);    -- Entrada A de 8 bits
+        bsoma : in STD_LOGIC_VECTOR(7 downto 0);    -- Entrada B de 8 bits
+        sum : out STD_LOGIC_VECTOR(7 downto 0)  -- Saída de soma de 8 bits
+    );
+end component;
+
+
+component genImm32 is
+  port (
+    instruction_mi_in : in std_logic_vector(31 downto 0);
+    imm32 : out std_logic_vector(31 downto 0)
+  );
+end component;
+
+component Mux21 is
+    Port (
+        sel : in STD_LOGIC;                          -- Sinal de seleção (0 ou 1)
+        data0 : in STD_LOGIC_VECTOR(31 downto 0);    -- Dado de entrada 0 (32 bits)
+        data1 : in STD_LOGIC_VECTOR(31 downto 0);    -- Dado de entrada 1 (32 bits)
+        output : out STD_LOGIC_VECTOR(31 downto 0)   -- Saída do multiplexador (32 bits)
+    );
+end component;
+
+
+component Controle is
+    port (
+        instruction_mi_ctrl_in : in std_logic_vector(31 downto 0);
+		  opcode_ula: out std_logic_vector(3 downto 0);
+        ALUSrc, Branch, MemRead, MemWrite, RegWrite, Mem2Reg : out std_logic
+    );
+end component;
+
+component MD is
+    Port (
+        clk : in STD_LOGIC;                                  -- Sinal de clock
+        reset : in STD_LOGIC;                                -- Sinal de reset
+        addr_md_in : in STD_LOGIC_VECTOR(31 downto 0);       -- Entrada do endereço para a memória de dados
+        data_md_in : in STD_LOGIC_VECTOR(31 downto 0);       -- Dados de entrada para a memória de dados
+        data_md_out : out STD_LOGIC_VECTOR(31 downto 0);     -- Saída de dados da memória de dados
+        MemRead : in STD_LOGIC;                              -- Sinal de controle MeMRead
+        MemWrite : in STD_LOGIC                              -- Sinal de controle MeMWrite
+    );
+end component;
+
+signal 		MemRead_md, MemWrite_md,
+				 zero, wren,
+				ALUSrc_E, Branch_E,MemRead_E, MemWrite_E, RegWrite_E, Mem2Reg_E, -- Pipeline do execute
+				ALUSrc_M, Branch_M, MemRead_M, MemWrite_M, RegWrite_M, Mem2Reg_M, -- Pipeline da memoria
+				ALUSrc_WB, Branch_WB, MemRead_WB, MemWrite_WB, RegWrite_WB, Mem2Reg_WB, -- Pipeline do write back
+				sel,sel2,sel3, FIM, clk, reset, 
+				FETCH, DECODE, EXECUTE, MEM, WB: STD_LOGIC;
+				
+				
+				
+signal opcode, opcode_ula_E, opcode_ula_M, opcode_ula_WB : std_logic_vector(3 downto 0);
+
+
+
+		 
+
+		 
+		 
+signal Z, A, B,ro1, ro2,data, addr_md_in,data_md_in,data_md_out, imm32, instruction_mi_ctrl_in, data0, data1, output,data02, data12, output2,data03, data13, output3, instruction_mi_out,instruction_mi_in, pc_initial, pc_reg : std_logic_vector(31 downto 0);
+signal  pc_out, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
+signal pc_mem_in, pc_mem_out : STD_LOGIC_VECTOR(31 downto 8);  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+signal imm7 : STD_LOGIC_VECTOR(6 downto 0); 
+signal rs1, rs2, rd_D,rd_E,rd_M, rd_WB :  std_logic_vector(4 downto 0);
+begin
+Controle_inst : Controle
+port map (
+        instruction_mi_ctrl_in => instruction_mi_ctrl_in,
+		  opcode_ula => opcode_ula_E,
+        ALUSrc => ALUSrc_E,
+		  Branch => Branch_E,
+		  MemRead => MemRead_E,
+		  MemWrite => MemWrite_E, 
+		  RegWrite => RegWrite_E,
+		  Mem2Reg => Mem2Reg_E
+);
+PC_inst : PC
+port map  (
+        clk => clk     ,         -- Sinal de clock
+        reset => reset ,           -- Sinal de reset
+		  pc_in => pc_reg ,-- entrada de endereço do PC
+        pc_out => pc_out,
+        pc_mem_out => pc_mem_out
+    );
+MI_inst : MI
+port map   (
+        clk => clk     ,         						-- Sinal de clock
+        reset => reset ,           						-- Sinal de reset
+        pc_mem_in => pc_mem_in  ,      				-- Entrada do endereço do PC para a memória de instruções (24 bits ignorados)
+        instruction_mi_out => instruction_mi_out,  -- Saída da instrução da memória de instruções (32 bits)
+        FIM => FIM,
+        pc_initial => pc_initial      					-- Saída do valor inicial de pc_in
+    );
+SUM1_inst : Somador8bits 
+port map (
+        asoma => asoma,    -- Entrada A de 8 bits
+        bsoma => bsoma,    -- Entrada B de 8 bits
+        sum => sum  -- Saída de soma de 8 bits
+    );
+MUX1_inst : Mux21 
+port map (
+        sel => sel       ,                  -- Sinal de seleção (0 ou 1)
+        data0 => data0    ,-- Dado de entrada 0 (32 bits)
+        data1 => data1    ,-- Dado de entrada 1 (32 bits)
+        output => output   -- Saída do multiplexador (32 bits)
+);
+
+MUX2_inst : Mux21 
+port map (
+        sel => sel2       ,                  -- Sinal de seleção (0 ou 1)
+        data0 => data02    ,-- Dado de entrada 0 (32 bits)
+        data1 => data12    ,-- Dado de entrada 1 (32 bits)
+        output => output2   -- Saída do multiplexador (32 bits)
+);
+MUX3_inst : Mux21 
+port map (
+        sel => sel3      ,                  -- Sinal de seleção (0 ou 1)
+        data0 => data03    ,-- Dado de entrada 0 (32 bits)
+        data1 => data13    ,-- Dado de entrada 1 (32 bits)
+        output => output3   -- Saída do multiplexador (32 bits)
+);
+
+ULA_inst : ULA 
+	port map (
+		opcode => opcode,
+		A=> A, 
+		B => B,
+		Z => Z,
+		zero => zero
+		);
+IMM_inst : genImm32
+  port map (
+    instruction_mi_in => instruction_mi_in,
+    imm32 => imm32
+  );
+
+ X_REG_inst : X_REG 
+  port map (
+    clk => clk,
+	 wren => wren,
+    rs1 => rs1,
+	 rs2 => rs2,
+	 rd => rd_WB,
+    data => data,
+    ro1 => ro1,
+	 ro2 => ro2
+  );
+MD_inst : MD 
+   Port map(
+        clk => clk,                                  -- Sinal de clock
+        reset => reset,                              -- Sinal de reset
+        addr_md_in => addr_md_in,       -- Entrada do endereço para a memória de dados
+        data_md_in => data_md_in,       -- Dados de entrada para a memória de dados
+        data_md_out => data_md_out,     -- Saída de dados da memória de dados
+        MemRead => MemRead_M,                              -- Sinal de controle MeMRead
+        MemWrite => MemWrite_M                              -- Sinal de controle MeMWrite
     );
 
-    DECODE_inst: DECODE
-    port map(
-        clk => clk,
-        reset => reset,
-        instruction_in => instruction_out_reg,
-        rs1 => rs1_reg,
-        rs2 => rs2_reg,
-        rd => rd_reg,
-        imm32 => imm32_reg,
-        ALUOp => ALUOp_reg
-    );
+ process
+  begin
+    while FIM = '0' loop
+	 if rising_edge(clk) then
 
-    EXECUTE_inst: EXECUTE
-    port map(
-        clk => clk,
-        reset => reset,
-        ALUOp => ALUOp_reg,
-        rs1_data => rs1_data_reg,
-        rs2_data => rs2_data_reg,
-        imm32 => imm32_reg,
-        alu_result => alu_result_reg,
-        zero => zero_reg
-    );
+	 
+	 
+	 
+	 if WB ='1' then
+	 
+			
+		data03 <= Z;
+		data13 <= data_md_out;
+		rd_WB <= rd_M;
+		sel3 <= Mem2Reg_WB;
 
-    MEM_inst: MEM
-    port map(
-        clk => clk,
-        reset => reset,
-        addr_in => addr_in_reg,
-        data_in => data_in_reg,
-        read_en => read_en_reg,
-        write_en => write_en_reg,
-        data_out => data_out_reg
-    );
+		wren <= wren;
+		end if ;
 
-    WB_inst: WB
-    port map(
-        clk => clk,
-        reset => reset,
-        rd => rd_reg,
-        alu_result => alu_result_reg,
-        mem_data => data_out_reg,
-        mem_to_reg => mem_to_reg_reg,
-        reg_data => rs1_data_reg
-    );
+		
+			
+			
+	 if MEM = '1' then
+	 	sel <= Branch_M and zero;
+		data1 <= sum;
+		
+		addr_md_in <= Z;
 
-    -- Saída dos sinais de controle para o estágio de memória
-    read_en <= read_en_reg;
-    write_en <= write_en_reg;
+		data_md_in <= ro2;
+		memRead_md <= MemRead_M;
+		MemWrite_md <= MemWrite_M;
+		
+		
+		ALUSrc_WB <= ALUSrc_M;
+		Branch_WB <= Branch_M;
+		MemRead_WB <= MemRead_M;
+		MemWrite_WB <= MemWrite_M;
+		wren <= RegWrite_M;
+		Mem2Reg_WB <= Mem2Reg_M;
+		opcode_ula_WB <= opcode_ula_M;
+		rd_wb <= rd_M;
+						end if;
 
-    -- Saída dos registradores de estágio
-    pc_out <= pc_reg;
-    instruction_out <= instruction_out_reg;
-    rs1 <= rs1_reg;
-    rs2 <= rs2_reg;
-    rd <= rd_reg;
-    imm32 <= imm32_reg;
-    ALUOp <= ALUOp_reg;
-    alu_result <= alu_result_reg;
-    zero <= zero_reg;
 
-    process (clk, reset)
-begin
+	 if EXECUTE = '1' then
+		asoma <= std_logic_vector(shift_left(unsigned(imm7), 1));
+		bsoma <= pc_out;
+		
+		data02 <= ro2;
+		data12 <= imm32;		sel2 <= ALUSrc_E;
+		A <= ro1;
+		B <= output2;
+		opcode <= opcode_ula_E;
+				end if;
 
-  if reset = '1' then
-    -- Sinais de reset para cada estágio
-    fetch_done <= '0';
-    decode_done <= '0';
-    execute_done <= '0';
-    mem_done <= '0';
-  elsif rising_edge(clk) then
-    -- Ativação dos estágios sequenciais
-    if fetch_done = '0' then
-      fetch_done <= '1';
-    elsif decode_done = '0' and fetch_done = '1' then
-      decode_done <= '1';
-    elsif execute_done = '0' and decode_done = '1' then
-      execute_done <= '1';
-    elsif mem_done = '0' and execute_done = '1' then
-      mem_done <= '1';
-    end if;
-  end if;
-end process;
+		
+		
+		
+		ALUSrc_M <= ALUSrc_E;
+		Branch_M <= Branch_E;
+		MemRead_M <= MemRead_E;
+		MemWrite_M <= MemWrite_E;
+		RegWrite_M <= RegWrite_E;
+		Mem2Reg_M <= Mem2Reg_E;
+		opcode_ula_M <= opcode_ula_E;
+		rd_M <= rd_E;
+		mem <= '1';
 
--- Processo para o estágio FETCH
-process (clk, fetch_done)
-begin
-  if fetch_done = '1' then
-			 wait until rising_edge(clk);
-			 -- logica do fetch
-  end if;
-end process;
 
--- Processo para o estágio DECODE
-process (clk, decode_done)
-begin
-  if decode_done = '1' then
-			 wait until rising_edge(clk);
-			 -- logica do decode
-  end if;
-end process;
+		
+		 if DECODE = '1' then
+			instruction_mi_ctrl_in <= instruction_mi_out;
+			instruction_mi_in <= instruction_mi_out;
+			imm7 <= imm32( 6 downto 0);
+			
+			rd_D <= instruction_mi_out (11 downto 7);
+			rs1 <= instruction_mi_out (19 downto 15);
+			rs2 <= instruction_mi_out (24 downto 20);
+			rd_E <= rd_D;
+			EXECUTE <= '1';
+						end if;
 
--- Processo para o estágio EXECUTE
-process (clk, execute_done)
-begin
-  if execute_done = '1' then
-			 wait until rising_edge(clk);
-			 -- logica do execute
-  end if;
-end process;
--- Processo para o estágio MEM
-process (clk, mem_done)
-begin
-  if mem_done = '1' then
-			 wait until rising_edge(clk);
-			 -- logica do mem
-  end if;
-end process;
 
--- Processo para o estágio WB
-process (clk, wb_done)
-begin
-  if wb_done = '1' then
-			 wait until rising_edge(clk);
-			 -- logica do wb
-  end if;
-end process;
+		 
+			if FETCH = '1' then	
+							pc_mem_in <= pc_mem_out;
+							asoma <= "00000100";
+							bsoma <= pc_out;
+							data0 <= sum;	
+							
+							pc_reg <= output;
+							DECODE <= '1';
+							
+							-- PC + 4, PC + Imm, PC --> MI
+							
+						  end if;
+							
+			
+		
+		
+		
+		
+		
+		
+		
+	end if;
+		
+		
+	end loop;
+  end process;
+  
+  
+
+  
+  
+  
+  process
+  begin
+	 pc_reg <= pc_initial;
+    reset <= '0';
+    while FIM = '0' loop
+      clk <= '0';
+      wait for 5 ns;
+      clk <= '1';
+      wait for 5 ns;
+    end loop;
+  end process;
+
+  
 
 end behavioral;

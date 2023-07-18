@@ -2,16 +2,16 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity ULA is
+entity ula is
 	generic (WSIZE : natural := 32);
 	port (
 		opcode : in std_logic_vector(3 downto 0);
 		A, B : in std_logic_vector(WSIZE-1 downto 0);
 		Z : out std_logic_vector(WSIZE-1 downto 0);
 		zero : out std_logic);
-end ULA;
+end ula;
 
-architecture ULA_arch of ULA is
+architecture ula_arch of ula is
 	signal result : std_logic_vector(WSIZE-1 downto 0);
 	signal auxzero : std_logic;
 
@@ -19,7 +19,7 @@ begin
 
 	Z <= result;
 
-	proc_ULA: process(A, B, opcode, result)
+	proc_ula: process(A, B, opcode, result)
 	begin
 	
 		case opcode is
@@ -71,4 +71,4 @@ begin
 			zero <= '0';
 		end if;
 	end process;
-end ULA_arch;
+end ula_arch;

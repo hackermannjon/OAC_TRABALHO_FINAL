@@ -4,17 +4,19 @@ use IEEE.numeric_std.all;
 
 entity Controle is
     port (
-        instr : in std_logic_vector(31 downto 0);
-        ALUOp : out std_logic_vector(1 downto 0);
+        instruction : in std_logic_vector(31 downto 0);
+		  opcode_ula: out std_logic_vector(3 downto 0);
         ALUSrc, Branch, MemRead, MemWrite, RegWrite, Mem2Reg : out std_logic
     );
 end Controle;
 
 architecture behavioral of Controle is
     signal opcode : std_logic_vector(7 downto 0);
-begin
-    opcode <= '0' & instr(6 downto 0);
+	 signal ALUOp : std_logic_vector(1 downto 0);
 
+begin
+    opcode <= '0' & instruction(6 downto 0);
+	 opcode_ula <= opcode(6 downto 3);
     process (opcode)
     begin
         case opcode is

@@ -1,56 +1,66 @@
-entity EXECUTE is
-    Port (
-        clk : in STD_LOGIC;                              -- Sinal de clock
-        reset : in STD_LOGIC;                            -- Sinal de reset
-        ALUOp : in STD_LOGIC_VECTOR(1 downto 0);         -- Entrada do sinal de controle da ALU (2 bits)
-        rs1_data : in STD_LOGIC_VECTOR(31 downto 0);     -- Entrada dos dados do registrador de origem 1 (32 bits)
-        rs2_data : in STD_LOGIC_VECTOR(31 downto 0);     -- Entrada dos dados do registrador de origem 2 (32 bits)
-        imm32 : in signed(31 downto 0);                  -- Entrada do valor imediato de 32 bits (signed)
-        alu_result : out STD_LOGIC_VECTOR(31 downto 0);  -- Saída do resultado da ALU (32 bits)
-        zero : out STD_LOGIC                             -- Saída do sinal de zero da ALU
-    );
-end EXECUTE;
+	library ieee;
+	use ieee.std_logic_1164.all;
+	use ieee.numeric_std.all;
 
-architecture behavioral of EXECUTE is
-    signal alu_result_reg : STD_LOGIC_VECTOR(31 downto 0);  -- Registrador para armazenar o resultado da ALU
-    signal zero_reg : STD_LOGIC;                            -- Registrador para armazenar o sinal de zero da ALU
+	entity PIPE_EXECUTE is
+		 Port (
+			  
+			  clk,PIPE_EXECUTE_done : in STD_LOGIC;                              -- Sinal de clock
+			  reset : in STD_LOGIC                         -- Sinal de reset                           
+		 );
+	end PIPE_EXECUTE;
 
-    -- Componentes internos
-    component ula is
-        generic (WSIZE : natural := 32);
-        port (
-            opcode : in std_logic_vector(3 downto 0);
-            A, B : in std_logic_vector(WSIZE-1 downto 0);
-            Z : out std_logic_vector(WSIZE-1 downto 0);
-            zero : out std_logic);
-    end ula;
+	architecture behavioral of PIPE_EXECUTE is
+		 -- Componentes internos
+		 component PIPE_DECODE is
+			Port (
+			   PIPE_DECODE_done : in STD_LOGIC;
+				clk : in STD_LOGIC;                                -- Sinal de clock
+				reset : in STD_LOGIC;                              -- Sinal de reset
+				instruction : in STD_LOGIC_VECTOR(31 downto 0);
+				ro1, ro2 : out std_logic_vector(31 downto 0)	-- Instrução vinda do FETCH
+			);
+		 end component;
+		 component ula is
+			  port (
+					opcode : in std_logic_vector(3 downto 0);
+					A, B : in std_logic_vector(32 downto 0);
+					Z : out std_logic_vector(32 downto 0);
+					zero : out std_logic);
+		 end component;
+		 component Controle is
+			port (
+				instr : in std_logic_vector(31 downto 0);
+        ALUOp : out std_logic_vector(1 downto 0);
+		  opcode_ula: out std_logic_vector(3 downto 0);
+        ALUSrc, Branch, MemRead, MemWrite, RegWrite, Mem2Reg : out std_logic);
+		 end component;
+		signal ro1, ro2 : std_logic_vector(31 downto 0);
+		begin
 
-begin
-    -- Instanciação dos componentes internos
-    ula_inst: ula
-    generic map(
-        WSIZE => 32
-    )
-    port map(
-        opcode => ALUOp,
-        A => rs1_data,
-        B => rs2_data,
-        Z => alu_result_reg,
-        zero => zero_reg
-    );
+		ula_inst: ula
+			  port map(
+					opcode => opcode_ula,
+					A => ro1,
+					B => ro2,
+					Z => alu_result,
+					zero => zero
+					);
+		 PIPE_DECODE_inst: PIPE_DECODE
+		 Port map (
+				clk  => clk,                  -- Sinal de clock
+				reset => reset ,                    -- Sinal de reset
+				ro1  => ro1,
+				ro2 => ro2	-- Instrução vinda do FETCH
+		 );
+		 controle_inst : Controle
+		 port map (
+		  opcode_ula => opcode
+		  );
 
-    -- Saída do resultado da ALU e sinal de zero
-    alu_result <= alu_result_reg;
-    zero <= zero_reg;
+	
+		 -- Instanciação dos componentes internos,
+		 
 
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            alu_result_reg <= (others => '0');
-            zero_reg <= '0';
-        elsif rising_edge(clk) then
-            alu_result_reg <= std_logic_vector( signed(rs1_data) + signed(imm32) );
-            zero_reg <= '1' when alu_result_reg = (others => '0') else '0';
-        end if;
-    end process;
-end behavioral;
+		 
+	end behavioral;

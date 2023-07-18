@@ -2,29 +2,26 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
--- Tamanho das memórias de código e dados (ajuste conforme necessário)
-constant CODE_MEM_SIZE : natural := 85;
-constant DATA_MEM_SIZE : natural := 12429;
-
-entity FETCH is
+entity PIPE_FETCH is
     Port (
         clk : in STD_LOGIC;               -- Sinal de clock
         reset : in STD_LOGIC;             -- Sinal de reset
-        pc_in : in std_logic_vector(31 downto 0); -- entrada de endereço do PC
-        pc_out : out STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
-        pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+        PIPE_FETCH_done : in STD_LOGIC;        -- Entrada PIPE_FETCH_done (0 ou 1)
+        instruction : out STD_LOGIC_VECTOR(31 downto 0) -- Saída da instrução da memória de instruções
+
+		  
     );
-end FETCH;
+end PIPE_FETCH;
 
-architecture behavioral of FETCH is
-    signal pc_reg : STD_LOGIC_VECTOR(7 downto 0);             -- Registrador para armazenar o valor atual do PC
-
-    -- Sinais intermediários
-    signal pc_plus_4 : std_logic_vector(31 downto 0);
-    signal pc_offset : std_logic_vector(31 downto 0);
-    signal pc_mux_out : std_logic_vector(31 downto 0);
-    signal mux_output : std_logic_vector(31 downto 0);
-
+architecture behavioral of PIPE_FETCH is
+    signal pc_reg : STD_LOGIC_VECTOR(31 downto 0);             -- Registrador para armazenar o valor atual do PC
+    signal pc_plus_4 : STD_LOGIC_VECTOR(31 downto 0);         -- Saída do Somador (PC + 4)
+    signal pc_plus_offset : STD_LOGIC_VECTOR(31 downto 0);    -- Saída do Somador (PC + Deslocamento)
+    signal pc_mux_out : STD_LOGIC_VECTOR(31 downto 0);        -- Saída do Mux21 (Seleção do PC)
+    signal control_signal : std_logic;                        -- Sinal de controle para o Mux21
+	 signal pc_out :  STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
+    signal pc_mem_out :  STD_LOGIC_VECTOR(31 downto 8);  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+   
     -- Componentes internos
     component PC is
         Port (
@@ -35,17 +32,27 @@ architecture behavioral of FETCH is
             pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
         );
     end component;
+	 component PIPE_MEM is
+    Port (
+        clk, PIPE_MEM_done : in STD_LOGIC;                                 -- Sinal de clock
+        reset : in STD_LOGIC;                               -- Sinal de reset
+        addr_in : in STD_LOGIC_VECTOR(7 downto 0);           -- Entrada do endereço da memória de dados (8 bits)
+        data_in : in STD_LOGIC_VECTOR(31 downto 0);          -- Entrada dos dados a serem escritos na memória de dados (32 bits)
+        data_out : out STD_LOGIC_VECTOR(31 downto 0)         -- Saída dos dados lidos da memória de dados (32 bits)
+    );
+end component;
+
 
     component MI is
         Port (
             clk : in STD_LOGIC;                                 -- Sinal de clock
             reset : in STD_LOGIC;                               -- Sinal de reset
             pc_mem_in : in STD_LOGIC_VECTOR(31 downto 8);        -- Entrada do endereço do PC para a memória de instruções (24 bits ignorados)
-            instruction_out : out STD_LOGIC_VECTOR(31 downto 0)  -- Saída da instrução da memória de instruções (32 bits)
+            instruction_out : out STD_LOGIC_VECTOR(31 downto 0);
+				FIM : out STD_LOGIC-- Saída da instrução da memória de instruções (32 bits)
         );
     end component;
 
-    -- Componentes adicionais
     component MUX21 is
         Port (
             sel : in STD_LOGIC;
@@ -55,11 +62,30 @@ architecture behavioral of FETCH is
         );
     end component;
 
-    component Somador32bits is
+    component Somador8bits is
         Port (
-            a : in STD_LOGIC_VECTOR(31 downto 0);
-            b : in STD_LOGIC_VECTOR(31 downto 0);
-            sum : out STD_LOGIC_VECTOR(31 downto 0)
+            a : in STD_LOGIC_VECTOR(7 downto 0);
+            b : in STD_LOGIC_VECTOR(7 downto 0);
+            sum : out STD_LOGIC_VECTOR(7 downto 0)
+        );
+    end component;
+
+    component ula is
+        generic (WSIZE : natural := 32);
+        port (
+            opcode : in std_logic_vector(3 downto 0);
+            A, B : in std_logic_vector(WSIZE-1 downto 0);
+            Z : out std_logic_vector(WSIZE-1 downto 0);
+            zero : out std_logic
+        );
+    end component;
+
+    component Controle is 
+        port (
+            instr : in std_logic_vector(31 downto 0);
+        ALUOp : out std_logic_vector(1 downto 0);
+		  opcode_ula: out std_logic_vector(3 downto 0);
+        ALUSrc, Branch, MemRead, MemWrite, RegWrite, Mem2Reg : out std_logic
         );
     end component;
 
@@ -70,22 +96,15 @@ architecture behavioral of FETCH is
         );
     end component;
 
-    -- Função auxiliar para ler arquivos binários e carregar na memória
-    procedure load_memory(filename : string; mem : inout std_logic_vector) is
-        file f : text open read_mode is filename;
-        variable line : line;
-        variable value : std_logic_vector(mem'length-1 downto 0);
-    begin
-        for i in mem'range loop
-            readline(f, line);
-            readline(line, value);
-            mem(i) := value;
-        end loop;
-        file_close(f);
-    end procedure;
+    signal branch_signal : std_logic;  -- Signal to hold the value of the Branch control signal from Controle
+    signal zero_signal : std_logic;    -- Signal to hold the value of the zero signal from ula
+
+    signal opcode_signal : std_logic_vector(3 downto 0);  -- Signal to hold the opcode from the instruction
+    signal A_signal, B_signal : std_logic_vector(31 downto 0);  -- Signals to hold the operands for the ula
 
 begin
     -- Componentes instanciados
+	
     PC_inst : PC
         port map (
             clk => clk,
@@ -95,6 +114,14 @@ begin
             pc_mem_out => pc_mem_out
         );
 
+	 MEM_inst : PIPE_MEM
+			port map (
+				clk => clk,
+            reset => reset,
+				data
+            addr_in => pc_mem_out
+				PIPE_MEM_done => PIPE_MEM_done
+			);	 
     MI_inst : MI
         port map (
             clk => clk,
@@ -103,52 +130,71 @@ begin
             instruction_out => instruction
         );
 
-    -- Sinais intermediários
-    pc_plus_4 <= pc_reg + 4;
-    pc_offset <= "000000000000000000000000" & instruction(31 downto 20);
-
-    -- Componentes adicionais
-    MUX_inst : MUX21
+    GenImm32_inst : genImm32
         port map (
-            sel => zero AND Branch,
-            data0 => pc_plus_4,
-            data1 => pc_reg + pc_offset,
-            output => mux_output
+            instr => instruction,
+            imm32 => pc_plus_offset
         );
 
-    Somador_inst : Somador32bits
+    SomadorPCPlus4_inst : Somador8bits
         port map (
-            a => pc_reg,
-            b => "00000000000000000000000000000100",  -- Valor decimal 4 (PC + 4)
+            a => pc_out,
+            b => "00000100",  -- Valor 4 em binário
             sum => pc_plus_4
         );
 
-    -- Processo para carregar os arquivos binários na memória durante a fase de inicialização
-    process
+    SomadorPCPlusOffset_inst : Somador8bits
+        port map (
+            a => pc_out,
+            b => std_logic_vector(resize(signed(pc_plus_offset), 8)),  -- Deslocamento de 8 bits
+            sum => pc_plus_offset
+        );
+
+    MuxPC_inst : MUX21
+        port map (
+            sel => control_signal,
+            data0 => pc_plus_4,
+            data1 => pc_plus_offset,
+            output => pc_mux_out
+        );
+
+    ula_inst : ula
+        generic map (WSIZE => 32)
+        port map (
+            opcode => opcode_signal,
+            A => A_signal,
+            B => B_signal,
+            Z => instruction,
+            zero => zero_signal
+        );
+
+    Controle_inst : Controle
+        port map (
+            instr => instruction,
+            Branch => branch_signal
+       
+        );
+
+    process (clk, reset)
     begin
         if reset = '1' then
-            -- Carregar código.bin na memória de instruções
-            load_memory("code.bin", code_mem);
-            -- Carregar data.bin na memória de dados
-            load_memory("data.bin", data_mem);
-        end if;
-    end process;
+            pc_reg <= (others => '0');
+            control_signal <= '0';
+        elsif rising_edge(clk) then
+            if PIPE_FETCH_done = '1' then  -- Verifica se PIPE_FETCH_done é igual a 1
+                if branch_signal = '1' and zero_signal = '1' then
+                    control_signal <= '1';
+                else
+                    control_signal <= '0';
+                end if;
 
-    -- Processo para buscar a instrução na memória de instruções com base no valor atual do PC
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            if reset = '1' then
-                -- Reinicializar o PC para 0
-                pc_reg <= (others => '0');
-            else
-                -- Atualizar o PC para o próximo valor
-                pc_reg <= pc_mux_out(7 downto 0);
+                if control_signal = '1' then
+                    pc_reg <= pc_mux_out;
+                else
+                    pc_reg <= pc_plus_4;
+                end if;
             end if;
         end if;
     end process;
-
-    -- Atribui o valor correto ao sinal pc_mux_out
-    pc_mux_out <= mux_output when reset = '1' else pc_plus_4;
 
 end behavioral;
