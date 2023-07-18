@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto_Final
-Tue Jul 18 02:18:41 2023
+Tue Jul 18 18:22:25 2023
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Jul 18 02:18:41 2023           ;
+; Analysis & Synthesis Status ; Failed - Tue Jul 18 18:22:25 2023           ;
 ; Quartus Prime Version       ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name               ; Projeto_Final                               ;
 ; Top-level Entity Name       ; PIPELINE                                    ;
@@ -160,16 +160,16 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul 18 02:18:33 2023
+    Info: Processing started: Tue Jul 18 18:21:32 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto_Final -c Projeto_Final
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
-    Info (12022): Found design unit 1: PC-Behavioral File: D:/projects/Pipeline/PC.vhd Line: 15
+    Info (12022): Found design unit 1: PC-Behavioral File: D:/projects/Pipeline/PC.vhd Line: 14
     Info (12023): Found entity 1: PC File: D:/projects/Pipeline/PC.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mi.vhd
-    Info (12022): Found design unit 1: MI-Behavioral File: D:/projects/Pipeline/MI.vhd Line: 17
-    Info (12023): Found entity 1: MI File: D:/projects/Pipeline/MI.vhd Line: 6
+    Info (12022): Found design unit 1: MI-Behavioral File: D:/projects/Pipeline/MI.vhd Line: 18
+    Info (12023): Found entity 1: MI File: D:/projects/Pipeline/MI.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
     Info (12022): Found design unit 1: ULA-ULA_arch File: D:/projects/Pipeline/ULA.vhd Line: 14
     Info (12023): Found entity 1: ULA File: D:/projects/Pipeline/ULA.vhd Line: 5
@@ -194,25 +194,28 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
 Info (12021): Found 2 design units, including 1 entities, in source file md.vhd
     Info (12022): Found design unit 1: MD-Behavioral File: D:/projects/Pipeline/MD.vhd Line: 19
     Info (12023): Found entity 1: MD File: D:/projects/Pipeline/MD.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file muxpc.vhd
+    Info (12022): Found design unit 1: Mux21PC-Behavioral File: D:/projects/Pipeline/MUXPC.vhd Line: 14
+    Info (12023): Found entity 1: Mux21PC File: D:/projects/Pipeline/MUXPC.vhd Line: 5
 Info (12127): Elaborating entity "PIPELINE" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(101): object "MemRead_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 101
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(101): object "MemWrite_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 101
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(105): object "ALUSrc_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 105
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(105): object "Branch_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 105
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(105): object "MemRead_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 105
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(105): object "MemWrite_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 105
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(101): used implicit default value for signal "FETCH" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 101
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(101): used implicit default value for signal "WB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 101
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(111): object "opcode_ula_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(119): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 119
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(119): object "output3" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 119
-Error (10344): VHDL expression error at PIPELINE.vhd(242): expression has 8 elements, but must have 32 elements File: D:/projects/Pipeline/PIPELINE.vhd Line: 242
-Error (10442): VHDL Process Statement error at PIPELINE.vhd(327): Process Statement must contain either a sensitivity list or a Wait Statement File: D:/projects/Pipeline/PIPELINE.vhd Line: 327
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(111): object "MemRead_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(111): object "MemWrite_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "ALUSrc_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "Branch_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "MemRead_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "MemWrite_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(111): used implicit default value for signal "FETCH" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(111): used implicit default value for signal "WB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(121): object "opcode_ula_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 121
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(129): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 129
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(129): object "output3" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 129
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(130): used implicit default value for signal "pc_mem_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 130
+Error (10536): VHDL Loop Statement error at PIPELINE.vhd(229): loop must terminate within 10,000 iterations File: D:/projects/Pipeline/PIPELINE.vhd Line: 229
 Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 12 warnings
-    Error: Peak virtual memory: 4838 megabytes
-    Error: Processing ended: Tue Jul 18 02:18:41 2023
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:18
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 13 warnings
+    Error: Peak virtual memory: 9720 megabytes
+    Error: Processing ended: Tue Jul 18 18:22:25 2023
+    Error: Elapsed time: 00:00:53
+    Error: Total CPU time (on all processors): 00:01:01
 
 

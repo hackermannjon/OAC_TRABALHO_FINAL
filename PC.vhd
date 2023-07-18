@@ -6,14 +6,13 @@ entity PC is
     Port (
         clk : in STD_LOGIC;               -- Sinal de clock
         reset : in STD_LOGIC;             -- Sinal de reset
-		  pc_in : in std_logic_vector(31 downto 0); -- entrada de endereço do PC
-        pc_out : out STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
-        pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+		  pc_in : in std_logic_vector(7 downto 0); -- entrada de endereço do PC
+        pc_out : out STD_LOGIC_VECTOR(7 downto 0)  -- Saída do endereço do PC (8 bits)
     );
 end PC;
 
 architecture Behavioral of PC is
-    signal pc_reg : STD_LOGIC_VECTOR(31 downto 0);  -- Registrador interno do PC
+    signal pc_reg : STD_LOGIC_VECTOR(7 downto 0);  -- Registrador interno do PC
 
 begin
     process(clk, reset)
@@ -26,5 +25,4 @@ begin
     end process;
 
     pc_out <= pc_reg(7 downto 0);                  -- Apenas os 8 bits menos significativos são enviados como saída
-    pc_mem_out <= pc_reg(31 downto 8);             -- Apenas os 24 bits mais significativos são enviados como saída para a memória de instruções
 end Behavioral;

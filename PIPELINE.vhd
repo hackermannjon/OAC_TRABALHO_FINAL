@@ -13,9 +13,8 @@ component PC is
     Port (
         clk : in STD_LOGIC;               -- Sinal de clock
         reset : in STD_LOGIC;             -- Sinal de reset
-		  pc_in : in std_logic_vector(31 downto 0); -- entrada de endereço do PC
-        pc_out : out STD_LOGIC_VECTOR(7 downto 0);  -- Saída do endereço do PC (8 bits)
-        pc_mem_out : out STD_LOGIC_VECTOR(31 downto 8)  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+		  pc_in : in std_logic_vector(7 downto 0); -- entrada de endereço do PC
+        pc_out : out STD_LOGIC_VECTOR(7 downto 0)  -- Saída do endereço do PC (8 bits)
     );
 end component;
 
@@ -30,14 +29,15 @@ component X_REG is
 end component;
 
 
+
 component MI is
     Port (
-        clk : in STD_LOGIC;                                 -- Sinal de clock
-        reset : in STD_LOGIC;                               -- Sinal de reset
-        pc_mem_in : in STD_LOGIC_VECTOR(31 downto 8);        -- Entrada do endereço do PC para a memória de instruções (24 bits ignorados)
-        instruction_mi_out : out STD_LOGIC_VECTOR(31 downto 0);  -- Saída da instrução da memória de instruções (32 bits)
-        FIM : out STD_LOGIC;
-        pc_initial : out STD_LOGIC_VECTOR(31 downto 0)       -- Saída do valor inicial de pc_in
+        clk : in STD_LOGIC;
+        reset : in STD_LOGIC;
+        pc_mem_in : in STD_LOGIC_VECTOR(7 downto 0);
+        instruction_mi_out : out STD_LOGIC_VECTOR(31 downto 0);
+        pc_initial : out STD_LOGIC_VECTOR(7 downto 0);
+        FIM : out STD_LOGIC  -- Sinal de saída para indicar o fim do programa
     );
 end component;
 
@@ -76,6 +76,16 @@ component Mux21 is
         output : out STD_LOGIC_VECTOR(31 downto 0)   -- Saída do multiplexador (32 bits)
     );
 end component;
+
+component Mux21PC is
+    Port (
+        sel_PC : in STD_LOGIC;                          -- Sinal de sel_PCeção (0 ou 1)
+        data0_PC : in STD_LOGIC_VECTOR(7 downto 0);    -- Dado de entrada 0 (32 bits)
+        data1_PC : in STD_LOGIC_VECTOR(7 downto 0);    -- Dado de entrada 1 (32 bits)
+        output_PC : out STD_LOGIC_VECTOR(7 downto 0)   -- Saída do multiplexador (32 bits)
+    );
+end component;
+
 
 
 component Controle is
@@ -116,9 +126,8 @@ signal opcode, opcode_ula_E, opcode_ula_M, opcode_ula_WB : std_logic_vector(3 do
 
 		 
 		 
-signal Z, A, B,ro1, ro2,data, addr_md_in,data_md_in,data_md_out, imm32, instruction_mi_ctrl_in, data0, data1, output,data02, data12, output2,data03, data13, output3, instruction_mi_out,instruction_mi_in, pc_initial, pc_reg : std_logic_vector(31 downto 0);
-signal  pc_out, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
-signal pc_mem_in, pc_mem_out : STD_LOGIC_VECTOR(31 downto 8);  -- Saída do endereço do PC para a memória de instruções (24 bits ignorados)
+signal Z, A, B,ro1, ro2,data, addr_md_in,data_md_in,data_md_out, imm32, instruction_mi_ctrl_in, data02, data12, output2,data03, data13, output3, instruction_mi_out,instruction_mi_in : std_logic_vector(31 downto 0);
+signal  data0, data1, output,pc_initial, pc_reg, pc_mem_in, pc_out, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
 signal imm7 : STD_LOGIC_VECTOR(6 downto 0); 
 signal rs1, rs2, rd_D,rd_E,rd_M, rd_WB :  std_logic_vector(4 downto 0);
 begin
@@ -138,8 +147,7 @@ port map  (
         clk => clk     ,         -- Sinal de clock
         reset => reset ,           -- Sinal de reset
 		  pc_in => pc_reg ,-- entrada de endereço do PC
-        pc_out => pc_out,
-        pc_mem_out => pc_mem_out
+        pc_out => pc_out
     );
 MI_inst : MI
 port map   (
@@ -156,13 +164,14 @@ port map (
         bsoma => bsoma,    -- Entrada B de 8 bits
         sum => sum  -- Saída de soma de 8 bits
     );
-MUX1_inst : Mux21 
+MUX1_inst : Mux21PC 
 port map (
-        sel => sel       ,                  -- Sinal de seleção (0 ou 1)
-        data0 => data0    ,-- Dado de entrada 0 (32 bits)
-        data1 => data1    ,-- Dado de entrada 1 (32 bits)
-        output => output   -- Saída do multiplexador (32 bits)
+        sel_PC => sel       ,                  -- Sinal de seleção (0 ou 1)
+        data0_PC => data0    ,-- Dado de entrada 0 (32 bits)
+        data1_PC => data1    ,-- Dado de entrada 1 (32 bits)
+        output_PC => output   -- Saída do multiplexador (32 bits)
 );
+
 
 MUX2_inst : Mux21 
 port map (
@@ -215,7 +224,7 @@ MD_inst : MD
         MemWrite => MemWrite_M                              -- Sinal de controle MeMWrite
     );
 
- process
+ process(clk, reset, FIM)
   begin
     while FIM = '0' loop
 	 if rising_edge(clk) then
@@ -260,7 +269,7 @@ MD_inst : MD
 
 
 	 if EXECUTE = '1' then
-		asoma <= std_logic_vector(shift_left(unsigned(imm7), 1));
+		asoma <= '0' & imm7(6 downto 0);
 		bsoma <= pc_out;
 		
 		data02 <= ro2;
@@ -300,7 +309,6 @@ MD_inst : MD
 
 		 
 			if FETCH = '1' then	
-							pc_mem_in <= pc_mem_out;
 							asoma <= "00000100";
 							bsoma <= pc_out;
 							data0 <= sum;	
