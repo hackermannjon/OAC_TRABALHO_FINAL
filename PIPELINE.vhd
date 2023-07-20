@@ -3,16 +3,18 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all; -- Add the numeric_std library for signed type
 
 entity PIPELINE is
+Port (
+        clk : in STD_LOGIC;               -- Sinal de clock
+		  reset : in STD_LOGIC            -- Sinal de reset
+);
 end PIPELINE;
 
 architecture behavioral of PIPELINE is
-
-
-
 component PC is
     Port (
-        clk : in STD_LOGIC;               -- Sinal de clock
+        clk : in STD_LOGIC;
         reset : in STD_LOGIC;             -- Sinal de reset
+		  -- Sinal de clock
 		  pc_in : in std_logic_vector(7 downto 0); -- entrada de endereço do PC
         pc_out : out STD_LOGIC_VECTOR(7 downto 0)  -- Saída do endereço do PC (8 bits)
     );
@@ -90,7 +92,7 @@ end component;
 
 component Controle is
     port (
-        instruction_mi_ctrl_in : in std_logic_vector(31 downto 0);
+        instruction : in std_logic_vector(31 downto 0);
 		  opcode_ula: out std_logic_vector(3 downto 0);
         ALUSrc, Branch, MemRead, MemWrite, RegWrite, Mem2Reg : out std_logic
     );
@@ -108,32 +110,26 @@ component MD is
     );
 end component;
 
+
 signal 		MemRead_md, MemWrite_md,
 				 zero, wren,
 				ALUSrc_E, Branch_E,MemRead_E, MemWrite_E, RegWrite_E, Mem2Reg_E, -- Pipeline do execute
 				ALUSrc_M, Branch_M, MemRead_M, MemWrite_M, RegWrite_M, Mem2Reg_M, -- Pipeline da memoria
 				ALUSrc_WB, Branch_WB, MemRead_WB, MemWrite_WB, RegWrite_WB, Mem2Reg_WB, -- Pipeline do write back
-				sel,sel2,sel3, FIM, clk, reset, 
+				sel,sel2,sel3, FIM,  
 				FETCH, DECODE, EXECUTE, MEM, WB: STD_LOGIC;
-				
-				
-				
-signal opcode, opcode_ula_E, opcode_ula_M, opcode_ula_WB : std_logic_vector(3 downto 0);
-
-
-
-		 
-
-		 
-		 
+signal InitiPC : STD_LOGIC := '0';				
+signal opcode, opcode_ula_E, opcode_ula_M, opcode_ula_WB : std_logic_vector(3 downto 0);		 
 signal Z, A, B,ro1, ro2,data, addr_md_in,data_md_in,data_md_out, imm32, instruction_mi_ctrl_in, data02, data12, output2,data03, data13, output3, instruction_mi_out,instruction_mi_in : std_logic_vector(31 downto 0);
-signal  data0, data1, output,pc_initial, pc_reg, pc_mem_in, pc_out, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
+signal  data0, data1, output,pc_initial, pc_reg, pc_mem_in, pc_out,pc_out_D,pc_out_E, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
 signal imm7 : STD_LOGIC_VECTOR(6 downto 0); 
 signal rs1, rs2, rd_D,rd_E,rd_M, rd_WB :  std_logic_vector(4 downto 0);
+
+
 begin
 Controle_inst : Controle
 port map (
-        instruction_mi_ctrl_in => instruction_mi_ctrl_in,
+        instruction => instruction_mi_ctrl_in,
 		  opcode_ula => opcode_ula_E,
         ALUSrc => ALUSrc_E,
 		  Branch => Branch_E,
@@ -224,11 +220,14 @@ MD_inst : MD
         MemWrite => MemWrite_M                              -- Sinal de controle MeMWrite
     );
 
+
  process(clk, reset, FIM)
   begin
-    while FIM = '0' loop
-	 if rising_edge(clk) then
+  	 pc_reg <= "00000000";
 
+    
+	 if rising_edge(clk) then
+	
 	 
 	 
 	 
@@ -249,7 +248,6 @@ MD_inst : MD
 	 if MEM = '1' then
 	 	sel <= Branch_M and zero;
 		data1 <= sum;
-		
 		addr_md_in <= Z;
 
 		data_md_in <= ro2;
@@ -270,14 +268,13 @@ MD_inst : MD
 
 	 if EXECUTE = '1' then
 		asoma <= '0' & imm7(6 downto 0);
-		bsoma <= pc_out;
+		bsoma <= pc_out_E;
 		
 		data02 <= ro2;
 		data12 <= imm32;		sel2 <= ALUSrc_E;
 		A <= ro1;
 		B <= output2;
 		opcode <= opcode_ula_E;
-				end if;
 
 		
 		
@@ -291,13 +288,16 @@ MD_inst : MD
 		opcode_ula_M <= opcode_ula_E;
 		rd_M <= rd_E;
 		mem <= '1';
+				end if;
 
 
 		
 		 if DECODE = '1' then
+		 
 			instruction_mi_ctrl_in <= instruction_mi_out;
 			instruction_mi_in <= instruction_mi_out;
 			imm7 <= imm32( 6 downto 0);
+			pc_out_E <= pc_out_D;
 			
 			rd_D <= instruction_mi_out (11 downto 7);
 			rs1 <= instruction_mi_out (19 downto 15);
@@ -309,12 +309,18 @@ MD_inst : MD
 
 		 
 			if FETCH = '1' then	
+			 if InitiPC = '0' then
+			 pc_reg <= "00000000";
+			 InitiPC <= '1';
+			 end if;
 							asoma <= "00000100";
 							bsoma <= pc_out;
 							data0 <= sum;	
-							
+							pc_mem_in <= pc_out;
+							pc_out_D <= pc_out;
 							pc_reg <= output;
 							DECODE <= '1';
+							
 							
 							-- PC + 4, PC + Imm, PC --> MI
 							
@@ -331,7 +337,6 @@ MD_inst : MD
 	end if;
 		
 		
-	end loop;
   end process;
   
   
@@ -339,17 +344,7 @@ MD_inst : MD
   
   
   
-  process
-  begin
-	 pc_reg <= pc_initial;
-    reset <= '0';
-    while FIM = '0' loop
-      clk <= '0';
-      wait for 5 ns;
-      clk <= '1';
-      wait for 5 ns;
-    end loop;
-  end process;
+ 
 
   
 

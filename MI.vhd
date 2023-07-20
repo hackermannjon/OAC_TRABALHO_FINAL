@@ -21,12 +21,12 @@ architecture Behavioral of MI is
     signal instruction_mem : INSTRUCTION_MEM_ARRAY;
     signal read_addr : STD_LOGIC_VECTOR(7 downto 0);
     file code_file : TEXT open read_mode is "code.bin";
-    variable line_buf : LINE;
-    variable word_buf : STD_LOGIC_VECTOR(31 downto 0);
-    variable initial_addr : STD_LOGIC_VECTOR(7 downto 0) := "00000000";  -- Variável para armazenar o endereço inicial da primeira instrução
-    variable end_of_file : BOOLEAN := FALSE;
 begin
     process(clk, reset)
+        variable initial_addr : STD_LOGIC_VECTOR(7 downto 0) := "00000000";  -- Variável para armazenar o endereço inicial da primeira instrução
+        variable line_buf : LINE;  -- Declaração da variável line_buf dentro do processo
+        variable word_buf : STD_LOGIC_VECTOR(31 downto 0);
+        variable end_of_file : BOOLEAN := FALSE;  -- Declaração da variável end_of_file dentro do processo
     begin
         if reset = '1' then
             read_addr <= (others => '0');
@@ -40,10 +40,7 @@ begin
                 FIM <= '0';  -- Mantém o sinal FIM como '0' se ainda não chegou ao fim do arquivo
             end if;
         end if;
-    end process;
 
-    process
-    begin
         if reset = '1' then
             file_close(code_file);
             file_open(code_file, "code.bin", READ_MODE);
@@ -72,5 +69,4 @@ begin
     end process;
 
     instruction_mi_out <= instruction_mem(to_integer(unsigned(read_addr)));
-    pc_initial <= initial_addr;  -- Saída do endereço inicial da primeira instrução para o PC
 end Behavioral;

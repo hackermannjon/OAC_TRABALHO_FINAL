@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto_Final
-Tue Jul 18 18:22:25 2023
+Thu Jul 20 00:30:54 2023
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -10,7 +10,20 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: ULA:ULA_inst
+ 10. Port Connectivity Checks: "MD:MD_inst"
+ 11. Port Connectivity Checks: "Mux21:MUX3_inst"
+ 12. Port Connectivity Checks: "Mux21PC:MUX1_inst"
+ 13. Port Connectivity Checks: "MI:MI_inst"
+ 14. Port Connectivity Checks: "PC:PC_inst"
+ 15. Port Connectivity Checks: "Controle:Controle_inst"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +46,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Jul 18 18:22:25 2023           ;
-; Quartus Prime Version       ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
-; Revision Name               ; Projeto_Final                               ;
-; Top-level Entity Name       ; PIPELINE                                    ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Jul 20 00:30:54 2023       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                   ; Projeto_Final                               ;
+; Top-level Entity Name           ; PIPELINE                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 2                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -154,13 +172,177 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------+---------+
+; PC.vhd                           ; yes             ; User VHDL File  ; D:/projects/Pipeline/PC.vhd       ;         ;
+; MI.vhd                           ; yes             ; User VHDL File  ; D:/projects/Pipeline/MI.vhd       ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; D:/projects/Pipeline/ULA.vhd      ;         ;
+; MUX.vhd                          ; yes             ; User VHDL File  ; D:/projects/Pipeline/MUX.vhd      ;         ;
+; SUM.vhd                          ; yes             ; User VHDL File  ; D:/projects/Pipeline/SUM.vhd      ;         ;
+; XREG.vhd                         ; yes             ; User VHDL File  ; D:/projects/Pipeline/XREG.vhd     ;         ;
+; PIPELINE.vhd                     ; yes             ; User VHDL File  ; D:/projects/Pipeline/PIPELINE.vhd ;         ;
+; GENIMM.vhd                       ; yes             ; User VHDL File  ; D:/projects/Pipeline/GENIMM.vhd   ;         ;
+; CONTROL.vhd                      ; yes             ; User VHDL File  ; D:/projects/Pipeline/CONTROL.vhd  ;         ;
+; MD.vhd                           ; yes             ; User VHDL File  ; D:/projects/Pipeline/MD.vhd       ;         ;
+; MUXPC.vhd                        ; yes             ; User VHDL File  ; D:/projects/Pipeline/MUXPC.vhd    ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 2     ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 2     ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |PIPELINE                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 2    ; 0            ; |PIPELINE           ; PIPELINE    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:ULA_inst ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WSIZE          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MD:MD_inst"                                                                                ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_md_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux21:MUX3_inst"                                                                      ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; sel    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data0  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data1  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux21PC:MUX1_inst"                                                                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; data0_pc  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; output_pc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MI:MI_inst"                                                                                       ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; pc_mem_in          ; Input  ; Info     ; Stuck at GND                                                                        ;
+; instruction_mi_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc_initial         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fim                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:PC_inst"                                                                           ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; pc_in  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; pc_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controle:Controle_inst"                                                                ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; mem2reg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul 18 18:21:32 2023
+    Info: Processing started: Thu Jul 20 00:30:41 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto_Final -c Projeto_Final
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -183,7 +365,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file xreg.vh
     Info (12022): Found design unit 1: X_REG-main File: D:/projects/Pipeline/XREG.vhd Line: 14
     Info (12023): Found entity 1: X_REG File: D:/projects/Pipeline/XREG.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pipeline.vhd
-    Info (12022): Found design unit 1: PIPELINE-behavioral File: D:/projects/Pipeline/PIPELINE.vhd Line: 8
+    Info (12022): Found design unit 1: PIPELINE-behavioral File: D:/projects/Pipeline/PIPELINE.vhd Line: 12
     Info (12023): Found entity 1: PIPELINE File: D:/projects/Pipeline/PIPELINE.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file genimm.vhd
     Info (12022): Found design unit 1: genImm32-a File: D:/projects/Pipeline/GENIMM.vhd Line: 11
@@ -192,30 +374,66 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: Controle-behavioral File: D:/projects/Pipeline/CONTROL.vhd Line: 13
     Info (12023): Found entity 1: Controle File: D:/projects/Pipeline/CONTROL.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file md.vhd
-    Info (12022): Found design unit 1: MD-Behavioral File: D:/projects/Pipeline/MD.vhd Line: 19
+    Info (12022): Found design unit 1: MD-Behavioral File: D:/projects/Pipeline/MD.vhd Line: 18
     Info (12023): Found entity 1: MD File: D:/projects/Pipeline/MD.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file muxpc.vhd
     Info (12022): Found design unit 1: Mux21PC-Behavioral File: D:/projects/Pipeline/MUXPC.vhd Line: 14
     Info (12023): Found entity 1: Mux21PC File: D:/projects/Pipeline/MUXPC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_clk_tb.vhd
+    Info (12022): Found design unit 1: PIPELINE_CLK_TB-behavior File: D:/projects/Pipeline/PIPELINE_CLK_TB.vhd Line: 7
+    Info (12023): Found entity 1: PIPELINE_CLK_TB File: D:/projects/Pipeline/PIPELINE_CLK_TB.vhd Line: 4
 Info (12127): Elaborating entity "PIPELINE" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(111): object "MemRead_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(111): object "MemWrite_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "ALUSrc_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "Branch_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "MemRead_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(115): object "MemWrite_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 115
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(111): used implicit default value for signal "FETCH" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(111): used implicit default value for signal "WB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 111
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(121): object "opcode_ula_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 121
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(129): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 129
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(129): object "output3" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 129
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(130): used implicit default value for signal "pc_mem_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 130
-Error (10536): VHDL Loop Statement error at PIPELINE.vhd(229): loop must terminate within 10,000 iterations File: D:/projects/Pipeline/PIPELINE.vhd Line: 229
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 13 warnings
-    Error: Peak virtual memory: 9720 megabytes
-    Error: Processing ended: Tue Jul 18 18:22:25 2023
-    Error: Elapsed time: 00:00:53
-    Error: Total CPU time (on all processors): 00:01:01
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(114): object "MemRead_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 114
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(114): object "MemWrite_md" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 114
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "ALUSrc_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "Branch_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "MemRead_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "MemWrite_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(119): object "FIM" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 119
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(114): used implicit default value for signal "FETCH" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 114
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(114): used implicit default value for signal "WB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 114
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(122): object "opcode_ula_WB" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 122
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(123): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/PIPELINE.vhd Line: 123
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(123): object "output3" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 123
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(124): object "pc_initial" assigned a value but never read File: D:/projects/Pipeline/PIPELINE.vhd Line: 124
+Warning (10873): Using initial value X (don't care) for net "data03" at PIPELINE.vhd(123) File: D:/projects/Pipeline/PIPELINE.vhd Line: 123
+Warning (10873): Using initial value X (don't care) for net "data13" at PIPELINE.vhd(123) File: D:/projects/Pipeline/PIPELINE.vhd Line: 123
+Warning (10873): Using initial value X (don't care) for net "data0" at PIPELINE.vhd(124) File: D:/projects/Pipeline/PIPELINE.vhd Line: 124
+Warning (10873): Using initial value X (don't care) for net "pc_mem_in" at PIPELINE.vhd(124) File: D:/projects/Pipeline/PIPELINE.vhd Line: 124
+Warning (10873): Using initial value X (don't care) for net "pc_out_D" at PIPELINE.vhd(124) File: D:/projects/Pipeline/PIPELINE.vhd Line: 124
+Warning (10873): Using initial value X (don't care) for net "sel3" at PIPELINE.vhd(119) File: D:/projects/Pipeline/PIPELINE.vhd Line: 119
+Warning (10873): Using initial value X (don't care) for net "DECODE" at PIPELINE.vhd(120) File: D:/projects/Pipeline/PIPELINE.vhd Line: 120
+Info (12128): Elaborating entity "Controle" for hierarchy "Controle:Controle_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 130
+Warning (10036): Verilog HDL or VHDL warning at CONTROL.vhd(15): object "ALUOp" assigned a value but never read File: D:/projects/Pipeline/CONTROL.vhd Line: 15
+Warning (10631): VHDL Process Statement warning at CONTROL.vhd(20): inferring latch(es) for signal or variable "Mem2Reg", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline/CONTROL.vhd Line: 20
+Info (10041): Inferred latch for "Mem2Reg" at CONTROL.vhd(20) File: D:/projects/Pipeline/CONTROL.vhd Line: 20
+Info (12128): Elaborating entity "PC" for hierarchy "PC:PC_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 141
+Info (12128): Elaborating entity "MI" for hierarchy "MI:MI_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 148
+Warning (10541): VHDL Signal Declaration warning at MI.vhd(13): used implicit default value for signal "pc_initial" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline/MI.vhd Line: 13
+Warning (10631): VHDL Process Statement warning at MI.vhd(25): inferring latch(es) for signal or variable "end_of_file", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline/MI.vhd Line: 25
+Warning (10873): Using initial value X (don't care) for net "instruction_mem" at MI.vhd(21) File: D:/projects/Pipeline/MI.vhd Line: 21
+Info (10041): Inferred latch for "end_of_file" at MI.vhd(44) File: D:/projects/Pipeline/MI.vhd Line: 44
+Info (12128): Elaborating entity "Somador8bits" for hierarchy "Somador8bits:SUM1_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 157
+Info (12128): Elaborating entity "Mux21PC" for hierarchy "Mux21PC:MUX1_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 163
+Info (12128): Elaborating entity "Mux21" for hierarchy "Mux21:MUX2_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 172
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULA_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 187
+Info (12128): Elaborating entity "genImm32" for hierarchy "genImm32:IMM_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 195
+Info (12128): Elaborating entity "X_REG" for hierarchy "X_REG:X_REG_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 201
+Warning (10036): Verilog HDL or VHDL warning at XREG.vhd(17): object "i" assigned a value but never read File: D:/projects/Pipeline/XREG.vhd Line: 17
+Info (12128): Elaborating entity "MD" for hierarchy "MD:MD_inst" File: D:/projects/Pipeline/PIPELINE.vhd Line: 212
+Warning (10631): VHDL Process Statement warning at MD.vhd(39): inferring latch(es) for signal or variable "end_of_file", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline/MD.vhd Line: 39
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: D:/projects/Pipeline/PIPELINE.vhd Line: 7
+    Warning (15610): No output dependent on input pin "reset" File: D:/projects/Pipeline/PIPELINE.vhd Line: 8
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Thu Jul 20 00:30:54 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:22
 
 

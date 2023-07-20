@@ -15,38 +15,38 @@ entity MD is
         MemWrite : in STD_LOGIC                              -- Sinal de controle MemWrite
     );
 end MD;
-
 architecture Behavioral of MD is
-    type data_memory is array (0 to 127) of STD_LOGIC_VECTOR(31 downto 0);  -- Memória de dados (128 palavras de 32 bits cada)
-    signal data_mem : data_memory;                                           -- Registrador interno da memória de dados
-    file data_file : TEXT open READ_MODE is "data.bin";  -- Abre o arquivo "data.bin" em modo de leitura
-    variable line_buf : line;
-    variable word_buf : std_logic_vector(31 downto 0);
-    variable n : integer := 0;
+    type data_memory is array (0 to 127) of STD_LOGIC_VECTOR(31 downto 0);
+    signal data_mem : data_memory;
+    file data_file : TEXT open READ_MODE is "data.bin";
 
 begin
+    -- The first process with clock-based condition
     process(clk, reset)
     begin
         if reset = '1' then
             data_mem <= (others => (others => '0'));
         elsif rising_edge(clk) then
-            if MemRead = '1' then  -- Leitura de dados
+            if MemRead = '1' then
                 data_md_out <= data_mem(to_integer(unsigned(addr_md_in)));
-            elsif MemWrite = '1' then  -- Escrita de dados
+            elsif MemWrite = '1' then
                 data_mem(to_integer(unsigned(addr_md_in))) <= data_md_in;
             end if;
         end if;
     end process;
 
-    -- Inicializa a memória de dados a partir do arquivo "data.bin" no início da simulação
-    process
+    -- The second process with a wait statement and sensitivity list
+    process(reset)
         variable end_of_file : BOOLEAN := FALSE;
+        variable line_buf : line;
+        variable word_buf : std_logic_vector(31 downto 0);
+        variable n : integer := 0;
     begin
         if reset = '1' then
             file_close(data_file);
             file_open(data_file, "data.bin", READ_MODE);
             end_of_file := FALSE;
-            n := 0;  -- Inicializa a variável 'n' para 0
+            n := 0;
         else
             if not end_of_file then
                 if not endfile(data_file) then
