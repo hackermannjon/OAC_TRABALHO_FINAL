@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PIPELINE
-Sun Jul 23 16:50:19 2023
+Wed Jul 26 16:17:28 2023
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -22,15 +22,10 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
  14. Parameter Settings for User Entity Instance: X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1
  15. Parameter Settings for User Entity Instance: X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__2
  16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "MD:MD_inst"
- 18. Port Connectivity Checks: "Mux21:MUX3_inst"
- 19. Port Connectivity Checks: "Mux21PC:MUX1_inst"
- 20. Port Connectivity Checks: "MI:MI_inst"
- 21. Port Connectivity Checks: "PC:PC_inst"
- 22. Port Connectivity Checks: "Controle:Controle_inst"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 17. Port Connectivity Checks: "Mux21:MUX3_inst"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -56,7 +51,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jul 23 16:50:19 2023       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jul 26 16:17:28 2023       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; PIPELINE                                    ;
 ; Top-level Entity Name           ; PIPELINE                                    ;
@@ -194,7 +189,6 @@ refer to the applicable agreement for further details.
 ; Controle.vhd                     ; yes             ; User VHDL File               ; D:/projects/Pipeline_RISCV/Controle.vhd                                      ;         ;
 ; ULA.vhd                          ; yes             ; User VHDL File               ; D:/projects/Pipeline_RISCV/ULA.vhd                                           ;         ;
 ; Somador8bits.vhd                 ; yes             ; User VHDL File               ; D:/projects/Pipeline_RISCV/Somador8bits.vhd                                  ;         ;
-; Mux21PC.vhd                      ; yes             ; User VHDL File               ; D:/projects/Pipeline_RISCV/Mux21PC.vhd                                       ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -245,47 +239,187 @@ refer to the applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; MEM                                    ; Stuck at VCC due to stuck port data_in ;
-; wren                                   ; Lost fanout                            ;
-; RegWrite_M                             ; Lost fanout                            ;
-; rd_WB[0]                               ; Lost fanout                            ;
-; rd_M[0]                                ; Lost fanout                            ;
-; rd_WB[1]                               ; Lost fanout                            ;
-; rd_M[1]                                ; Lost fanout                            ;
-; rd_WB[2]                               ; Lost fanout                            ;
-; rd_M[2]                                ; Lost fanout                            ;
-; rd_WB[3]                               ; Lost fanout                            ;
-; rd_M[3]                                ; Lost fanout                            ;
-; rd_WB[4]                               ; Lost fanout                            ;
-; rd_M[4]                                ; Lost fanout                            ;
-; rs1[0..4]                              ; Lost fanout                            ;
-; rs2[0..4]                              ; Lost fanout                            ;
-; rd_E[0..4]                             ; Lost fanout                            ;
-; EXECUTE                                ; Lost fanout                            ;
-; instruction_mi_ctrl_in[0..6]           ; Lost fanout                            ;
-; Total Number of Removed Registers = 36 ;                                        ;
-+----------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; data12[0]                               ; Stuck at GND due to stuck port data_in ;
+; asoma[0,1]                              ; Stuck at GND due to stuck port data_in ;
+; asoma[2]                                ; Stuck at VCC due to stuck port data_in ;
+; asoma[3..31]                            ; Stuck at GND due to stuck port data_in ;
+; instruction_mi_in[0..29]                ; Lost fanout                            ;
+; rd_D[0..4]                              ; Lost fanout                            ;
+; rs1[0..4]                               ; Lost fanout                            ;
+; rs2[0..4]                               ; Lost fanout                            ;
+; rd_E[0..4]                              ; Lost fanout                            ;
+; EXECUTE                                 ; Lost fanout                            ;
+; data0[0..31]                            ; Lost fanout                            ;
+; pc_mem_in[0..30]                        ; Lost fanout                            ;
+; pc_in[0..31]                            ; Lost fanout                            ;
+; DECODE                                  ; Lost fanout                            ;
+; instruction_mi_in[30,31]                ; Lost fanout                            ;
+; instruction_mi_ctrl_in[0..6]            ; Lost fanout                            ;
+; MEM                                     ; Lost fanout                            ;
+; rd_M[0..4]                              ; Lost fanout                            ;
+; RegWrite_M                              ; Lost fanout                            ;
+; Branch_M                                ; Lost fanout                            ;
+; opcode[0..3]                            ; Lost fanout                            ;
+; B[0..31]                                ; Lost fanout                            ;
+; A[0..31]                                ; Lost fanout                            ;
+; sel2                                    ; Lost fanout                            ;
+; data12[1..31]                           ; Lost fanout                            ;
+; data02[0..31]                           ; Lost fanout                            ;
+; bsoma[0..31]                            ; Lost fanout                            ;
+; WB                                      ; Lost fanout                            ;
+; data1[0..31]                            ; Lost fanout                            ;
+; sel                                     ; Lost fanout                            ;
+; wren                                    ; Lost fanout                            ;
+; rd_WB[0..4]                             ; Lost fanout                            ;
+; X_REG:X_REG_inst|write_enable           ; Lost fanout                            ;
+; MI:MI_inst|data_out[0..31]              ; Lost fanout                            ;
+; MI:MI_inst|read_addr[0..30]             ; Lost fanout                            ;
+; PC:PC_inst|pc_out[0..31]                ; Lost fanout                            ;
+; Total Number of Removed Registers = 497 ;                                        ;
++-----------------------------------------+----------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; rd_WB[0]      ; Lost Fanouts              ; rd_M[0], rd_E[0]                       ;
-; rd_WB[1]      ; Lost Fanouts              ; rd_M[1], rd_E[1]                       ;
-; rd_WB[2]      ; Lost Fanouts              ; rd_M[2], rd_E[2]                       ;
-; rd_WB[3]      ; Lost Fanouts              ; rd_M[3], rd_E[3]                       ;
-; rd_WB[4]      ; Lost Fanouts              ; rd_M[4], rd_E[4]                       ;
-; MEM           ; Stuck at VCC              ; EXECUTE                                ;
-;               ; due to stuck port data_in ;                                        ;
-; wren          ; Lost Fanouts              ; RegWrite_M                             ;
-+---------------+---------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                         ;
++-----------------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++-----------------------+---------------------------+---------------------------------------------------------------------------------+
+; A[0]                  ; Lost Fanouts              ; rd_WB[0], rd_WB[1], rd_WB[2], rd_WB[3], rd_WB[4], X_REG:X_REG_inst|write_enable ;
+; data12[0]             ; Stuck at GND              ; EXECUTE, sel2, data02[0]                                                        ;
+;                       ; due to stuck port data_in ;                                                                                 ;
+; instruction_mi_in[29] ; Lost Fanouts              ; DECODE, MI:MI_inst|data_out[29]                                                 ;
+; B[17]                 ; Lost Fanouts              ; data12[17], data02[17]                                                          ;
+; pc_in[31]             ; Lost Fanouts              ; data1[31], sel                                                                  ;
+; B[1]                  ; Lost Fanouts              ; data12[1], data02[1]                                                            ;
+; B[2]                  ; Lost Fanouts              ; data12[2], data02[2]                                                            ;
+; B[3]                  ; Lost Fanouts              ; data12[3], data02[3]                                                            ;
+; B[4]                  ; Lost Fanouts              ; data12[4], data02[4]                                                            ;
+; B[5]                  ; Lost Fanouts              ; data12[5], data02[5]                                                            ;
+; B[6]                  ; Lost Fanouts              ; data12[6], data02[6]                                                            ;
+; B[7]                  ; Lost Fanouts              ; data12[7], data02[7]                                                            ;
+; B[8]                  ; Lost Fanouts              ; data12[8], data02[8]                                                            ;
+; B[9]                  ; Lost Fanouts              ; data12[9], data02[9]                                                            ;
+; B[10]                 ; Lost Fanouts              ; data12[10], data02[10]                                                          ;
+; B[11]                 ; Lost Fanouts              ; data12[11], data02[11]                                                          ;
+; B[12]                 ; Lost Fanouts              ; data12[12], data02[12]                                                          ;
+; B[13]                 ; Lost Fanouts              ; data12[13], data02[13]                                                          ;
+; B[15]                 ; Lost Fanouts              ; data12[15], data02[15]                                                          ;
+; B[16]                 ; Lost Fanouts              ; data12[16], data02[16]                                                          ;
+; B[18]                 ; Lost Fanouts              ; data12[18], data02[18]                                                          ;
+; B[19]                 ; Lost Fanouts              ; data12[19], data02[19]                                                          ;
+; B[20]                 ; Lost Fanouts              ; data12[20], data02[20]                                                          ;
+; B[21]                 ; Lost Fanouts              ; data12[21], data02[21]                                                          ;
+; B[22]                 ; Lost Fanouts              ; data12[22], data02[22]                                                          ;
+; B[23]                 ; Lost Fanouts              ; data12[23], data02[23]                                                          ;
+; B[24]                 ; Lost Fanouts              ; data12[24], data02[24]                                                          ;
+; B[25]                 ; Lost Fanouts              ; data12[25], data02[25]                                                          ;
+; B[26]                 ; Lost Fanouts              ; data12[26], data02[26]                                                          ;
+; B[27]                 ; Lost Fanouts              ; data12[27], data02[27]                                                          ;
+; B[28]                 ; Lost Fanouts              ; data12[28], data02[28]                                                          ;
+; B[29]                 ; Lost Fanouts              ; data12[29], data02[29]                                                          ;
+; B[30]                 ; Lost Fanouts              ; data12[30], data02[30]                                                          ;
+; B[31]                 ; Lost Fanouts              ; data12[31], data02[31]                                                          ;
+; B[14]                 ; Lost Fanouts              ; data12[14], data02[14]                                                          ;
+; pc_mem_in[27]         ; Lost Fanouts              ; PC:PC_inst|pc_out[27]                                                           ;
+; pc_mem_in[26]         ; Lost Fanouts              ; PC:PC_inst|pc_out[26]                                                           ;
+; pc_mem_in[25]         ; Lost Fanouts              ; PC:PC_inst|pc_out[25]                                                           ;
+; pc_mem_in[24]         ; Lost Fanouts              ; PC:PC_inst|pc_out[24]                                                           ;
+; pc_mem_in[23]         ; Lost Fanouts              ; PC:PC_inst|pc_out[23]                                                           ;
+; pc_mem_in[22]         ; Lost Fanouts              ; PC:PC_inst|pc_out[22]                                                           ;
+; pc_mem_in[21]         ; Lost Fanouts              ; PC:PC_inst|pc_out[21]                                                           ;
+; pc_mem_in[20]         ; Lost Fanouts              ; PC:PC_inst|pc_out[20]                                                           ;
+; pc_mem_in[19]         ; Lost Fanouts              ; PC:PC_inst|pc_out[19]                                                           ;
+; pc_mem_in[18]         ; Lost Fanouts              ; PC:PC_inst|pc_out[18]                                                           ;
+; pc_mem_in[17]         ; Lost Fanouts              ; PC:PC_inst|pc_out[17]                                                           ;
+; pc_mem_in[16]         ; Lost Fanouts              ; PC:PC_inst|pc_out[16]                                                           ;
+; pc_mem_in[15]         ; Lost Fanouts              ; PC:PC_inst|pc_out[15]                                                           ;
+; pc_mem_in[14]         ; Lost Fanouts              ; PC:PC_inst|pc_out[14]                                                           ;
+; pc_mem_in[13]         ; Lost Fanouts              ; PC:PC_inst|pc_out[13]                                                           ;
+; pc_mem_in[12]         ; Lost Fanouts              ; PC:PC_inst|pc_out[12]                                                           ;
+; pc_mem_in[11]         ; Lost Fanouts              ; PC:PC_inst|pc_out[11]                                                           ;
+; pc_mem_in[10]         ; Lost Fanouts              ; PC:PC_inst|pc_out[10]                                                           ;
+; pc_mem_in[9]          ; Lost Fanouts              ; PC:PC_inst|pc_out[9]                                                            ;
+; pc_mem_in[8]          ; Lost Fanouts              ; PC:PC_inst|pc_out[8]                                                            ;
+; pc_mem_in[7]          ; Lost Fanouts              ; PC:PC_inst|pc_out[7]                                                            ;
+; pc_mem_in[6]          ; Lost Fanouts              ; PC:PC_inst|pc_out[6]                                                            ;
+; pc_mem_in[5]          ; Lost Fanouts              ; PC:PC_inst|pc_out[5]                                                            ;
+; pc_mem_in[4]          ; Lost Fanouts              ; PC:PC_inst|pc_out[4]                                                            ;
+; pc_mem_in[3]          ; Lost Fanouts              ; PC:PC_inst|pc_out[3]                                                            ;
+; pc_mem_in[2]          ; Lost Fanouts              ; PC:PC_inst|pc_out[2]                                                            ;
+; pc_mem_in[1]          ; Lost Fanouts              ; PC:PC_inst|pc_out[1]                                                            ;
+; pc_mem_in[0]          ; Lost Fanouts              ; PC:PC_inst|pc_out[0]                                                            ;
+; pc_in[30]             ; Lost Fanouts              ; data1[30]                                                                       ;
+; instruction_mi_in[14] ; Lost Fanouts              ; MI:MI_inst|data_out[14]                                                         ;
+; pc_in[28]             ; Lost Fanouts              ; data1[28]                                                                       ;
+; pc_in[27]             ; Lost Fanouts              ; data1[27]                                                                       ;
+; pc_in[26]             ; Lost Fanouts              ; data1[26]                                                                       ;
+; pc_in[25]             ; Lost Fanouts              ; data1[25]                                                                       ;
+; pc_in[24]             ; Lost Fanouts              ; data1[24]                                                                       ;
+; pc_in[23]             ; Lost Fanouts              ; data1[23]                                                                       ;
+; pc_in[22]             ; Lost Fanouts              ; data1[22]                                                                       ;
+; pc_in[21]             ; Lost Fanouts              ; data1[21]                                                                       ;
+; pc_in[20]             ; Lost Fanouts              ; data1[20]                                                                       ;
+; pc_in[19]             ; Lost Fanouts              ; data1[19]                                                                       ;
+; pc_in[18]             ; Lost Fanouts              ; data1[18]                                                                       ;
+; pc_in[17]             ; Lost Fanouts              ; data1[17]                                                                       ;
+; pc_in[16]             ; Lost Fanouts              ; data1[16]                                                                       ;
+; pc_in[15]             ; Lost Fanouts              ; data1[15]                                                                       ;
+; pc_in[14]             ; Lost Fanouts              ; data1[14]                                                                       ;
+; pc_in[13]             ; Lost Fanouts              ; data1[13]                                                                       ;
+; pc_in[12]             ; Lost Fanouts              ; data1[12]                                                                       ;
+; pc_in[11]             ; Lost Fanouts              ; data1[11]                                                                       ;
+; pc_in[10]             ; Lost Fanouts              ; data1[10]                                                                       ;
+; pc_in[9]              ; Lost Fanouts              ; data1[9]                                                                        ;
+; pc_in[8]              ; Lost Fanouts              ; data1[8]                                                                        ;
+; pc_in[7]              ; Lost Fanouts              ; data1[7]                                                                        ;
+; pc_in[6]              ; Lost Fanouts              ; data1[6]                                                                        ;
+; pc_in[5]              ; Lost Fanouts              ; data1[5]                                                                        ;
+; pc_in[4]              ; Lost Fanouts              ; data1[4]                                                                        ;
+; pc_in[3]              ; Lost Fanouts              ; data1[3]                                                                        ;
+; pc_in[2]              ; Lost Fanouts              ; data1[2]                                                                        ;
+; pc_in[1]              ; Lost Fanouts              ; data1[1]                                                                        ;
+; pc_in[0]              ; Lost Fanouts              ; data1[0]                                                                        ;
+; instruction_mi_in[30] ; Lost Fanouts              ; MI:MI_inst|data_out[30]                                                         ;
+; instruction_mi_in[31] ; Lost Fanouts              ; MI:MI_inst|data_out[31]                                                         ;
+; instruction_mi_in[28] ; Lost Fanouts              ; MI:MI_inst|data_out[28]                                                         ;
+; instruction_mi_in[27] ; Lost Fanouts              ; MI:MI_inst|data_out[27]                                                         ;
+; instruction_mi_in[26] ; Lost Fanouts              ; MI:MI_inst|data_out[26]                                                         ;
+; instruction_mi_in[25] ; Lost Fanouts              ; MI:MI_inst|data_out[25]                                                         ;
+; instruction_mi_in[24] ; Lost Fanouts              ; MI:MI_inst|data_out[24]                                                         ;
+; instruction_mi_in[23] ; Lost Fanouts              ; MI:MI_inst|data_out[23]                                                         ;
+; instruction_mi_in[22] ; Lost Fanouts              ; MI:MI_inst|data_out[22]                                                         ;
+; instruction_mi_in[21] ; Lost Fanouts              ; MI:MI_inst|data_out[21]                                                         ;
+; instruction_mi_in[20] ; Lost Fanouts              ; MI:MI_inst|data_out[20]                                                         ;
+; instruction_mi_in[19] ; Lost Fanouts              ; MI:MI_inst|data_out[19]                                                         ;
+; instruction_mi_in[18] ; Lost Fanouts              ; MI:MI_inst|data_out[18]                                                         ;
+; instruction_mi_in[17] ; Lost Fanouts              ; MI:MI_inst|data_out[17]                                                         ;
+; instruction_mi_in[16] ; Lost Fanouts              ; MI:MI_inst|data_out[16]                                                         ;
+; instruction_mi_in[15] ; Lost Fanouts              ; MI:MI_inst|data_out[15]                                                         ;
+; instruction_mi_in[13] ; Lost Fanouts              ; MI:MI_inst|data_out[13]                                                         ;
+; instruction_mi_in[12] ; Lost Fanouts              ; MI:MI_inst|data_out[12]                                                         ;
+; pc_in[29]             ; Lost Fanouts              ; data1[29]                                                                       ;
+; instruction_mi_in[11] ; Lost Fanouts              ; MI:MI_inst|data_out[11]                                                         ;
+; instruction_mi_in[10] ; Lost Fanouts              ; MI:MI_inst|data_out[10]                                                         ;
+; instruction_mi_in[9]  ; Lost Fanouts              ; MI:MI_inst|data_out[9]                                                          ;
+; instruction_mi_in[8]  ; Lost Fanouts              ; MI:MI_inst|data_out[8]                                                          ;
+; instruction_mi_in[7]  ; Lost Fanouts              ; MI:MI_inst|data_out[7]                                                          ;
+; instruction_mi_in[6]  ; Lost Fanouts              ; MI:MI_inst|data_out[6]                                                          ;
+; instruction_mi_in[5]  ; Lost Fanouts              ; MI:MI_inst|data_out[5]                                                          ;
+; instruction_mi_in[4]  ; Lost Fanouts              ; MI:MI_inst|data_out[4]                                                          ;
+; instruction_mi_in[3]  ; Lost Fanouts              ; MI:MI_inst|data_out[3]                                                          ;
+; instruction_mi_in[2]  ; Lost Fanouts              ; MI:MI_inst|data_out[2]                                                          ;
+; instruction_mi_in[1]  ; Lost Fanouts              ; MI:MI_inst|data_out[1]                                                          ;
+; instruction_mi_in[0]  ; Lost Fanouts              ; MI:MI_inst|data_out[0]                                                          ;
+; pc_mem_in[30]         ; Lost Fanouts              ; PC:PC_inst|pc_out[30]                                                           ;
+; pc_mem_in[29]         ; Lost Fanouts              ; PC:PC_inst|pc_out[29]                                                           ;
+; pc_mem_in[28]         ; Lost Fanouts              ; PC:PC_inst|pc_out[28]                                                           ;
+; bsoma[31]             ; Lost Fanouts              ; PC:PC_inst|pc_out[31]                                                           ;
++-----------------------+---------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -484,66 +618,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MD:MD_inst"                                                                                ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                             ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-; data_md_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Mux21:MUX3_inst"                                                                      ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port   ; Type   ; Severity ; Details                                                                             ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
-; sel    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data0  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data1  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Mux21PC:MUX1_inst"                                                                       ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; data0_pc  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; output_pc ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "MI:MI_inst"                                                                                       ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port               ; Type   ; Severity ; Details                                                                             ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-; pc_mem_in          ; Input  ; Info     ; Stuck at GND                                                                        ;
-; instruction_mi_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pc_initial         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; fim                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PC:PC_inst"                                                                           ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; pc_in  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pc_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Controle:Controle_inst"                                                                ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; mem2reg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -573,7 +654,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sun Jul 23 16:50:09 2023
+    Info: Processing started: Wed Jul 26 16:17:18 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PIPELINE -c PIPELINE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -587,13 +668,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file genimm3
     Info (12022): Found design unit 1: genImm32-a File: D:/projects/Pipeline_RISCV/genImm32.vhd Line: 11
     Info (12023): Found entity 1: genImm32 File: D:/projects/Pipeline_RISCV/genImm32.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
-    Info (12022): Found design unit 1: PC-Behavioral File: D:/projects/Pipeline_RISCV/PC.vhd Line: 14
+    Info (12022): Found design unit 1: PC-Behavioral File: D:/projects/Pipeline_RISCV/PC.vhd Line: 13
     Info (12023): Found entity 1: PC File: D:/projects/Pipeline_RISCV/PC.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file md.vhd
-    Info (12022): Found design unit 1: MD-Behavioral File: D:/projects/Pipeline_RISCV/MD.vhd Line: 18
+    Info (12022): Found design unit 1: MD-RTL File: D:/projects/Pipeline_RISCV/MD.vhd Line: 19
     Info (12023): Found entity 1: MD File: D:/projects/Pipeline_RISCV/MD.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mi.vhd
-    Info (12022): Found design unit 1: MI-Behavioral File: D:/projects/Pipeline_RISCV/MI.vhd Line: 18
+    Info (12022): Found design unit 1: MI-RTL File: D:/projects/Pipeline_RISCV/MI.vhd Line: 15
     Info (12023): Found entity 1: MI File: D:/projects/Pipeline_RISCV/MI.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mux21.vhd
     Info (12022): Found design unit 1: Mux21-Behavioral File: D:/projects/Pipeline_RISCV/Mux21.vhd Line: 14
@@ -613,43 +694,41 @@ Info (12021): Found 2 design units, including 1 entities, in source file somador
 Info (12021): Found 2 design units, including 1 entities, in source file mux21pc.vhd
     Info (12022): Found design unit 1: Mux21PC-Behavioral File: D:/projects/Pipeline_RISCV/Mux21PC.vhd Line: 14
     Info (12023): Found entity 1: Mux21PC File: D:/projects/Pipeline_RISCV/Mux21PC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pipe_if_id.vhd
+    Info (12022): Found design unit 1: if_id-main File: D:/projects/Pipeline_RISCV/PIPE_IF_ID.vhd Line: 20
+    Info (12023): Found entity 1: if_id File: D:/projects/Pipeline_RISCV/PIPE_IF_ID.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pipe_id_ex.vhd
+    Info (12022): Found design unit 1: id_ex-main File: D:/projects/Pipeline_RISCV/PIPE_ID_EX.vhd Line: 27
+    Info (12023): Found entity 1: id_ex File: D:/projects/Pipeline_RISCV/PIPE_ID_EX.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pipe_ex_mem.vhd
+    Info (12022): Found design unit 1: ex_mem-main File: D:/projects/Pipeline_RISCV/PIPE_EX_MEM.vhd Line: 25
+    Info (12023): Found entity 1: ex_mem File: D:/projects/Pipeline_RISCV/PIPE_EX_MEM.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file pipe_mem_wb.vhd
+    Info (12022): Found design unit 1: mem_wb-main File: D:/projects/Pipeline_RISCV/PIPE_MEM_WB.vhd Line: 25
+    Info (12023): Found entity 1: mem_wb File: D:/projects/Pipeline_RISCV/PIPE_MEM_WB.vhd Line: 9
 Info (12127): Elaborating entity "PIPELINE" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "MemRead_md" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "MemWrite_md" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(122): object "ALUSrc_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 122
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(122): object "Branch_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 122
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(122): object "MemRead_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 122
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(122): object "MemWrite_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 122
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(123): object "FIM" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 123
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(118): used implicit default value for signal "FETCH" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(118): used implicit default value for signal "WB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(126): object "opcode_ula_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 126
-Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(127): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 127
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(127): object "output3" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 127
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(128): object "pc_initial" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 128
-Warning (10873): Using initial value X (don't care) for net "data03" at PIPELINE.vhd(127) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 127
-Warning (10873): Using initial value X (don't care) for net "data13" at PIPELINE.vhd(127) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 127
-Warning (10873): Using initial value X (don't care) for net "data0" at PIPELINE.vhd(128) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 128
-Warning (10873): Using initial value X (don't care) for net "pc_mem_in" at PIPELINE.vhd(128) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 128
-Warning (10873): Using initial value X (don't care) for net "pc_out_D" at PIPELINE.vhd(128) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 128
-Warning (10873): Using initial value X (don't care) for net "sel3" at PIPELINE.vhd(123) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 123
-Warning (10873): Using initial value X (don't care) for net "DECODE" at PIPELINE.vhd(124) File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 124
-Info (12128): Elaborating entity "Controle" for hierarchy "Controle:Controle_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 134
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(114): object "MemRead_md" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 114
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(114): object "MemWrite_md" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 114
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "ALUSrc_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "Branch_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "MemRead_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(118): object "MemWrite_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 118
+Warning (10540): VHDL Signal Declaration warning at PIPELINE.vhd(121): used explicit default value for signal "FETCH" because signal was never assigned a value File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 121
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(123): object "opcode_ula_WB" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 123
+Warning (10541): VHDL Signal Declaration warning at PIPELINE.vhd(125): used implicit default value for signal "data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 125
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(125): object "output3" assigned a value but never read File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 125
+Info (12128): Elaborating entity "Controle" for hierarchy "Controle:Controle_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 135
 Warning (10036): Verilog HDL or VHDL warning at Controle.vhd(15): object "ALUOp" assigned a value but never read File: D:/projects/Pipeline_RISCV/Controle.vhd Line: 15
 Warning (10631): VHDL Process Statement warning at Controle.vhd(20): inferring latch(es) for signal or variable "Mem2Reg", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline_RISCV/Controle.vhd Line: 20
 Info (10041): Inferred latch for "Mem2Reg" at Controle.vhd(20) File: D:/projects/Pipeline_RISCV/Controle.vhd Line: 20
-Info (12128): Elaborating entity "PC" for hierarchy "PC:PC_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 145
-Info (12128): Elaborating entity "MI" for hierarchy "MI:MI_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 152
-Warning (10541): VHDL Signal Declaration warning at MI.vhd(13): used implicit default value for signal "pc_initial" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline_RISCV/MI.vhd Line: 13
-Warning (10631): VHDL Process Statement warning at MI.vhd(25): inferring latch(es) for signal or variable "end_of_file", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline_RISCV/MI.vhd Line: 25
-Warning (10873): Using initial value X (don't care) for net "instruction_mem" at MI.vhd(21) File: D:/projects/Pipeline_RISCV/MI.vhd Line: 21
-Info (10041): Inferred latch for "end_of_file" at MI.vhd(44) File: D:/projects/Pipeline_RISCV/MI.vhd Line: 44
-Info (12128): Elaborating entity "Somador8bits" for hierarchy "Somador8bits:SUM1_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 161
-Info (12128): Elaborating entity "Mux21PC" for hierarchy "Mux21PC:MUX1_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 167
-Info (12128): Elaborating entity "Mux21" for hierarchy "Mux21:MUX2_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 176
-Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULA_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 191
-Info (12128): Elaborating entity "genImm32" for hierarchy "genImm32:IMM_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 199
-Info (12128): Elaborating entity "X_REG" for hierarchy "X_REG:X_REG_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 205
+Info (12128): Elaborating entity "PC" for hierarchy "PC:PC_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 146
+Info (12128): Elaborating entity "MI" for hierarchy "MI:MI_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 153
+Warning (10873): Using initial value X (don't care) for net "mem.raddr_b" at MI.vhd(43) File: D:/projects/Pipeline_RISCV/MI.vhd Line: 43
+Info (12128): Elaborating entity "Somador8bits" for hierarchy "Somador8bits:SUM1_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 159
+Info (12128): Elaborating entity "Mux21" for hierarchy "Mux21:MUX1_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 165
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:ULA_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 189
+Info (12128): Elaborating entity "genImm32" for hierarchy "genImm32:IMM_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 197
+Info (12128): Elaborating entity "X_REG" for hierarchy "X_REG:X_REG_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 203
 Info (12128): Elaborating entity "altsyncram" for hierarchy "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1"
 Info (12130): Elaborated megafunction instantiation "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1"
 Info (12133): Instantiated megafunction "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1" with the following parameter:
@@ -671,8 +750,7 @@ Info (12133): Instantiated megafunction "X_REG:X_REG_inst|altsyncram:x_Regs[0][3
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_u2n1.tdf
     Info (12023): Found entity 1: altsyncram_u2n1 File: D:/projects/Pipeline_RISCV/db/altsyncram_u2n1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_u2n1" for hierarchy "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1|altsyncram_u2n1:auto_generated" File: d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "MD" for hierarchy "MD:MD_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 216
-Warning (10631): VHDL Process Statement warning at MD.vhd(39): inferring latch(es) for signal or variable "end_of_file", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline_RISCV/MD.vhd Line: 39
+Info (12128): Elaborating entity "MD" for hierarchy "MD:MD_inst" File: D:/projects/Pipeline_RISCV/PIPELINE.vhd Line: 214
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__2|altsyncram_u2n1:auto_generated|q_b[0]" File: D:/projects/Pipeline_RISCV/db/altsyncram_u2n1.tdf Line: 37
@@ -739,7 +817,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1|altsyncram_u2n1:auto_generated|q_b[29]" File: D:/projects/Pipeline_RISCV/db/altsyncram_u2n1.tdf Line: 849
         Warning (14320): Synthesized away node "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1|altsyncram_u2n1:auto_generated|q_b[30]" File: D:/projects/Pipeline_RISCV/db/altsyncram_u2n1.tdf Line: 877
         Warning (14320): Synthesized away node "X_REG:X_REG_inst|altsyncram:x_Regs[0][31]__1|altsyncram_u2n1:auto_generated|q_b[31]" File: D:/projects/Pipeline_RISCV/db/altsyncram_u2n1.tdf Line: 905
-Info (17049): 35 registers lost all their fanouts during netlist optimizations.
+Info (17049): 464 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
@@ -748,10 +826,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
-    Info: Peak virtual memory: 4899 megabytes
-    Info: Processing ended: Sun Jul 23 16:50:19 2023
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Wed Jul 26 16:17:28 2023
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info: Total CPU time (on all processors): 00:00:20
 
 

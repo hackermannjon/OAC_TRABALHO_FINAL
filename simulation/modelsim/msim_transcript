@@ -12,7 +12,7 @@
 # 
 # vcom -93 -work work {D:/projects/Pipeline_RISCV/PIPELINE.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:10:09 on Jul 25,2023
+# Start time: 16:17:39 on Jul 26,2023
 # vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PIPELINE.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -20,11 +20,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PIPELINE
 # -- Compiling architecture behavioral of PIPELINE
-# End time: 22:10:09 on Jul 25,2023, Elapsed time: 0:00:00
+# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {D:/projects/Pipeline_RISCV/X_REG.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:10:09 on Jul 25,2023
+# Start time: 16:17:39 on Jul 26,2023
 # vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/X_REG.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -32,11 +32,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity X_REG
 # -- Compiling architecture main of X_REG
-# End time: 22:10:09 on Jul 25,2023, Elapsed time: 0:00:00
+# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {D:/projects/Pipeline_RISCV/genImm32.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:10:09 on Jul 25,2023
+# Start time: 16:17:39 on Jul 26,2023
 # vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/genImm32.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -44,11 +44,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity genImm32
 # -- Compiling architecture a of genImm32
-# End time: 22:10:09 on Jul 25,2023, Elapsed time: 0:00:00
+# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {D:/projects/Pipeline_RISCV/PC.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 22:10:10 on Jul 25,2023
+# Start time: 16:17:39 on Jul 26,2023
 # vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -56,13 +56,154 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PC
 # -- Compiling architecture Behavioral of PC
-# ** Error: D:/projects/Pipeline_RISCV/PC.vhd(23): (vcom-1136) Unknown identifier "pc_write".
-# ** Error: D:/projects/Pipeline_RISCV/PC.vhd(23): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
-# ** Error: D:/projects/Pipeline_RISCV/PC.vhd(30): VHDL Compiler exiting
-# End time: 22:10:10 on Jul 25,2023, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 0
-# ** Error: D:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./PIPELINE_run_msim_rtl_vhdl.do line 11
-# D:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {D:/projects/Pipeline_RISCV/PC.vhd}"
+# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/MD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:39 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/MD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling entity MD
+# -- Compiling architecture RTL of MD
+# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/MI.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:39 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/MI.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling entity MI
+# -- Compiling architecture RTL of MI
+# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/Mux21.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:40 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Mux21.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Mux21
+# -- Compiling architecture Behavioral of Mux21
+# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/Controle.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:40 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Controle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Controle
+# -- Compiling architecture behavioral of Controle
+# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/ULA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:40 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/ULA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ULA
+# -- Compiling architecture ULA_arch of ULA
+# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/Somador8bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:40 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Somador8bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Somador8bits
+# -- Compiling architecture Behavioral of Somador8bits
+# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/PIPELINE_TB.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:17:40 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PIPELINE_TB.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPELINE_TB
+# -- Compiling architecture behavior of PIPELINE_TB
+# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  PIPELINE_TB
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs=""+acc"" PIPELINE_TB 
+# Start time: 16:17:40 on Jul 26,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.pipeline_tb(behavior)
+# Loading work.pipeline(behavioral)
+# Loading work.controle(behavioral)
+# Loading work.pc(behavioral)
+# Loading ieee.std_logic_textio(body)
+# Loading work.mi(rtl)
+# Loading work.somador8bits(behavioral)
+# Loading work.mux21(behavioral)
+# Loading work.ula(ula_arch)
+# Loading work.genimm32(a)
+# Loading work.x_reg(main)
+# Loading work.md(rtl)
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: 55619  Hostname: DESKTOP-FTG14UC  ProcessID: 18116
+#           Attempting to use alternate WLF file "./wlfte5g09d".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfte5g09d
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+# ** Note: PC  0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/PC_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+# ** Note: addr 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+# ** Note: dataout 264307351
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+# ** Fatal: (vsim-3734) Index value 0 is out of range 32 downto 1.
+#    Time: 5 ns  Iteration: 1  Process: /pipeline_tb/U1/X_REG_inst/line__35 File: D:/projects/Pipeline_RISCV/X_REG.vhd
+# Fatal error in Process line__35 at D:/projects/Pipeline_RISCV/X_REG.vhd line 25
+# 
+# HDL call sequence:
+# Stopped at D:/projects/Pipeline_RISCV/X_REG.vhd 25 ForLoop loop
+# called from  D:/projects/Pipeline_RISCV/X_REG.vhd 48 ForLoop loop
+# 
+# End time: 17:04:45 on Jul 26,2023, Elapsed time: 0:47:05
+# Errors: 2, Warnings: 9

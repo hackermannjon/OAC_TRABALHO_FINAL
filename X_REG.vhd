@@ -12,10 +12,11 @@ entity X_REG is
 end X_REG;
 
 architecture main of X_REG is
-  type RegArray is array (natural range <>) of std_logic_vector(31 downto 0);
-  signal x_Regs : RegArray(0 to 31) := (others => (others => '0'));
-  signal rs1_index, rs2_index, rd_index : integer;
-  signal all_regs : RegArray(0 to 31) := (others => (others => '0'));
+  type RegArray is array (0 to 31) of std_logic_vector(31 downto 0);
+  signal x_Regs : RegArray := (others => (others => '0'));
+  signal rs1_index, rs2_index, rd_index : integer range 0 to 31;
+  signal all_regs : RegArray := (others => (others => '0'));
+  signal write_enable : std_logic := '0';
 
   function to_string(data : std_logic_vector) return string is
     variable str : string(data'length downto 1) := (others => ' ');
@@ -34,12 +35,13 @@ begin
   process (clk)
   begin
     if rising_edge(clk) then
-      ro1 <= x_Regs(rs1_index);
-      ro2 <= x_Regs(rs2_index);
-
-      if wren = '1' and rd_index /= 0 then
+      if write_enable = '1' and rd_index /= 0 then
         x_Regs(rd_index) <= data;
       end if;
+      write_enable <= wren;
+
+      ro1 <= x_Regs(rs1_index);
+      ro2 <= x_Regs(rs2_index);
 
       -- Print register values after every clock edge
       for i in 0 to 31 loop
@@ -48,3 +50,4 @@ begin
     end if;
   end process;
 end main;
+

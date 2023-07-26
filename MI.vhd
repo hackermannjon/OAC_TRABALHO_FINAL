@@ -13,40 +13,49 @@ entity MI is
 end entity;
 
 architecture RTL of MI is
-    type mem_type is array (0 to (2**16)-1) of std_logic_vector(31 downto 0); -- Data size is 32 bits now
-    signal read_addr: integer range 0 to (2**16)-1;
+    type mem_type is array (0 to (2**8)-1) of std_logic_vector(data_out'range);
+
+    signal read_addr: std_logic_vector(addr'range);
+
+    constant LIMIT : integer := 8#2000#;
 
     impure function init_mem return mem_type is
-        file text_file    :   text open read_mode is "D:/projects/MI/code"; -- Mudar diretório
-        variable text_line    :   line;
-        variable text_word    :   std_logic_vector(31 downto 0); -- Data size is 32 bits now
-        variable memoria    :   mem_type;
-        variable n        :   integer;
+        file text_file : text open read_mode is "D:/projects/Pipeline_RISCV/code"; 
+        variable text_line : line;
+        variable text_word : std_logic_vector(data_out'range);
+        variable memoria : mem_type;
+        variable n : integer;
     begin
         n := 0;
         while not endfile(text_file) loop
-            if n <= 54 then
+            if  n < (LIMIT / 4) then
                 readline(text_file, text_line);
-                read(text_line, text_word); -- Use 'read' instead of 'hread' to read binary data
+                read(text_line, text_word);
                 memoria(n) := text_word;
                 n := n + 1;
-            else
-                exit; -- Exit the loop after reading up to 54 words
+            else 
+                exit;
             end if;
         end loop;
-
         return memoria;
     end;
 
     signal mem: mem_type := init_mem;
 
 begin
-    read_addr <= to_integer(unsigned(addr)) / 4;
-
     process(clk)
     begin
         if rising_edge(clk) then
-            data_out <= mem(read_addr);
+            report "addr " & integer'image(to_integer(unsigned(addr)));
+
+            read_addr <= addr;
+				if (to_integer(unsigned(read_addr)) < LIMIT) then
+            data_out <= mem(to_integer(unsigned(read_addr))/4);
+				report "dataout " & integer'image(to_integer(unsigned(mem(to_integer(unsigned(read_addr))/4))));
         end if;
+
+        end if;
+
+        
     end process;
 end architecture;
