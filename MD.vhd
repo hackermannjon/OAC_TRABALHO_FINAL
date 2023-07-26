@@ -1,8 +1,8 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-use std.textio.all;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 use IEEE.std_logic_textio.all;
+use std.textio.all;
 
 entity MD is
     Port (
@@ -15,50 +15,45 @@ entity MD is
         MemWrite : in STD_LOGIC                              -- Sinal de controle MemWrite
     );
 end MD;
-architecture Behavioral of MD is
-    type data_memory is array (0 to 127) of STD_LOGIC_VECTOR(31 downto 0);
-    signal data_mem : data_memory;
-    file data_file : TEXT open READ_MODE is "data.bin";
+
+architecture RTL of MD is
+    type mem_type is array (0 to (2**16)-1) of std_logic_vector(31 downto 0); -- Data size is 32 bits now
+    signal read_addr: integer range 0 to (2**16)-1;
+
+    impure function init_mem return mem_type is
+        file text_file    :   text open read_mode is "D:/projects/MI/code"; -- Mudar diretório
+        variable text_line    :   line;
+        variable text_word    :   std_logic_vector(31 downto 0); -- Data size is 32 bits now
+        variable memoria    :   mem_type;
+        variable n        :   integer;
+    begin
+        n := 0;
+        while not endfile(text_file) loop
+            if n <= 54 then
+                readline(text_file, text_line);
+                read(text_line, text_word); -- Use 'read' instead of 'hread' to read binary data
+                memoria(n) := text_word;
+                n := n + 1;
+            else
+                exit; -- Exit the loop after reading up to 54 words
+            end if;
+        end loop;
+
+        return memoria;
+    end;
+
+    signal mem: mem_type := init_mem;
 
 begin
-    -- The first process with clock-based condition
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            data_mem <= (others => (others => '0'));
-        elsif rising_edge(clk) then
-            if MemRead = '1' then
-                data_md_out <= data_mem(to_integer(unsigned(addr_md_in)));
-            elsif MemWrite = '1' then
-                data_mem(to_integer(unsigned(addr_md_in))) <= data_md_in;
-            end if;
-        end if;
-    end process;
+    read_addr <= to_integer(unsigned(addr_md_in)) / 4;
 
-    -- The second process with a wait statement and sensitivity list
-    process(reset)
-        variable end_of_file : BOOLEAN := FALSE;
-        variable line_buf : line;
-        variable word_buf : std_logic_vector(31 downto 0);
-        variable n : integer := 0;
+    process(clk)
     begin
-        if reset = '1' then
-            file_close(data_file);
-            file_open(data_file, "data.bin", READ_MODE);
-            end_of_file := FALSE;
-            n := 0;
-        else
-            if not end_of_file then
-                if not endfile(data_file) then
-                    readline(data_file, line_buf);
-                    read(line_buf, word_buf);
-                    data_mem(n) <= word_buf;
-                    n := n + 1;
-                else
-                    end_of_file := TRUE;
-                    file_close(data_file);
-                end if;
-            end if;
+        if rising_edge(clk) then
+				if MemRead = 1 then
+					data_md_out <= mem(read_addr);
+				elsif MemWrite = 1 then
+					mem(read_addr) <= data_md_in;
         end if;
     end process;
-end Behavioral;
+end architecture;

@@ -1,72 +1,52 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-use std.textio.all;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
 use IEEE.std_logic_textio.all;
+use std.textio.all;
 
 entity MI is
-    Port (
-        clk : in STD_LOGIC;
-        reset : in STD_LOGIC;
-        pc_mem_in : in STD_LOGIC_VECTOR(7 downto 0);
-        instruction_mi_out : out STD_LOGIC_VECTOR(31 downto 0);
-        pc_initial : out STD_LOGIC_VECTOR(7 downto 0);
-        FIM : out STD_LOGIC  -- Sinal de saída para indicar o fim do programa
+    port (
+        clk      : in    std_logic;
+        addr     : in    std_logic_vector(31 downto 0);
+        data_out : out   std_logic_vector(31 downto 0)
     );
-end MI;
+end entity;
 
-architecture Behavioral of MI is
-    constant MEM_SIZE : integer := 256;
-    type INSTRUCTION_MEM_ARRAY is array (0 to MEM_SIZE - 1) of STD_LOGIC_VECTOR(31 downto 0);
-    signal instruction_mem : INSTRUCTION_MEM_ARRAY;
-    signal read_addr : STD_LOGIC_VECTOR(7 downto 0);
-    file code_file : TEXT open read_mode is "code.bin";
-begin
-    process(clk, reset)
-        variable initial_addr : STD_LOGIC_VECTOR(7 downto 0) := "00000000";  -- Variável para armazenar o endereço inicial da primeira instrução
-        variable line_buf : LINE;  -- Declaração da variável line_buf dentro do processo
-        variable word_buf : STD_LOGIC_VECTOR(31 downto 0);
-        variable end_of_file : BOOLEAN := FALSE;  -- Declaração da variável end_of_file dentro do processo
+architecture RTL of MI is
+    type mem_type is array (0 to (2**16)-1) of std_logic_vector(31 downto 0); -- Data size is 32 bits now
+    signal read_addr: integer range 0 to (2**16)-1;
+
+    impure function init_mem return mem_type is
+        file text_file    :   text open read_mode is "D:/projects/MI/code"; -- Mudar diretório
+        variable text_line    :   line;
+        variable text_word    :   std_logic_vector(31 downto 0); -- Data size is 32 bits now
+        variable memoria    :   mem_type;
+        variable n        :   integer;
     begin
-        if reset = '1' then
-            read_addr <= (others => '0');
-            FIM <= '0';  -- Reinicia o sinal FIM no reset
-        elsif rising_edge(clk) then
-            read_addr <= pc_mem_in;
-
-            if end_of_file then
-                FIM <= '1';  -- Define o sinal FIM como '1' quando chegar ao fim do arquivo
+        n := 0;
+        while not endfile(text_file) loop
+            if n <= 54 then
+                readline(text_file, text_line);
+                read(text_line, text_word); -- Use 'read' instead of 'hread' to read binary data
+                memoria(n) := text_word;
+                n := n + 1;
             else
-                FIM <= '0';  -- Mantém o sinal FIM como '0' se ainda não chegou ao fim do arquivo
+                exit; -- Exit the loop after reading up to 54 words
             end if;
-        end if;
+        end loop;
 
-        if reset = '1' then
-            file_close(code_file);
-            file_open(code_file, "code.bin", READ_MODE);
-            end_of_file := FALSE;
-            initial_addr := "00000000";  -- Reinicia o endereço inicial para o valor do primeiro endereço de instrução
-        else
-            if not end_of_file then
-                if not endfile(code_file) then
-                    for i in 0 to MEM_SIZE - 1 loop
-                        if to_integer(unsigned(read_addr)) = i then
-                            if initial_addr = "00000000" then  -- Verifica se o endereço inicial ainda não foi atribuído
-                                initial_addr := read_addr;  -- Atribui o endereço inicial da primeira instrução
-                            end if;
-                            readline(code_file, line_buf);
-                            read(line_buf, word_buf);
-                            instruction_mem(i) <= word_buf;
-                            exit;
-                        end if;
-                    end loop;
-                else
-                    end_of_file := TRUE;
-                    file_close(code_file);
-                end if;
-            end if;
+        return memoria;
+    end;
+
+    signal mem: mem_type := init_mem;
+
+begin
+    read_addr <= to_integer(unsigned(addr)) / 4;
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            data_out <= mem(read_addr);
         end if;
     end process;
-
-    instruction_mi_out <= instruction_mem(to_integer(unsigned(read_addr)));
-end Behavioral;
+end architecture;

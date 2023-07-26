@@ -5,11 +5,15 @@ use IEEE.numeric_std.all; -- Add the numeric_std library for signed type
 entity PIPELINE is
 Port (
         clk : in STD_LOGIC;               -- Sinal de clock
-		  reset : in STD_LOGIC            -- Sinal de reset
+		  reset : in STD_LOGIC          -- Sinal de reset
+		--  teste_rs1,teste_rs2, teste_rd : out std_logic_vector(4 downto 0)
+ 
+
 );
 end PIPELINE;
 
 architecture behavioral of PIPELINE is
+
 component PC is
     Port (
         clk : in STD_LOGIC;
@@ -121,7 +125,7 @@ signal 		MemRead_md, MemWrite_md,
 signal InitiPC : STD_LOGIC := '0';				
 signal opcode, opcode_ula_E, opcode_ula_M, opcode_ula_WB : std_logic_vector(3 downto 0);		 
 signal Z, A, B,ro1, ro2,data, addr_md_in,data_md_in,data_md_out, imm32, instruction_mi_ctrl_in, data02, data12, output2,data03, data13, output3, instruction_mi_out,instruction_mi_in : std_logic_vector(31 downto 0);
-signal  data0, data1, output,pc_initial, pc_reg, pc_mem_in, pc_out,pc_out_D,pc_out_E, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
+signal  data0, data1, output,pc_initial, pc_in, pc_mem_in, pc_out,pc_out_D,pc_out_E, asoma, bsoma, sum : STD_LOGIC_VECTOR(7 downto 0);
 signal imm7 : STD_LOGIC_VECTOR(6 downto 0); 
 signal rs1, rs2, rd_D,rd_E,rd_M, rd_WB :  std_logic_vector(4 downto 0);
 
@@ -142,7 +146,7 @@ PC_inst : PC
 port map  (
         clk => clk     ,         -- Sinal de clock
         reset => reset ,           -- Sinal de reset
-		  pc_in => pc_reg ,-- entrada de endereço do PC
+		  pc_in => pc_in ,-- entrada de endereço do PC
         pc_out => pc_out
     );
 MI_inst : MI
@@ -223,7 +227,7 @@ MD_inst : MD
 
  process(clk, reset, FIM)
   begin
-  	 pc_reg <= "00000000";
+  	 pc_in <= "00000000";
 
     
 	 if rising_edge(clk) then
@@ -271,10 +275,18 @@ MD_inst : MD
 		bsoma <= pc_out_E;
 		
 		data02 <= ro2;
-		data12 <= imm32;		sel2 <= ALUSrc_E;
+		data12 <= imm32;
+		sel2 <= ALUSrc_E;
 		A <= ro1;
 		B <= output2;
 		opcode <= opcode_ula_E;
+		
+		
+		
+		
+	--	teste_rs1 <= rs1;
+	--	teste_rs2 <= rs2;
+	--	teste_rd  <= rd_E;
 
 		
 		
@@ -310,7 +322,7 @@ MD_inst : MD
 		 
 			if FETCH = '1' then	
 			 if InitiPC = '0' then
-			 pc_reg <= "00000000";
+			 pc_in <= "00000000";
 			 InitiPC <= '1';
 			 end if;
 							asoma <= "00000100";
@@ -318,7 +330,7 @@ MD_inst : MD
 							data0 <= sum;	
 							pc_mem_in <= pc_out;
 							pc_out_D <= pc_out;
-							pc_reg <= output;
+							pc_in <= output;
 							DECODE <= '1';
 							
 							
@@ -327,7 +339,6 @@ MD_inst : MD
 						  end if;
 							
 			
-		
 		
 		
 		

@@ -4,30 +4,27 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity PC is
     Port (
-        clk : in STD_LOGIC;               -- Sinal de clock
-        reset : in STD_LOGIC;             -- Sinal de reset
-		  pc_in : in std_logic_vector(7 downto 0); -- entrada de endereço do PC
-        pc_out : out STD_LOGIC_VECTOR(7 downto 0)  -- Saída do endereço do PC (8 bits)
+        clk : in STD_LOGIC;                            -- Clock signal
+        reset : in STD_LOGIC;                          -- Reset signal
+        pc_in : in STD_LOGIC_VECTOR(31 downto 0);     -- Source for updating PC (e.g., branch target, jump address)
+        pc_out : out STD_LOGIC_VECTOR(31 downto 0)     -- Output PC value
     );
 end PC;
 
 architecture Behavioral of PC is
-    signal pc_reg : STD_LOGIC_VECTOR(7 downto 0);  -- Registrador interno do PC
+    signal pc_reg : STD_LOGIC_VECTOR(31 downto 0);     -- PC register
 
 begin
     process(clk, reset)
     begin
-        if reset = '1' then                -- Verifica se o sinal de reset está ativo
-            pc_reg <= (others => '0');     -- Reinicia o contador de programa para 0
+        if reset = '1' then
+            pc_reg <= (others => '0');                 -- Reset PC to zero
         elsif rising_edge(clk) then
-				if pc_in = "00000000" then
-				pc_reg <= std_logic_vector(unsigned(pc_reg) + 0);   -- Incrementa o contador de programa em 1
-				else
-            pc_reg <= std_logic_vector(unsigned(pc_reg) + 1);   -- Incrementa o contador de programa em 1
-       		end if;-- Verifica se ocorreu uma borda de subida no sinal de clock
-
-		 end if;
+            if pc_write = '1' then
+                pc_reg <= pc_in;                      -- Update PC with pc_src if pc_write is enabled
+            end if;
+        end if;
     end process;
 
-    pc_out <= pc_reg(7 downto 0);                  -- Apenas os 8 bits menos significativos são enviados como saída
+    pc_out <= pc_reg;                                 -- Output the current value of the PC
 end Behavioral;
