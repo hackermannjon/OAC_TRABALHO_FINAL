@@ -10,71 +10,34 @@
 # Copying D:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/PIPELINE.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_FETCH.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:39 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PIPELINE.vhd 
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_FETCH.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_FETCH
+# -- Compiling architecture behavioral of PIPE_FETCH
+# End time: 21:53:26 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/PIPELINE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPELINE.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PIPELINE
 # -- Compiling architecture behavioral of PIPELINE
-# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
+# End time: 21:53:26 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/X_REG.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/MI.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:39 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/X_REG.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity X_REG
-# -- Compiling architecture main of X_REG
-# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/genImm32.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:39 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/genImm32.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity genImm32
-# -- Compiling architecture a of genImm32
-# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/PC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:39 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PC
-# -- Compiling architecture Behavioral of PC
-# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/MD.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:39 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/MD.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_textio
-# -- Compiling entity MD
-# -- Compiling architecture RTL of MD
-# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/MI.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:39 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/MI.vhd 
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/MI.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -82,128 +45,1783 @@
 # -- Loading package std_logic_textio
 # -- Compiling entity MI
 # -- Compiling architecture RTL of MI
-# End time: 16:17:39 on Jul 26,2023, Elapsed time: 0:00:00
+# End time: 21:53:26 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/Mux21.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/PC.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:40 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Mux21.vhd 
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PC
+# -- Compiling architecture Behavioral of PC
+# End time: 21:53:26 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/Mux21.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/Mux21.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Mux21
 # -- Compiling architecture Behavioral of Mux21
-# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# End time: 21:53:26 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/Controle.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_IF_ID.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:40 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Controle.vhd 
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_IF_ID.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_IF_ID
+# -- Compiling architecture arch of PIPE_IF_ID
+# End time: 21:53:26 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_DECODE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:26 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_DECODE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_DECODE
+# -- Compiling architecture behavioral of PIPE_DECODE
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/Controle.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/Controle.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Controle
 # -- Compiling architecture behavioral of Controle
-# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/ULA.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/X_REG.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:40 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/ULA.vhd 
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/X_REG.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity X_REG
+# -- Compiling architecture main of X_REG
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/genImm32.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/genImm32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity genImm32
+# -- Compiling architecture a of genImm32
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_ID_EX.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_ID_EX.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_ID_EX
+# -- Compiling architecture main of PIPE_ID_EX
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_EXECUTE.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_EXECUTE.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_EXECUTE
+# -- Compiling architecture behavioral of PIPE_EXECUTE
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/ULA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/ULA.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ULA
 # -- Compiling architecture ULA_arch of ULA
-# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/Somador8bits.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_EX_MEM.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:40 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Somador8bits.vhd 
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_EX_MEM.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity Somador8bits
-# -- Compiling architecture Behavioral of Somador8bits
-# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# -- Compiling entity PIPE_EX_MEM
+# -- Compiling architecture main of PIPE_EX_MEM
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_MEM.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_MEM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_MEM
+# -- Compiling architecture behavioral of PIPE_MEM
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/MD.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/MD.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling entity MD
+# -- Compiling architecture RTL of MD
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline1/PIPE_WB.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPE_WB.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PIPE_WB
+# -- Compiling architecture behavioral of PIPE_WB
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {D:/projects/Pipeline_RISCV/PIPELINE_TB.vhd}
+# vcom -93 -work work {D:/projects/Pipeline1/PIPELINE_TB.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:17:40 on Jul 26,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PIPELINE_TB.vhd 
+# Start time: 21:53:27 on Jul 26,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline1/PIPELINE_TB.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PIPELINE_TB
 # -- Compiling architecture behavior of PIPELINE_TB
-# End time: 16:17:40 on Jul 26,2023, Elapsed time: 0:00:00
+# End time: 21:53:27 on Jul 26,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  PIPELINE_TB
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs=""+acc"" PIPELINE_TB 
-# Start time: 16:17:40 on Jul 26,2023
+# Start time: 21:53:28 on Jul 26,2023
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading work.pipeline_tb(behavior)
 # Loading work.pipeline(behavioral)
-# Loading work.controle(behavioral)
+# Loading work.pipe_fetch(behavioral)
+# Loading work.mux21(behavioral)
 # Loading work.pc(behavioral)
 # Loading ieee.std_logic_textio(body)
 # Loading work.mi(rtl)
-# Loading work.somador8bits(behavioral)
-# Loading work.mux21(behavioral)
-# Loading work.ula(ula_arch)
+# Loading work.pipe_if_id(arch)
+# Loading work.pipe_decode(behavioral)
 # Loading work.genimm32(a)
+# Loading work.controle(behavioral)
 # Loading work.x_reg(main)
+# Loading work.pipe_id_ex(main)
+# Loading work.pipe_execute(behavioral)
+# Loading work.ula(ula_arch)
+# Loading work.pipe_ex_mem(main)
+# Loading work.pipe_mem(behavioral)
 # Loading work.md(rtl)
+# Loading work.pipe_wb(behavioral)
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline_tb/U1/INST_IDEX/RD_EXECUTE(11 downto 7) has no driver.
+# This port will contribute value (UUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline_tb/U1/INST_IDEX/RegWrite_out has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /pipeline_tb/U1/INST_WB/m2r has no driver.
+# This port will contribute value (U) to the signal network.
 # 
 # add wave *
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: 55619  Hostname: DESKTOP-FTG14UC  ProcessID: 18116
-#           Attempting to use alternate WLF file "./wlfte5g09d".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfte5g09d
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/INST_DECODE/DECODE_XREG
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/INST_DECODE/DECODE_XREG
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/INST_DECODE/DECODE_XREG
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
 # ** Note: PC  0
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/PC_inst
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
 # ** Note: addr 0
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
 # ** Note: dataout 264307351
-#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/MI_inst
-# ** Fatal: (vsim-3734) Index value 0 is out of range 32 downto 1.
-#    Time: 5 ns  Iteration: 1  Process: /pipeline_tb/U1/X_REG_inst/line__35 File: D:/projects/Pipeline_RISCV/X_REG.vhd
-# Fatal error in Process line__35 at D:/projects/Pipeline_RISCV/X_REG.vhd line 25
-# 
-# HDL call sequence:
-# Stopped at D:/projects/Pipeline_RISCV/X_REG.vhd 25 ForLoop loop
-# called from  D:/projects/Pipeline_RISCV/X_REG.vhd 48 ForLoop loop
-# 
-# End time: 17:04:45 on Jul 26,2023, Elapsed time: 0:47:05
-# Errors: 2, Warnings: 9
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 5 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_MEM/MEM_MD
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 15 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_MEM/MEM_MD
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 25 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_MEM/MEM_MD
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 35 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 45 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 2  Instance: /pipeline_tb/U1/INST_DECODE/DECODE_XREG
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 45 ns  Iteration: 2  Instance: /pipeline_tb/U1/INST_DECODE/DECODE_XREG
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 55 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 65 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 75 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 85 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 95 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 105 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 115 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 125 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 135 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 145 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 155 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 165 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 175 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 185 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 195 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 205 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 215 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 225 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 235 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 245 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 255 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 265 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 275 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 285 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 295 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 305 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 315 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 325 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 335 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 345 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 355 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 365 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 375 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 385 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 395 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 405 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 415 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 425 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 435 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 445 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 455 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 465 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 475 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 485 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 495 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 505 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 515 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 525 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 535 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 545 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 555 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 565 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 575 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 585 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 595 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 605 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 615 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 625 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 635 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 645 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 655 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 665 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 675 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 685 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 695 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 705 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 715 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 725 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 735 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 745 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 755 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 765 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 775 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 785 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 795 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 805 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 815 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 825 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 835 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 845 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 855 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 865 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 875 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 885 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 895 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 905 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 915 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 925 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 935 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 945 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Note: PC  0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/PC_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: addr 0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# ** Note: dataout 264307351
+#    Time: 955 ns  Iteration: 1  Instance: /pipeline_tb/U1/INST_FETCH/MI_FETCH
+# Break key hit
+# Break in Process line__36 at D:/projects/Pipeline1/PIPELINE_TB.vhd line 45
+# End time: 21:54:40 on Jul 26,2023, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 491

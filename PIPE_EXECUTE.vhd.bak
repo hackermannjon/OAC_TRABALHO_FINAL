@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+
+
+
+entity PIPE_EXECUTE is
+    Port (
+        clk, reset, RegWrite_in : in STD_LOGIC;  
+        DATA, ADDR, INST : in STD_LOGIC_VECTOR(31 downto 0);  -- Source for updating PC (e.g., branch target, jump address)
+        ADDR_OUT : out STD_LOGIC_VECTOR(31 downto 0);
+		  ro1, ro2 : out std_logic_vector(31 downto 0);
+		  imm32 : out signed(31 downto 0);
+
+		  ALUSrc, Branch, MemRead, MemWrite, RegWrite, Mem2Reg : out std_logic;
+		  opcode_ula: out std_logic_vector(3 downto 0)
+
+
+		  -- Output PC value
+    );
+end PIPE_EXECUTE;
+
+architecture behavioral of PIPE_EXECUTE is
+
+
+	
+end behavioral;

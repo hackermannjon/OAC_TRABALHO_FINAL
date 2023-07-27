@@ -34,8 +34,9 @@ begin
   -- Clock process
   process
 	begin
+	reset <= '1';
   while now < 960 ns loop
-	 reset <= '1';
+	 reset <= '0';
     clk <= '0';
     wait for 5 ns;
     clk <= '1';

@@ -35,18 +35,15 @@ begin
   process (clk)
   begin
     if rising_edge(clk) then
-      if write_enable = '1' and rd_index /= 0 then
+      write_enable <= wren;
+		if write_enable = '1' and rd_index /= 0 then
         x_Regs(rd_index) <= data;
       end if;
-      write_enable <= wren;
 
       ro1 <= x_Regs(rs1_index);
       ro2 <= x_Regs(rs2_index);
 
       -- Print register values after every clock edge
-      for i in 0 to 31 loop
-        report "Register " & integer'image(i) & ": " & to_string(x_Regs(i));
-      end loop;
     end if;
   end process;
 end main;

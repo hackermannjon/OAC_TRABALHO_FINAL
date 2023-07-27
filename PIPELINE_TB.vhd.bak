@@ -5,7 +5,7 @@ entity PIPELINE_TB is
 end PIPELINE_TB;
 
 architecture behavior of PIPELINE_TB is
-  signal clk : std_logic := '0';
+  signal clk,reset : std_logic := '0';
 
   -- Sinais para acompanhar os valores dos registradores
   signal teste_rs1, teste_rs2, teste_rd : std_logic_vector(4 downto 0) := (others => '0');
@@ -25,7 +25,7 @@ begin
   U1: PIPELINE
   Port map(
     clk => clk,
-    reset => '0'
+    reset => reset
    -- teste_rs1 => teste_rs1,
   --  teste_rs2 => teste_rs2,
   --  teste_rd => teste_rd
@@ -33,11 +33,13 @@ begin
 
   -- Clock process
   process
-  begin
+	begin
+  while now < 960 ns loop
+	 reset <= '1';
+    clk <= '0';
     wait for 5 ns;
-    clk <= not clk;
-    if now > 500 ns then  -- Stop the simulation after 500 ns
-      wait;
-    end if;
-  end process;
+    clk <= '1';
+    wait for 5 ns;
+  end loop;
+end process;
 end behavior;
