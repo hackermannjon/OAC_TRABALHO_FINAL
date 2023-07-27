@@ -5,8 +5,10 @@ use IEEE.numeric_std.all; -- Add the numeric_std library for signed type
 entity PIPELINE is
 Port (
         clk : in STD_LOGIC;               -- Sinal de clock
-		  reset : in STD_LOGIC          -- Sinal de reset
-		--  teste_rs1,teste_rs2, teste_rd : out std_logic_vector(4 downto 0)
+		  reset : in STD_LOGIC  ;        -- Sinal de reset
+		  RS1, RS2,ENDERECO ,INSTRUCAO : out STD_LOGIC_VECTOR(31 downto 0);
+		   
+		  RD  : out std_logic_vector(11 downto 7)
  
 
 );
@@ -337,9 +339,21 @@ INST_WB : PIPE_WB
 
 
     );
+	 
+	 
 
 
   
-  
+  process(clk)
+    begin
+        if rising_edge(clk) then
+				  ENDERECO <= DECODE_ADDR;
+				  INSTRUCAO <= DECODE_INST;
+				  RS1 <= ro1;
+				  RS2 <= ro2;
+				  RD <= RD_OUT;
+
+        end if;
+    end process;
 
 end behavioral;

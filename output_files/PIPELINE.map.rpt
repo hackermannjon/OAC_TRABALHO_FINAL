@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PIPELINE
-Wed Jul 26 21:53:17 2023
+Thu Jul 27 01:19:56 2023
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -13,14 +13,27 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: PIPE_ID_EX:INST_IDEX
- 10. Parameter Settings for User Entity Instance: PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA
- 11. Parameter Settings for User Entity Instance: PIPE_EX_MEM:INST_EXMEM
- 12. Port Connectivity Checks: "PIPE_WB:INST_WB"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0|altsyncram_0tq1:auto_generated
+ 16. Source assignments for PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1|altsyncram_0tq1:auto_generated
+ 17. Parameter Settings for User Entity Instance: PIPE_ID_EX:INST_IDEX
+ 18. Parameter Settings for User Entity Instance: PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA
+ 19. Parameter Settings for User Entity Instance: PIPE_EX_MEM:INST_EXMEM
+ 20. Parameter Settings for Inferred Entity Instance: PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1
+ 22. altsyncram Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "PIPE_WB:INST_WB"
+ 24. Port Connectivity Checks: "PIPE_EXECUTE:INST_EXECUTE|ADD_PC:EXECUTE_ADD"
+ 25. Port Connectivity Checks: "PIPE_FETCH:INST_FETCH|ADD_PC:ADD_FETCH"
+ 26. Post-Synthesis Netlist Statistics for Top Partition
+ 27. Elapsed Time Per Partition
+ 28. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +59,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jul 26 21:53:17 2023       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jul 27 01:19:56 2023       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; PIPELINE                                    ;
 ; Top-level Entity Name           ; PIPELINE                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 2                                           ;
+; Total registers                 ; 494                                         ;
+; Total pins                      ; 135                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
+; Total block memory bits         ; 2,048                                       ;
 ; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -162,73 +175,316 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------+---------+
-; PIPE_FETCH.vhd                   ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_FETCH.vhd   ;         ;
-; PIPELINE.vhd                     ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPELINE.vhd     ;         ;
-; MI.vhd                           ; yes             ; User VHDL File  ; D:/projects/Pipeline1/MI.vhd           ;         ;
-; PC.vhd                           ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PC.vhd           ;         ;
-; Mux21.vhd                        ; yes             ; User VHDL File  ; D:/projects/Pipeline1/Mux21.vhd        ;         ;
-; PIPE_IF_ID.vhd                   ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_IF_ID.vhd   ;         ;
-; PIPE_DECODE.vhd                  ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_DECODE.vhd  ;         ;
-; Controle.vhd                     ; yes             ; User VHDL File  ; D:/projects/Pipeline1/Controle.vhd     ;         ;
-; X_REG.vhd                        ; yes             ; User VHDL File  ; D:/projects/Pipeline1/X_REG.vhd        ;         ;
-; genImm32.vhd                     ; yes             ; User VHDL File  ; D:/projects/Pipeline1/genImm32.vhd     ;         ;
-; PIPE_ID_EX.vhd                   ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_ID_EX.vhd   ;         ;
-; PIPE_EXECUTE.vhd                 ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_EXECUTE.vhd ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; D:/projects/Pipeline1/ULA.vhd          ;         ;
-; PIPE_EX_MEM.vhd                  ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_EX_MEM.vhd  ;         ;
-; PIPE_MEM.vhd                     ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_MEM.vhd     ;         ;
-; MD.vhd                           ; yes             ; User VHDL File  ; D:/projects/Pipeline1/MD.vhd           ;         ;
-; PIPE_WB.vhd                      ; yes             ; User VHDL File  ; D:/projects/Pipeline1/PIPE_WB.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
++----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
+; PIPE_FETCH.vhd                         ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_FETCH.vhd                                         ;         ;
+; PIPELINE.vhd                           ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPELINE.vhd                                           ;         ;
+; MI.vhd                                 ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/MI.vhd                                                 ;         ;
+; PC.vhd                                 ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PC.vhd                                                 ;         ;
+; Mux21.vhd                              ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/Mux21.vhd                                              ;         ;
+; PIPE_IF_ID.vhd                         ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_IF_ID.vhd                                         ;         ;
+; PIPE_DECODE.vhd                        ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_DECODE.vhd                                        ;         ;
+; Controle.vhd                           ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/Controle.vhd                                           ;         ;
+; X_REG.vhd                              ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/X_REG.vhd                                              ;         ;
+; genImm32.vhd                           ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/genImm32.vhd                                           ;         ;
+; PIPE_ID_EX.vhd                         ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_ID_EX.vhd                                         ;         ;
+; PIPE_EXECUTE.vhd                       ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_EXECUTE.vhd                                       ;         ;
+; ULA.vhd                                ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/ULA.vhd                                                ;         ;
+; PIPE_EX_MEM.vhd                        ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_EX_MEM.vhd                                        ;         ;
+; PIPE_MEM.vhd                           ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_MEM.vhd                                           ;         ;
+; MD.vhd                                 ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/MD.vhd                                                 ;         ;
+; PIPE_WB.vhd                            ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/PIPE_WB.vhd                                            ;         ;
+; ADD_PC.vhd                             ; yes             ; User VHDL File                                        ; D:/projects/Pipeline1/ADD_PC.vhd                                             ;         ;
+; altsyncram.tdf                         ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                  ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                            ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                         ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal180.inc                         ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/aglobal180.inc        ;         ;
+; a_rdenreg.inc                          ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                             ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                             ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                           ; yes             ; Megafunction                                          ; d:/intelfpga_lite/18.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_0tq1.tdf                 ; yes             ; Auto-Generated Megafunction                           ; D:/projects/Pipeline1/db/altsyncram_0tq1.tdf                                 ;         ;
+; db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/projects/Pipeline1/db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif                 ;         ;
++----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 0     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 0     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 0     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 2     ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 2     ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 492       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 634       ;
+;     -- 7 input functions                    ; 8         ;
+;     -- 6 input functions                    ; 268       ;
+;     -- 5 input functions                    ; 138       ;
+;     -- 4 input functions                    ; 68        ;
+;     -- <=3 input functions                  ; 152       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 494       ;
+;                                             ;           ;
+; I/O pins                                    ; 135       ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 2048      ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 558       ;
+; Total fan-out                               ; 4930      ;
+; Average fan-out                             ; 3.37      ;
++---------------------------------------------+-----------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |PIPELINE                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 2    ; 0            ; |PIPELINE           ; PIPELINE    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                 ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |PIPELINE                                    ; 634 (1)             ; 494 (101)                 ; 2048              ; 0          ; 135  ; 0            ; |PIPELINE                                                                                                  ; PIPELINE        ; work         ;
+;    |PIPE_DECODE:INST_DECODE|                 ; 58 (0)              ; 5 (5)                     ; 2048              ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE                                                                          ; PIPE_DECODE     ; work         ;
+;       |Controle:DECODE_CONTROLE|             ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|Controle:DECODE_CONTROLE                                                 ; Controle        ; work         ;
+;       |X_REG:DECODE_XREG|                    ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG                                                        ; X_REG           ; work         ;
+;          |altsyncram:x_Regs_rtl_0|           ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0                                ; altsyncram      ; work         ;
+;             |altsyncram_0tq1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0|altsyncram_0tq1:auto_generated ; altsyncram_0tq1 ; work         ;
+;          |altsyncram:x_Regs_rtl_1|           ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1                                ; altsyncram      ; work         ;
+;             |altsyncram_0tq1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1|altsyncram_0tq1:auto_generated ; altsyncram_0tq1 ; work         ;
+;       |genImm32:DECODE_IMM32|                ; 50 (50)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_DECODE:INST_DECODE|genImm32:DECODE_IMM32                                                    ; genImm32        ; work         ;
+;    |PIPE_EXECUTE:INST_EXECUTE|               ; 533 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE                                                                        ; PIPE_EXECUTE    ; work         ;
+;       |Mux21:EXECUTE_MUX|                    ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|Mux21:EXECUTE_MUX                                                      ; Mux21           ; work         ;
+;       |ULA:EXECUTE_ULA|                      ; 504 (504)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA                                                        ; ULA             ; work         ;
+;    |PIPE_EX_MEM:INST_EXMEM|                  ; 0 (0)               ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_EX_MEM:INST_EXMEM                                                                           ; PIPE_EX_MEM     ; work         ;
+;    |PIPE_FETCH:INST_FETCH|                   ; 32 (2)              ; 125 (93)                  ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_FETCH:INST_FETCH                                                                            ; PIPE_FETCH      ; work         ;
+;       |ADD_PC:ADD_FETCH|                     ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_FETCH:INST_FETCH|ADD_PC:ADD_FETCH                                                           ; ADD_PC          ; work         ;
+;       |PC:PC_FETCH|                          ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_FETCH:INST_FETCH|PC:PC_FETCH                                                                ; PC              ; work         ;
+;    |PIPE_ID_EX:INST_IDEX|                    ; 9 (9)               ; 102 (102)                 ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_ID_EX:INST_IDEX                                                                             ; PIPE_ID_EX      ; work         ;
+;    |PIPE_IF_ID:INST_IFID|                    ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_IF_ID:INST_IFID                                                                             ; PIPE_IF_ID      ; work         ;
+;    |PIPE_MEM:INST_MEM|                       ; 1 (1)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_MEM:INST_MEM                                                                                ; PIPE_MEM        ; work         ;
+;    |PIPE_WB:INST_WB|                         ; 0 (0)               ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |PIPELINE|PIPE_WB:INST_WB                                                                                  ; PIPE_WB         ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                  ;
++-------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------+
+; Name                                                                                                        ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                    ;
++-------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------+
+; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0|altsyncram_0tq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif ;
+; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1|altsyncram_0tq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif ;
++-------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                       ;
++----------------------------------------------------------+-------------------------------------------------------+------------------------+
+; Latch Name                                               ; Latch Enable Signal                                   ; Free of Timing Hazards ;
++----------------------------------------------------------+-------------------------------------------------------+------------------------+
+; PIPE_DECODE:INST_DECODE|Controle:DECODE_CONTROLE|Mem2Reg ; PIPE_DECODE:INST_DECODE|Controle:DECODE_CONTROLE|Mux0 ; yes                    ;
+; Number of user-specified and inferred latches = 1        ;                                                       ;                        ;
++----------------------------------------------------------+-------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                        ;
++--------------------------------------------------------+--------------------------------------------------+
+; Register name                                          ; Reason for Removal                               ;
++--------------------------------------------------------+--------------------------------------------------+
+; PIPE_EX_MEM:INST_EXMEM|ro2_OUTMEM[0..31]               ; Lost fanout                                      ;
+; PIPE_MEM:INST_MEM|MD:MEM_MD|read_addr[0..7]            ; Lost fanout                                      ;
+; PIPE_ID_EX:INST_IDEX|imm32_out[0]                      ; Stuck at GND due to stuck port data_in           ;
+; PIPE_MEM:INST_MEM|MD:MEM_MD|data_md_out[4..31]         ; Stuck at GND due to stuck port data_in           ;
+; PIPE_EX_MEM:INST_EXMEM|MemRead_OUTMEM                  ; Lost fanout                                      ;
+; PIPE_ID_EX:INST_IDEX|MemRead_out                       ; Lost fanout                                      ;
+; PIPE_MEM:INST_MEM|MD:MEM_MD|data_md_out[0..3]          ; Stuck at GND due to stuck port data_in           ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[0]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[0]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[1]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[1]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[2]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[2]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[3]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[3]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[4]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[4]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[5]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[5]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[6]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[6]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[7]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[7]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[8]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[8]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[9]         ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[9]  ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[10]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[10] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[11]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[11] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[12]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[12] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[13]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[13] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[14]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[14] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[15]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[15] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[16]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[16] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[17]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[17] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[18]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[18] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[19]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[19] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[20]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[20] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[21]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[21] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[22]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[22] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[23]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[23] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[24]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[24] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[25]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[25] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[26]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[26] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[27]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[27] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[28]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[28] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[29]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[29] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|read_addr[30]        ; Merged with PIPE_FETCH:INST_FETCH|FETCH_ADDR[30] ;
+; PIPE_FETCH:INST_FETCH|pc_out[0]                        ; Merged with PIPE_FETCH:INST_FETCH|data0[0]       ;
+; PIPE_FETCH:INST_FETCH|pc_out[1]                        ; Merged with PIPE_FETCH:INST_FETCH|data0[1]       ;
+; PIPE_FETCH:INST_FETCH|pc_out[2]                        ; Merged with PIPE_FETCH:INST_FETCH|data0[2]       ;
+; PIPE_EX_MEM:INST_EXMEM|RegWrite_OUTMEM                 ; Stuck at GND due to stuck port data_in           ;
+; PIPE_EX_MEM:INST_EXMEM|RD_MEM[7..11]                   ; Stuck at GND due to stuck port data_in           ;
+; PIPE_WB:INST_WB|regw                                   ; Stuck at GND due to stuck port data_in           ;
+; PIPE_WB:INST_WB|RD_LAST[7..11]                         ; Stuck at GND due to stuck port data_in           ;
+; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|write_enable ; Stuck at GND due to stuck port data_in           ;
+; PIPE_DECODE:INST_DECODE|RD[7..11]                      ; Stuck at GND due to stuck port data_in           ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[0..31]      ; Stuck at GND due to stuck port data_in           ;
+; PIPE_IF_ID:INST_IFID|DECODE_ADDR[0..31]                ; Stuck at GND due to stuck port data_in           ;
+; PIPE_DECODE:INST_DECODE|ADDR_OUT[0..31]                ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[0]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[1]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[2]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[3]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[4]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[5]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[6]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[7]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[8]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[9]~reg0                                       ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[10]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[11]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[12]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[13]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[14]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[15]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[16]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[17]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[18]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[19]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[20]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[21]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[22]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[23]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[24]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[25]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[26]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[27]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[28]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[29]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[30]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; ENDERECO[31]~reg0                                      ; Stuck at GND due to stuck port data_in           ;
+; PIPE_ID_EX:INST_IDEX|ADDR_out[0..31]                   ; Stuck at GND due to stuck port data_in           ;
+; PIPE_EX_MEM:INST_EXMEM|ADDRRESULT_OUTMEM[0,1]          ; Stuck at GND due to stuck port data_in           ;
+; PIPE_MEM:INST_MEM|ADDRRESULT_OUT[0,1]                  ; Stuck at GND due to stuck port data_in           ;
+; Total Number of Removed Registers = 291                ;                                                  ;
++--------------------------------------------------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                   ;
++------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register                                           ;
++------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[1]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[1], PIPE_DECODE:INST_DECODE|ADDR_OUT[1],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[1]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[1],                              ;
+;                                                ;                           ; PIPE_EX_MEM:INST_EXMEM|ADDRRESULT_OUTMEM[1], PIPE_MEM:INST_MEM|ADDRRESULT_OUT[1] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[0]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[0], PIPE_DECODE:INST_DECODE|ADDR_OUT[0],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[0]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[0],                              ;
+;                                                ;                           ; PIPE_EX_MEM:INST_EXMEM|ADDRRESULT_OUTMEM[0], PIPE_MEM:INST_MEM|ADDRRESULT_OUT[0] ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[12] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[12], PIPE_DECODE:INST_DECODE|ADDR_OUT[12],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[12]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[12]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[25] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[25], PIPE_DECODE:INST_DECODE|ADDR_OUT[25],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[25]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[25]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[26] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[26], PIPE_DECODE:INST_DECODE|ADDR_OUT[26],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[26]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[26]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[27] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[27], PIPE_DECODE:INST_DECODE|ADDR_OUT[27],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[27]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[27]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[28] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[28], PIPE_DECODE:INST_DECODE|ADDR_OUT[28],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[28]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[28]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[29] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[29], PIPE_DECODE:INST_DECODE|ADDR_OUT[29],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[29]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[29]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[30] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[30], PIPE_DECODE:INST_DECODE|ADDR_OUT[30],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[30]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[30]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[2]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[2], PIPE_DECODE:INST_DECODE|ADDR_OUT[2],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[2]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[2]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[3]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[3], PIPE_DECODE:INST_DECODE|ADDR_OUT[3],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[3]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[3]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[4]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[4], PIPE_DECODE:INST_DECODE|ADDR_OUT[4],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[4]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[4]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[5]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[5], PIPE_DECODE:INST_DECODE|ADDR_OUT[5],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[5]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[5]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[6]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[6], PIPE_DECODE:INST_DECODE|ADDR_OUT[6],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[6]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[6]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[7]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[7], PIPE_DECODE:INST_DECODE|ADDR_OUT[7],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[7]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[7]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[8]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[8], PIPE_DECODE:INST_DECODE|ADDR_OUT[8],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[8]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[8]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[9]  ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[9], PIPE_DECODE:INST_DECODE|ADDR_OUT[9],        ;
+;                                                ; due to stuck port data_in ; ENDERECO[9]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[9]                               ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[10] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[10], PIPE_DECODE:INST_DECODE|ADDR_OUT[10],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[10]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[10]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[11] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[11], PIPE_DECODE:INST_DECODE|ADDR_OUT[11],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[11]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[11]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[31] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[31], PIPE_DECODE:INST_DECODE|ADDR_OUT[31],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[31]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[31]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[13] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[13], PIPE_DECODE:INST_DECODE|ADDR_OUT[13],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[13]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[13]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[14] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[14], PIPE_DECODE:INST_DECODE|ADDR_OUT[14],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[14]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[14]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[15] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[15], PIPE_DECODE:INST_DECODE|ADDR_OUT[15],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[15]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[15]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[16] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[16], PIPE_DECODE:INST_DECODE|ADDR_OUT[16],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[16]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[16]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[17] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[17], PIPE_DECODE:INST_DECODE|ADDR_OUT[17],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[17]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[17]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[18] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[18], PIPE_DECODE:INST_DECODE|ADDR_OUT[18],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[18]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[18]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[19] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[19], PIPE_DECODE:INST_DECODE|ADDR_OUT[19],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[19]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[19]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[20] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[20], PIPE_DECODE:INST_DECODE|ADDR_OUT[20],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[20]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[20]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[21] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[21], PIPE_DECODE:INST_DECODE|ADDR_OUT[21],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[21]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[21]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[22] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[22], PIPE_DECODE:INST_DECODE|ADDR_OUT[22],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[22]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[22]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[23] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[23], PIPE_DECODE:INST_DECODE|ADDR_OUT[23],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[23]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[23]                             ;
+; PIPE_FETCH:INST_FETCH|MI:MI_FETCH|data_out[24] ; Stuck at GND              ; PIPE_IF_ID:INST_IFID|DECODE_ADDR[24], PIPE_DECODE:INST_DECODE|ADDR_OUT[24],      ;
+;                                                ; due to stuck port data_in ; ENDERECO[24]~reg0, PIPE_ID_EX:INST_IDEX|ADDR_out[24]                             ;
+; PIPE_EX_MEM:INST_EXMEM|RegWrite_OUTMEM         ; Stuck at GND              ; PIPE_WB:INST_WB|regw, PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|write_enable     ;
+;                                                ; due to stuck port data_in ;                                                                                  ;
+; PIPE_EX_MEM:INST_EXMEM|RD_MEM[7]               ; Stuck at GND              ; PIPE_WB:INST_WB|RD_LAST[7], PIPE_DECODE:INST_DECODE|RD[7]                        ;
+;                                                ; due to stuck port data_in ;                                                                                  ;
+; PIPE_EX_MEM:INST_EXMEM|RD_MEM[8]               ; Stuck at GND              ; PIPE_WB:INST_WB|RD_LAST[8], PIPE_DECODE:INST_DECODE|RD[8]                        ;
+;                                                ; due to stuck port data_in ;                                                                                  ;
+; PIPE_EX_MEM:INST_EXMEM|RD_MEM[9]               ; Stuck at GND              ; PIPE_WB:INST_WB|RD_LAST[9], PIPE_DECODE:INST_DECODE|RD[9]                        ;
+;                                                ; due to stuck port data_in ;                                                                                  ;
+; PIPE_EX_MEM:INST_EXMEM|RD_MEM[10]              ; Stuck at GND              ; PIPE_WB:INST_WB|RD_LAST[10], PIPE_DECODE:INST_DECODE|RD[10]                      ;
+;                                                ; due to stuck port data_in ;                                                                                  ;
+; PIPE_EX_MEM:INST_EXMEM|RD_MEM[11]              ; Stuck at GND              ; PIPE_WB:INST_WB|RD_LAST[11], PIPE_DECODE:INST_DECODE|RD[11]                      ;
+;                                                ; due to stuck port data_in ;                                                                                  ;
+; PIPE_EX_MEM:INST_EXMEM|MemRead_OUTMEM          ; Lost Fanouts              ; PIPE_ID_EX:INST_IDEX|MemRead_out                                                 ;
++------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -236,14 +492,72 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 494   ;
+; Number of registers using Synchronous Clear  ; 40    ;
+; Number of registers using Synchronous Load   ; 40    ;
+; Number of registers using Asynchronous Clear ; 32    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                         ;
++------------------------------------------------------+--------------------------------------------------------+------+
+; Register Name                                        ; Megafunction                                           ; Type ;
++------------------------------------------------------+--------------------------------------------------------+------+
+; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|ro1[0..31] ; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|x_Regs_rtl_0 ; RAM  ;
+; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|ro2[0..31] ; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|x_Regs_rtl_1 ; RAM  ;
++------------------------------------------------------+--------------------------------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |PIPELINE|PIPE_ID_EX:INST_IDEX|imm32_out[26]                    ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; Yes        ; |PIPELINE|PIPE_ID_EX:INST_IDEX|imm32_out[1]                     ;
+; 13:1               ; 5 bits    ; 40 LEs        ; 25 LEs               ; 15 LEs                 ; Yes        ; |PIPELINE|PIPE_ID_EX:INST_IDEX|imm32_out[8]                     ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; Yes        ; |PIPELINE|PIPE_ID_EX:INST_IDEX|imm32_out[21]                    ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; Yes        ; |PIPELINE|PIPE_ID_EX:INST_IDEX|imm32_out[18]                    ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |PIPELINE|PIPE_ID_EX:INST_IDEX|imm32_out[15]                    ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |PIPELINE|PIPE_DECODE:INST_DECODE|genImm32:DECODE_IMM32|Mux30   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_DECODE:INST_DECODE|genImm32:DECODE_IMM32|Mux30   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftLeft0  ;
+; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftRight1 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftRight0 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftRight1 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftLeft0  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftLeft0  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|ShiftLeft0  ;
+; 22:1               ; 5 bits    ; 70 LEs        ; 70 LEs               ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux27       ;
+; 23:1               ; 8 bits    ; 120 LEs       ; 112 LEs              ; 8 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux11       ;
+; 22:1               ; 3 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux17       ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux21       ;
+; 25:1               ; 3 bits    ; 48 LEs        ; 45 LEs               ; 3 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux28       ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 28 LEs               ; 4 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux6        ;
+; 26:1               ; 3 bits    ; 51 LEs        ; 45 LEs               ; 6 LEs                  ; No         ; |PIPELINE|PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA|Mux3        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0|altsyncram_0tq1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                        ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                         ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1|altsyncram_0tq1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                        ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                         ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
 
 
 +-------------------------------------------------------------------+
@@ -276,6 +590,159 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0 ;
++------------------------------------+----------------------------------------+--------------------------------------+
+; Parameter Name                     ; Value                                  ; Type                                 ;
++------------------------------------+----------------------------------------+--------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                      ; Untyped                              ;
+; AUTO_CARRY_CHAINS                  ; ON                                     ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                    ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS                ; ON                                     ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                    ; IGNORE_CASCADE                       ;
+; WIDTH_BYTEENA                      ; 1                                      ; Untyped                              ;
+; OPERATION_MODE                     ; DUAL_PORT                              ; Untyped                              ;
+; WIDTH_A                            ; 32                                     ; Untyped                              ;
+; WIDTHAD_A                          ; 5                                      ; Untyped                              ;
+; NUMWORDS_A                         ; 32                                     ; Untyped                              ;
+; OUTDATA_REG_A                      ; UNREGISTERED                           ; Untyped                              ;
+; ADDRESS_ACLR_A                     ; NONE                                   ; Untyped                              ;
+; OUTDATA_ACLR_A                     ; NONE                                   ; Untyped                              ;
+; WRCONTROL_ACLR_A                   ; NONE                                   ; Untyped                              ;
+; INDATA_ACLR_A                      ; NONE                                   ; Untyped                              ;
+; BYTEENA_ACLR_A                     ; NONE                                   ; Untyped                              ;
+; WIDTH_B                            ; 32                                     ; Untyped                              ;
+; WIDTHAD_B                          ; 5                                      ; Untyped                              ;
+; NUMWORDS_B                         ; 32                                     ; Untyped                              ;
+; INDATA_REG_B                       ; CLOCK1                                 ; Untyped                              ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                 ; Untyped                              ;
+; RDCONTROL_REG_B                    ; CLOCK1                                 ; Untyped                              ;
+; ADDRESS_REG_B                      ; CLOCK0                                 ; Untyped                              ;
+; OUTDATA_REG_B                      ; UNREGISTERED                           ; Untyped                              ;
+; BYTEENA_REG_B                      ; CLOCK1                                 ; Untyped                              ;
+; INDATA_ACLR_B                      ; NONE                                   ; Untyped                              ;
+; WRCONTROL_ACLR_B                   ; NONE                                   ; Untyped                              ;
+; ADDRESS_ACLR_B                     ; NONE                                   ; Untyped                              ;
+; OUTDATA_ACLR_B                     ; NONE                                   ; Untyped                              ;
+; RDCONTROL_ACLR_B                   ; NONE                                   ; Untyped                              ;
+; BYTEENA_ACLR_B                     ; NONE                                   ; Untyped                              ;
+; WIDTH_BYTEENA_A                    ; 1                                      ; Untyped                              ;
+; WIDTH_BYTEENA_B                    ; 1                                      ; Untyped                              ;
+; RAM_BLOCK_TYPE                     ; AUTO                                   ; Untyped                              ;
+; BYTE_SIZE                          ; 8                                      ; Untyped                              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ; Untyped                              ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                   ; Untyped                              ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                   ; Untyped                              ;
+; INIT_FILE                          ; db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif ; Untyped                              ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                 ; Untyped                              ;
+; MAXIMUM_DEPTH                      ; 0                                      ; Untyped                              ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                        ; Untyped                              ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                        ; Untyped                              ;
+; ENABLE_ECC                         ; FALSE                                  ; Untyped                              ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                  ; Untyped                              ;
+; WIDTH_ECCSTATUS                    ; 3                                      ; Untyped                              ;
+; DEVICE_FAMILY                      ; Cyclone V                              ; Untyped                              ;
+; CBXI_PARAMETER                     ; altsyncram_0tq1                        ; Untyped                              ;
++------------------------------------+----------------------------------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1 ;
++------------------------------------+----------------------------------------+--------------------------------------+
+; Parameter Name                     ; Value                                  ; Type                                 ;
++------------------------------------+----------------------------------------+--------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                      ; Untyped                              ;
+; AUTO_CARRY_CHAINS                  ; ON                                     ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                    ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS                ; ON                                     ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                    ; IGNORE_CASCADE                       ;
+; WIDTH_BYTEENA                      ; 1                                      ; Untyped                              ;
+; OPERATION_MODE                     ; DUAL_PORT                              ; Untyped                              ;
+; WIDTH_A                            ; 32                                     ; Untyped                              ;
+; WIDTHAD_A                          ; 5                                      ; Untyped                              ;
+; NUMWORDS_A                         ; 32                                     ; Untyped                              ;
+; OUTDATA_REG_A                      ; UNREGISTERED                           ; Untyped                              ;
+; ADDRESS_ACLR_A                     ; NONE                                   ; Untyped                              ;
+; OUTDATA_ACLR_A                     ; NONE                                   ; Untyped                              ;
+; WRCONTROL_ACLR_A                   ; NONE                                   ; Untyped                              ;
+; INDATA_ACLR_A                      ; NONE                                   ; Untyped                              ;
+; BYTEENA_ACLR_A                     ; NONE                                   ; Untyped                              ;
+; WIDTH_B                            ; 32                                     ; Untyped                              ;
+; WIDTHAD_B                          ; 5                                      ; Untyped                              ;
+; NUMWORDS_B                         ; 32                                     ; Untyped                              ;
+; INDATA_REG_B                       ; CLOCK1                                 ; Untyped                              ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                 ; Untyped                              ;
+; RDCONTROL_REG_B                    ; CLOCK1                                 ; Untyped                              ;
+; ADDRESS_REG_B                      ; CLOCK0                                 ; Untyped                              ;
+; OUTDATA_REG_B                      ; UNREGISTERED                           ; Untyped                              ;
+; BYTEENA_REG_B                      ; CLOCK1                                 ; Untyped                              ;
+; INDATA_ACLR_B                      ; NONE                                   ; Untyped                              ;
+; WRCONTROL_ACLR_B                   ; NONE                                   ; Untyped                              ;
+; ADDRESS_ACLR_B                     ; NONE                                   ; Untyped                              ;
+; OUTDATA_ACLR_B                     ; NONE                                   ; Untyped                              ;
+; RDCONTROL_ACLR_B                   ; NONE                                   ; Untyped                              ;
+; BYTEENA_ACLR_B                     ; NONE                                   ; Untyped                              ;
+; WIDTH_BYTEENA_A                    ; 1                                      ; Untyped                              ;
+; WIDTH_BYTEENA_B                    ; 1                                      ; Untyped                              ;
+; RAM_BLOCK_TYPE                     ; AUTO                                   ; Untyped                              ;
+; BYTE_SIZE                          ; 8                                      ; Untyped                              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                               ; Untyped                              ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                   ; Untyped                              ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                   ; Untyped                              ;
+; INIT_FILE                          ; db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif ; Untyped                              ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                 ; Untyped                              ;
+; MAXIMUM_DEPTH                      ; 0                                      ; Untyped                              ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                 ; Untyped                              ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                        ; Untyped                              ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                        ; Untyped                              ;
+; ENABLE_ECC                         ; FALSE                                  ; Untyped                              ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                  ; Untyped                              ;
+; WIDTH_ECCSTATUS                    ; 3                                      ; Untyped                              ;
+; DEVICE_FAMILY                      ; Cyclone V                              ; Untyped                              ;
+; CBXI_PARAMETER                     ; altsyncram_0tq1                        ; Untyped                              ;
++------------------------------------+----------------------------------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                              ;
++-------------------------------------------+-------------------------------------------------------------------+
+; Name                                      ; Value                                                             ;
++-------------------------------------------+-------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                 ;
+; Entity Instance                           ; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                         ;
+;     -- WIDTH_A                            ; 32                                                                ;
+;     -- NUMWORDS_A                         ; 32                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                      ;
+;     -- WIDTH_B                            ; 32                                                                ;
+;     -- NUMWORDS_B                         ; 32                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                          ;
+; Entity Instance                           ; PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                         ;
+;     -- WIDTH_A                            ; 32                                                                ;
+;     -- NUMWORDS_A                         ; 32                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                      ;
+;     -- WIDTH_B                            ; 32                                                                ;
+;     -- NUMWORDS_B                         ; 32                                                                ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                          ;
++-------------------------------------------+-------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "PIPE_WB:INST_WB"                                                                    ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -285,16 +752,57 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "PIPE_EXECUTE:INST_EXECUTE|ADD_PC:EXECUTE_ADD" ;
++----------+-------+----------+--------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                    ;
++----------+-------+----------+--------------------------------------------+
+; asoma[0] ; Input ; Info     ; Stuck at GND                               ;
++----------+-------+----------+--------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "PIPE_FETCH:INST_FETCH|ADD_PC:ADD_FETCH" ;
++--------------+-------+----------+----------------------------------+
+; Port         ; Type  ; Severity ; Details                          ;
++--------------+-------+----------+----------------------------------+
+; bsoma[31..3] ; Input ; Info     ; Stuck at GND                     ;
+; bsoma[1..0]  ; Input ; Info     ; Stuck at GND                     ;
+; bsoma[2]     ; Input ; Info     ; Stuck at VCC                     ;
++--------------+-------+----------+----------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 2                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 494                         ;
+;     CLR SLD           ; 32                          ;
+;     SCLR              ; 32                          ;
+;     SCLR SLD          ; 8                           ;
+;     plain             ; 422                         ;
+; arriav_lcell_comb     ; 634                         ;
+;     arith             ; 63                          ;
+;         1 data inputs ; 31                          ;
+;         4 data inputs ; 1                           ;
+;         5 data inputs ; 31                          ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 563                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 86                          ;
+;         4 data inputs ; 67                          ;
+;         5 data inputs ; 107                         ;
+;         6 data inputs ; 268                         ;
+; boundary_port         ; 135                         ;
+; stratixv_ram_block    ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 4.93                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -302,7 +810,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -312,7 +820,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed Jul 26 21:53:09 2023
+    Info: Processing started: Thu Jul 27 01:19:42 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PIPELINE -c PIPELINE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -320,7 +828,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file pipe_fe
     Info (12022): Found design unit 1: PIPE_FETCH-behavioral File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 17
     Info (12023): Found entity 1: PIPE_FETCH File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file pipeline.vhd
-    Info (12022): Found design unit 1: PIPELINE-behavioral File: D:/projects/Pipeline1/PIPELINE.vhd Line: 15
+    Info (12022): Found design unit 1: PIPELINE-behavioral File: D:/projects/Pipeline1/PIPELINE.vhd Line: 17
     Info (12023): Found entity 1: PIPELINE File: D:/projects/Pipeline1/PIPELINE.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mi.vhd
     Info (12022): Found design unit 1: MI-RTL File: D:/projects/Pipeline1/MI.vhd Line: 15
@@ -335,14 +843,14 @@ Info (12021): Found 2 design units, including 1 entities, in source file pipe_if
     Info (12022): Found design unit 1: PIPE_IF_ID-arch File: D:/projects/Pipeline1/PIPE_IF_ID.vhd Line: 16
     Info (12023): Found entity 1: PIPE_IF_ID File: D:/projects/Pipeline1/PIPE_IF_ID.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pipeline_tb.vhd
-    Info (12022): Found design unit 1: PIPELINE_TB-behavior File: D:/projects/Pipeline1/PIPELINE_TB.vhd Line: 7
-    Info (12023): Found entity 1: PIPELINE_TB File: D:/projects/Pipeline1/PIPELINE_TB.vhd Line: 4
+    Info (12022): Found design unit 1: PIPELINE_TB-behavior File: D:/projects/Pipeline1/PIPELINE_TB.vhd Line: 8
+    Info (12023): Found entity 1: PIPELINE_TB File: D:/projects/Pipeline1/PIPELINE_TB.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pipe_decode.vhd
     Info (12022): Found design unit 1: PIPE_DECODE-behavioral File: D:/projects/Pipeline1/PIPE_DECODE.vhd Line: 25
     Info (12023): Found entity 1: PIPE_DECODE File: D:/projects/Pipeline1/PIPE_DECODE.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file controle.vhd
-    Info (12022): Found design unit 1: Controle-behavioral File: D:/projects/Pipeline1/Controle.vhd Line: 13
-    Info (12023): Found entity 1: Controle File: D:/projects/Pipeline1/Controle.vhd Line: 5
+    Info (12022): Found design unit 1: Controle-behavioral File: D:/projects/Pipeline1/Controle.vhd Line: 15
+    Info (12023): Found entity 1: Controle File: D:/projects/Pipeline1/Controle.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file x_reg.vhd
     Info (12022): Found design unit 1: X_REG-main File: D:/projects/Pipeline1/X_REG.vhd Line: 14
     Info (12023): Found entity 1: X_REG File: D:/projects/Pipeline1/X_REG.vhd Line: 5
@@ -370,44 +878,173 @@ Info (12021): Found 2 design units, including 1 entities, in source file md.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file pipe_wb.vhd
     Info (12022): Found design unit 1: PIPE_WB-behavioral File: D:/projects/Pipeline1/PIPE_WB.vhd Line: 24
     Info (12023): Found entity 1: PIPE_WB File: D:/projects/Pipeline1/PIPE_WB.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file add_pc.vhd
+    Info (12022): Found design unit 1: ADD_PC-Behavioral File: D:/projects/Pipeline1/ADD_PC.vhd Line: 13
+    Info (12023): Found entity 1: ADD_PC File: D:/projects/Pipeline1/ADD_PC.vhd Line: 5
 Info (12127): Elaborating entity "PIPELINE" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(69): object "m2r_s" assigned a value but never read File: D:/projects/Pipeline1/PIPELINE.vhd Line: 69
-Info (12128): Elaborating entity "PIPE_FETCH" for hierarchy "PIPE_FETCH:INST_FETCH" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 180
-Warning (10492): VHDL Process Statement warning at PIPE_FETCH.vhd(76): signal "updated_pc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 76
-Info (12128): Elaborating entity "Mux21" for hierarchy "PIPE_FETCH:INST_FETCH|Mux21:MUX_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 51
-Info (12128): Elaborating entity "PC" for hierarchy "PIPE_FETCH:INST_FETCH|PC:PC_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 59
-Info (12128): Elaborating entity "MI" for hierarchy "PIPE_FETCH:INST_FETCH|MI:MI_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 67
+Warning (10036): Verilog HDL or VHDL warning at PIPELINE.vhd(71): object "m2r_s" assigned a value but never read File: D:/projects/Pipeline1/PIPELINE.vhd Line: 71
+Info (12128): Elaborating entity "PIPE_FETCH" for hierarchy "PIPE_FETCH:INST_FETCH" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 182
+Info (12128): Elaborating entity "ADD_PC" for hierarchy "PIPE_FETCH:INST_FETCH|ADD_PC:ADD_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 57
+Info (12128): Elaborating entity "Mux21" for hierarchy "PIPE_FETCH:INST_FETCH|Mux21:MUX_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 65
+Info (12128): Elaborating entity "PC" for hierarchy "PIPE_FETCH:INST_FETCH|PC:PC_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at PC.vhd(21): signal "pc_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/projects/Pipeline1/PC.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at PC.vhd(17): inferring latch(es) for signal or variable "pc_reg", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[0]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[1]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[2]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[3]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[4]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[5]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[6]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[7]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[8]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[9]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[10]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[11]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[12]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[13]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[14]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[15]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[16]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[17]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[18]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[19]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[20]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[21]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[22]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[23]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[24]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[25]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[26]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[27]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[28]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[29]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[30]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (10041): Inferred latch for "pc_reg[31]" at PC.vhd(17) File: D:/projects/Pipeline1/PC.vhd Line: 17
+Info (12128): Elaborating entity "MI" for hierarchy "PIPE_FETCH:INST_FETCH|MI:MI_FETCH" File: D:/projects/Pipeline1/PIPE_FETCH.vhd Line: 81
 Warning (10873): Using initial value X (don't care) for net "mem.raddr_b" at MI.vhd(43) File: D:/projects/Pipeline1/MI.vhd Line: 43
-Info (12128): Elaborating entity "PIPE_IF_ID" for hierarchy "PIPE_IF_ID:INST_IFID" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 191
-Info (12128): Elaborating entity "PIPE_DECODE" for hierarchy "PIPE_DECODE:INST_DECODE" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 202
+Info (12128): Elaborating entity "PIPE_IF_ID" for hierarchy "PIPE_IF_ID:INST_IFID" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 193
+Info (12128): Elaborating entity "PIPE_DECODE" for hierarchy "PIPE_DECODE:INST_DECODE" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 204
 Info (12128): Elaborating entity "genImm32" for hierarchy "PIPE_DECODE:INST_DECODE|genImm32:DECODE_IMM32" File: D:/projects/Pipeline1/PIPE_DECODE.vhd Line: 55
 Info (12128): Elaborating entity "Controle" for hierarchy "PIPE_DECODE:INST_DECODE|Controle:DECODE_CONTROLE" File: D:/projects/Pipeline1/PIPE_DECODE.vhd Line: 60
-Warning (10036): Verilog HDL or VHDL warning at Controle.vhd(15): object "ALUOp" assigned a value but never read File: D:/projects/Pipeline1/Controle.vhd Line: 15
-Warning (10631): VHDL Process Statement warning at Controle.vhd(20): inferring latch(es) for signal or variable "Mem2Reg", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline1/Controle.vhd Line: 20
-Info (10041): Inferred latch for "Mem2Reg" at Controle.vhd(20) File: D:/projects/Pipeline1/Controle.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at Controle.vhd(16): object "RegWrites" assigned a value but never read File: D:/projects/Pipeline1/Controle.vhd Line: 16
+Warning (10036): Verilog HDL or VHDL warning at Controle.vhd(18): object "ALUOp" assigned a value but never read File: D:/projects/Pipeline1/Controle.vhd Line: 18
+Warning (10631): VHDL Process Statement warning at Controle.vhd(23): inferring latch(es) for signal or variable "Mem2Reg", which holds its previous value in one or more paths through the process File: D:/projects/Pipeline1/Controle.vhd Line: 23
+Info (10041): Inferred latch for "Mem2Reg" at Controle.vhd(23) File: D:/projects/Pipeline1/Controle.vhd Line: 23
 Info (12128): Elaborating entity "X_REG" for hierarchy "PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG" File: D:/projects/Pipeline1/PIPE_DECODE.vhd Line: 71
-Info (12128): Elaborating entity "PIPE_ID_EX" for hierarchy "PIPE_ID_EX:INST_IDEX" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 229
+Info (12128): Elaborating entity "PIPE_ID_EX" for hierarchy "PIPE_ID_EX:INST_IDEX" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 231
 Warning (10541): VHDL Signal Declaration warning at PIPE_ID_EX.vhd(22): used implicit default value for signal "RD_EXECUTE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline1/PIPE_ID_EX.vhd Line: 22
 Warning (10541): VHDL Signal Declaration warning at PIPE_ID_EX.vhd(28): used implicit default value for signal "RegWrite_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline1/PIPE_ID_EX.vhd Line: 28
-Info (12128): Elaborating entity "PIPE_EXECUTE" for hierarchy "PIPE_EXECUTE:INST_EXECUTE" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 260
-Info (12128): Elaborating entity "ULA" for hierarchy "PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA" File: D:/projects/Pipeline1/PIPE_EXECUTE.vhd Line: 58
-Info (12128): Elaborating entity "PIPE_EX_MEM" for hierarchy "PIPE_EX_MEM:INST_EXMEM" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 277
-Info (12128): Elaborating entity "PIPE_MEM" for hierarchy "PIPE_MEM:INST_MEM" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 305
+Info (12128): Elaborating entity "PIPE_EXECUTE" for hierarchy "PIPE_EXECUTE:INST_EXECUTE" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 262
+Info (12128): Elaborating entity "ULA" for hierarchy "PIPE_EXECUTE:INST_EXECUTE|ULA:EXECUTE_ULA" File: D:/projects/Pipeline1/PIPE_EXECUTE.vhd Line: 67
+Info (12128): Elaborating entity "PIPE_EX_MEM" for hierarchy "PIPE_EX_MEM:INST_EXMEM" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 279
+Info (12128): Elaborating entity "PIPE_MEM" for hierarchy "PIPE_MEM:INST_MEM" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 307
 Info (12128): Elaborating entity "MD" for hierarchy "PIPE_MEM:INST_MEM|MD:MEM_MD" File: D:/projects/Pipeline1/PIPE_MEM.vhd Line: 40
-Info (12128): Elaborating entity "PIPE_WB" for hierarchy "PIPE_WB:INST_WB" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 324
+Info (12128): Elaborating entity "PIPE_WB" for hierarchy "PIPE_WB:INST_WB" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 326
 Warning (10541): VHDL Signal Declaration warning at PIPE_WB.vhd(18): used implicit default value for signal "m2r" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/projects/Pipeline1/PIPE_WB.vhd Line: 18
+Info (19000): Inferred 2 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|x_Regs_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|x_Regs_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0"
+Info (12133): Instantiated megafunction "PIPE_DECODE:INST_DECODE|X_REG:DECODE_XREG|altsyncram:x_Regs_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/PIPELINE.ram0_X_REG_5ed292c.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0tq1.tdf
+    Info (12023): Found entity 1: altsyncram_0tq1 File: D:/projects/Pipeline1/db/altsyncram_0tq1.tdf Line: 27
+Warning (13012): Latch PIPE_DECODE:INST_DECODE|Controle:DECODE_CONTROLE|Mem2Reg has unsafe behavior File: D:/projects/Pipeline1/Controle.vhd Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal PIPE_IF_ID:INST_IFID|DECODE_INST[0] File: D:/projects/Pipeline1/PIPE_IF_ID.vhd Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ENDERECO[0]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[1]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[2]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[3]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[4]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[5]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[6]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[7]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[8]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[9]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[10]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[11]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[12]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[13]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[14]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[15]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[16]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[17]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[18]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[19]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[20]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[21]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[22]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[23]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[24]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[25]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[26]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[27]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[28]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[29]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[30]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+    Warning (13410): Pin "ENDERECO[31]" is stuck at GND File: D:/projects/Pipeline1/PIPELINE.vhd Line: 349
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 42 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 7
-    Warning (15610): No output dependent on input pin "reset" File: D:/projects/Pipeline1/PIPELINE.vhd Line: 8
-Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1255 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Wed Jul 26 21:53:17 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:17
+    Info (21059): Implemented 133 output pins
+    Info (21061): Implemented 1056 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 4925 megabytes
+    Info: Processing ended: Thu Jul 27 01:19:56 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:23
 
 

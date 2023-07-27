@@ -22,6 +22,7 @@ vcom -93 -work work {D:/projects/Pipeline1/PIPE_EX_MEM.vhd}
 vcom -93 -work work {D:/projects/Pipeline1/PIPE_MEM.vhd}
 vcom -93 -work work {D:/projects/Pipeline1/MD.vhd}
 vcom -93 -work work {D:/projects/Pipeline1/PIPE_WB.vhd}
+vcom -93 -work work {D:/projects/Pipeline1/ADD_PC.vhd}
 
 vcom -93 -work work {D:/projects/Pipeline1/PIPELINE_TB.vhd}
 

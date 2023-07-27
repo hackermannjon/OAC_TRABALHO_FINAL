@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Jul 26 21:53:17 2023
+Analysis & Synthesis Status : Successful - Thu Jul 27 01:19:56 2023
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : PIPELINE
 Top-level Entity Name : PIPELINE
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 2
+Total registers : 494
+Total pins : 135
 Total virtual pins : 0
-Total block memory bits : 0
+Total block memory bits : 2,048
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

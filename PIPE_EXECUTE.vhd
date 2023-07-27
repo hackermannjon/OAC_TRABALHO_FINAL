@@ -21,7 +21,7 @@ entity PIPE_EXECUTE is
 end PIPE_EXECUTE;
 
 architecture behavioral of PIPE_EXECUTE is
-signal  output :  STD_LOGIC_VECTOR(31 downto 0);   -- Saída do multiplexador (32 bits)
+signal  A,B, sum, output :  STD_LOGIC_VECTOR(31 downto 0);   -- Saída do multiplexador (32 bits)
 signal imm32left : STD_LOGIC_VECTOR(31 downto 0);
 
 component Mux21 is
@@ -41,6 +41,15 @@ component ULA is
 		A, B : in std_logic_vector(WSIZE-1 downto 0);
 		Z : out std_logic_vector(WSIZE-1 downto 0);
 		zero : out std_logic);
+end component;
+
+
+component ADD_PC is
+    Port (
+        asoma : in STD_LOGIC_VECTOR(31 downto 0);    -- Entrada A de 8 bits
+        bsoma : in STD_LOGIC_VECTOR(31 downto 0);    -- Entrada B de 8 bits
+        sum : out STD_LOGIC_VECTOR(31 downto 0)  -- Saída de soma de 8 bits
+    );
 end component;
 
 begin
@@ -64,9 +73,17 @@ EXECUTE_ULA : ULA
 		zero => zero
 );
 
+EXECUTE_ADD : ADD_PC
 
+Port MAP(
+        asoma => A ,
+        bsoma => B ,
+        sum => sum
+    );
 
-RESULT_ADDR <= std_logic_vector(shift_left(unsigned(imm32), 1) + unsigned(ADDR));
+A <= std_logic_vector(shift_left(unsigned(imm32), 1));
+B <= std_logic_vector(unsigned(ADDR));
+RESULT_ADDR <= sum;
 ro2_execute <= ro2;
 
 

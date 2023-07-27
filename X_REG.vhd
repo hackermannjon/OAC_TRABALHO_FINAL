@@ -43,6 +43,8 @@ begin
       ro1 <= x_Regs(rs1_index);
       ro2 <= x_Regs(rs2_index);
 
+
+
       -- Print register values after every clock edge
     end if;
   end process;

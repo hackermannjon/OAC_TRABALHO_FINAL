@@ -34,6 +34,13 @@ architecture behavioral of PIPE_FETCH is
             output : out STD_LOGIC_VECTOR(31 downto 0)
         );
     end component;
+	 component ADD_PC is
+    Port (
+        asoma : in STD_LOGIC_VECTOR(31 downto 0);    -- Entrada A de 8 bits
+        bsoma : in STD_LOGIC_VECTOR(31 downto 0);    -- Entrada B de 8 bits
+        sum : out STD_LOGIC_VECTOR(31 downto 0)  -- Saída de soma de 8 bits
+    );
+		end component;
 
     component MI is
         port (
@@ -43,11 +50,18 @@ architecture behavioral of PIPE_FETCH is
         );
     end component;
 
-    signal data0, data1, output, pc_initial, pc_mem_in, pc_out, pc_out_E, asoma, bsoma, sum : STD_LOGIC_VECTOR(31 downto 0);
+    signal data0, data1, output, pc_initial, pc_mem_in, pc_out, pc_out_E, sum : STD_LOGIC_VECTOR(31 downto 0);
 
 begin
 
-
+	 ADD_FETCH : ADD_PC
+	 Port MAP(
+        asoma => updated_pc,
+        bsoma => "00000000000000000000000000000100",
+        sum => sum
+    );
+	
+	 
     MUX_FETCH : Mux21 
     port map (
         sel => ALUSRC,
@@ -73,13 +87,12 @@ begin
 
     process(clk)
     begin
-	 data1  <= std_logic_vector(unsigned(updated_pc) + 4);
         if rising_edge(clk) then
-				data0 <= data1; 
-            pc_out <= updated_pc;
+		      pc_out <= updated_pc;
+				data0 <= sum; 
+				FETCH_ADDR <= pc_out;
         end if;
     end process;
 
-    FETCH_ADDR <= pc_out;
 
 end behavioral;

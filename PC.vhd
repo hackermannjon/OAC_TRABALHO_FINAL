@@ -16,12 +16,12 @@ architecture Behavioral of PC is
 begin
     process(clk, reset)
     begin
-
-        if rising_edge(clk) then
-
-                pc_out <= pc_in;                      -- Update PC with pc_src if pc_write is enabled
-    		  			report "PC  " & integer'image(to_integer(unsigned(pc_in)));
-
+		  if reset = '1' then
+            pc_reg <= "00000000000000000000000000000000";
+					  pc_out <= pc_reg;
+	-- Initialize PC register to all zeros when reset is active
+        elsif rising_edge(clk) then
+            pc_out <= pc_in; -- Update PC with pc_in if there is a rising edge of the clock
         end if;
     end process;
                                  -- Output the current value of the PC
