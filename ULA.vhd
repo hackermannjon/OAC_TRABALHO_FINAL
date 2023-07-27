@@ -70,6 +70,5 @@ begin
 		else
 			zero <= '0';
 		end if;
-
 	end process;
 end ULA_arch;

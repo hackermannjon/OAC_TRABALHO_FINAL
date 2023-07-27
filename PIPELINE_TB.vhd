@@ -1,25 +1,35 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all; 
 entity PIPELINE_TB is
 end PIPELINE_TB;
 
 architecture behavior of PIPELINE_TB is
-    signal clk, reset_flag : STD_LOGIC := '0';
-    signal reset_tb : STD_LOGIC := '1';
+    signal clk : std_logic := '0';
+    signal reset_flag : std_logic := '0';
+    signal reset_tb : std_logic := '0';
 
     -- Sinais para acompanhar os valores dos registradores
-    signal RS1_tb, RS2_tb, ENDERECO_tb, INSTRUCAO_tb : STD_LOGIC_VECTOR(31 downto 0);
-    signal  RD_tb : STD_LOGIC_VECTOR(11 downto 7);
+    signal teste_rs1, teste_rs2, teste_rd : std_logic_vector(4 downto 0) ;
+    signal SUM_TB, PC_OUT_TB, INST_TB : std_logic_vector(31 downto 0) ;
+	 signal WB_TB, MEM_TB, EXECUTE_TB, DECODE_TB, FETCH_TB        :  STD_LOGIC ;
+	 signal ADDR : std_logic_vector(31 downto 0) := "00000000000000000000000000000000" ;
 
     -- Component declaration for PIPELINE
     component PIPELINE is
-        Port (
-            clk, reset : in STD_LOGIC;               -- Sinal de clock e reset
-            RS1, RS2, ENDERECO, INSTRUCAO : out STD_LOGIC_VECTOR(31 downto 0);
-            RD_out : out STD_LOGIC_VECTOR(11 downto 7)
-        );
+Port (
+      clk : in STD_LOGIC;               -- Sinal de clock
+		reset : in STD_LOGIC ;         -- Sinal de reset
+		teste_rs1,teste_rs2, teste_rd : out std_logic_vector(4 downto 0);
+		SUM_TB, PC_OUT_TB, INST_TB: out std_logic_vector(31 downto 0);
+		ADDR : in std_logic_vector(31 downto 0);
+		WB_TB, MEM_TB, EXECUTE_TB, DECODE_TB, FETCH_TB        : out STD_LOGIC 
+
+
+ 
+
+);
+ 
     end component;
 
 begin
@@ -27,27 +37,38 @@ begin
     Port map(
         clk => clk,
         reset => reset_tb,
-        ENDERECO => ENDERECO_tb,
-        INSTRUCAO => INSTRUCAO_tb,
-        RS1 => RS1_tb,
-        RS2 => RS2_tb,
-        RD_out => RD_tb
+        teste_rs1 => teste_rs1,
+        teste_rs2 => teste_rs2,
+        teste_rd => teste_rd,
+        SUM_TB => SUM_TB,
+        PC_OUT_TB => PC_OUT_TB,
+        INST_TB => INST_TB,
+		  WB_TB => WB_TB,
+		  ADDR => ADDR,
+		  MEM_TB => MEM_TB,
+		  EXECUTE_TB => EXECUTE_TB,
+		  DECODE_TB => DECODE_TB,
+		  FETCH_TB  =>   FETCH_TB    
     );
 
     -- Clock process
     process
     begin
         while now < 960 ns loop
-            clk <= '0';
-            wait for 100 ns;
             if reset_flag = '0' then
                 reset_tb <= '1';
                 reset_flag <= '1';
             elsif reset_flag = '1' then 
+								ADDR <= std_logic_vector(unsigned(ADDR) + 4);
+
                 reset_tb <= '0';
             end if;
-            clk <= '1';
-            wait for 100 ns;
+				wait for 10 ns;
+
+            clk <= not(clk);
+				
+
+
             if reset_flag = '0' then
                 reset_tb <= '1';
                 reset_flag <= '1';
@@ -57,7 +78,6 @@ begin
         end loop;
     end process;
 
-    -- Print the values of the pipeline outputs
 
 
 end behavior;

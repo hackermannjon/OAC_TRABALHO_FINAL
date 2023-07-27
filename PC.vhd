@@ -14,15 +14,19 @@ architecture Behavioral of PC is
     signal pc_reg : STD_LOGIC_VECTOR(31 downto 0);     -- PC register
 
 begin
-    process(clk, reset)
-    begin
-		  if reset = '1' then
-            pc_reg <= "00000000000000000000000000000000";
-					  pc_out <= pc_reg;
+   -- process(clk, reset)
+   -- begin
+		  
 	-- Initialize PC register to all zeros when reset is active
-        elsif rising_edge(clk) then
-            pc_out <= pc_in; -- Update PC with pc_in if there is a rising edge of the clock
-        end if;
-    end process;
+	--	 if rising_edge(clk) then
+	--		if reset = '1' then
+     --       pc_reg <= "00000000000000000000000000000000";
+	--				  pc_out <= pc_reg;
+	--		else
+            pc_out <= pc_in; 
+	--			end if;-- Update PC with pc_in if there is a rising edge of the clock
+  --    end if;
+		  
+   -- end process;
                                  -- Output the current value of the PC
 end Behavioral;

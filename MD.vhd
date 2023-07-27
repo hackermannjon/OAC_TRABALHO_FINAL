@@ -18,10 +18,10 @@ end MD;
 
 architecture RTL of MD is
     type mem_type is array (0 to (2**8)-1) of std_logic_vector(31 downto 0); -- Data size is 32 bits now
-    signal read_addr: integer range 0 to (2**8)-1;
+    signal read_addr: unsigned(7 downto 0) := (others => '0'); -- Change the type to 8-bit unsigned integer
 
     impure function init_mem return mem_type is
-        file text_file    :   text open read_mode is "D:/projects/Pipeline_RISCV/data"; -- Mudar diretório
+        file text_file    :   text open read_mode is "D:/projects/Pipeline/data"; -- Mudar diretório
         variable text_line    :   line;
         variable text_word    :   std_logic_vector(31 downto 0); -- Data size is 32 bits now
         variable memoria    :   mem_type;
@@ -29,7 +29,7 @@ architecture RTL of MD is
     begin
         n := 0;
         while not endfile(text_file) loop
-            if n < 54 then
+            if n < 255 then
                 readline(text_file, text_line);
                 read(text_line, text_word); -- Use 'read' instead of 'hread' to read binary data
                 memoria(n) := text_word;
@@ -48,12 +48,12 @@ begin
     process(clk)
     begin
         if rising_edge(clk) then
-            read_addr <= to_integer(unsigned(addr_md_in)) / 4;
+            read_addr <= resize(unsigned(addr_md_in), 8);
 
             if MemRead = '1' then
-                data_md_out <= mem(read_addr);
+                data_md_out <= mem(to_integer(read_addr));
             elsif MemWrite = '1' then
-                mem(read_addr) <= data_md_in;
+                mem(to_integer(read_addr)) <= data_md_in;
             else
                 -- Add a default condition for data_md_out when both MemRead and MemWrite are '0'
                 data_md_out <= (others => '0');

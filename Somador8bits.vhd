@@ -12,11 +12,6 @@ end Somador8bits;
 
 architecture Behavioral of Somador8bits is
 begin
-    process(asoma, bsoma)
-        variable temp_sum : UNSIGNED(31 downto 0);
-    begin
-        temp_sum := UNSIGNED(asoma) + UNSIGNED(bsoma);   -- Soma as entradas
-        sum <= STD_LOGIC_VECTOR(temp_sum);       -- Converte a soma para a saída
-    end process;
+    sum <= std_logic_vector(unsigned(asoma) + unsigned(bsoma));
 
 end Behavioral;

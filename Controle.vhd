@@ -1,8 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use IEEE.std_logic_textio.all;
-use std.textio.all;
 
 entity Controle is
     port (
@@ -13,7 +11,6 @@ entity Controle is
 end Controle;
 
 architecture behavioral of Controle is
-		signal RegWrites  :  std_logic;
     signal opcode : std_logic_vector(7 downto 0);
 	 signal ALUOp : std_logic_vector(1 downto 0);
 
@@ -30,8 +27,6 @@ begin
                 MemRead <= '0';
                 MemWrite <= '0';
                 RegWrite <= '1';
-					 					 RegWrites <= '1';
-
                 Mem2Reg <= '0';
 
             when x"03" | x"13" | x"67" =>
@@ -42,8 +37,6 @@ begin
                 MemWrite <= '0';
                 RegWrite <= '1';
                 Mem2Reg <= '1';
-					 					 RegWrites <= '1';
-
 
             when x"23" =>
                 ALUOp <= "00";
@@ -52,8 +45,6 @@ begin
                 MemRead <= '0';
                 MemWrite <= '1';
                 RegWrite <= '0';
-					 					 RegWrites <= '0';
-
 
             when x"63" =>
                 ALUOp <= "01";
@@ -62,8 +53,6 @@ begin
                 MemRead <= '0';
                 MemWrite <= '0';
                 RegWrite <= '0';
-					 					 RegWrites <= '0';
-
 
             when others =>
                 ALUOp <= "00";
@@ -73,9 +62,6 @@ begin
                 MemWrite <= '0';
                 RegWrite <= '0';
                 Mem2Reg <= '0';
-					 RegWrites <= '0';
         end case;
-		  
-
     end process;
 end;

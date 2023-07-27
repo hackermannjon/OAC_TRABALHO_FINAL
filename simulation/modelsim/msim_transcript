@@ -1,4 +1,5 @@
 # Reading D:/intelFPGA_lite/18.0/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
 # do PIPELINE_run_msim_rtl_vhdl.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -10,192 +11,59 @@
 # Copying D:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_FETCH.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/PIPELINE.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_FETCH.vhd 
+# Start time: 09:10:26 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PIPELINE.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_FETCH
-# -- Compiling architecture behavioral of PIPE_FETCH
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPELINE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPELINE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
 # -- Compiling entity PIPELINE
 # -- Compiling architecture behavioral of PIPELINE
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
+# End time: 09:10:26 on Jul 27,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/MI.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/X_REG.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/MI.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_textio
-# -- Compiling entity MI
-# -- Compiling architecture RTL of MI
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PC.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PC.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PC
-# -- Compiling architecture Behavioral of PC
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/Mux21.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/Mux21.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity Mux21
-# -- Compiling architecture Behavioral of Mux21
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_IF_ID.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_IF_ID.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_IF_ID
-# -- Compiling architecture arch of PIPE_IF_ID
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_DECODE.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_DECODE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_DECODE
-# -- Compiling architecture behavioral of PIPE_DECODE
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/Controle.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/Controle.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_textio
-# -- Compiling entity Controle
-# -- Compiling architecture behavioral of Controle
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/X_REG.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/X_REG.vhd 
+# Start time: 09:10:26 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/X_REG.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity X_REG
 # -- Compiling architecture main of X_REG
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/genImm32.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/genImm32.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:28 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/genImm32.vhd 
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/genImm32.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity genImm32
 # -- Compiling architecture a of genImm32
-# End time: 01:23:28 on Jul 27,2023, Elapsed time: 0:00:00
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_ID_EX.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/PC.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:29 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_ID_EX.vhd 
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PC.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_ID_EX
-# -- Compiling architecture main of PIPE_ID_EX
-# End time: 01:23:29 on Jul 27,2023, Elapsed time: 0:00:00
+# -- Compiling entity PC
+# -- Compiling architecture Behavioral of PC
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_EXECUTE.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/MD.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:29 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_EXECUTE.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_EXECUTE
-# -- Compiling architecture behavioral of PIPE_EXECUTE
-# End time: 01:23:29 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/ULA.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:29 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/ULA.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ULA
-# -- Compiling architecture ULA_arch of ULA
-# End time: 01:23:29 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_EX_MEM.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:29 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_EX_MEM.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_EX_MEM
-# -- Compiling architecture main of PIPE_EX_MEM
-# End time: 01:23:29 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_MEM.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:29 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_MEM.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_MEM
-# -- Compiling architecture behavioral of PIPE_MEM
-# End time: 01:23:29 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/MD.vhd}
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:29 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/MD.vhd 
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/MD.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -203,50 +71,1010 @@
 # -- Loading package std_logic_textio
 # -- Compiling entity MD
 # -- Compiling architecture RTL of MD
-# End time: 01:23:29 on Jul 27,2023, Elapsed time: 0:00:00
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/PIPE_WB.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/MI.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:31 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPE_WB.vhd 
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/MI.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity PIPE_WB
-# -- Compiling architecture behavioral of PIPE_WB
-# End time: 01:23:31 on Jul 27,2023, Elapsed time: 0:00:00
+# -- Loading package std_logic_textio
+# -- Compiling entity MI
+# -- Compiling architecture RTL of MI
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vcom -93 -work work {D:/projects/Pipeline/ADD_PC.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/Mux21.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:32 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/ADD_PC.vhd 
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Mux21.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity ADD_PC
-# -- Compiling architecture Behavioral of ADD_PC
-# End time: 01:23:32 on Jul 27,2023, Elapsed time: 0:00:00
+# -- Compiling entity Mux21
+# -- Compiling architecture Behavioral of Mux21
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/Controle.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Controle.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Controle
+# -- Compiling architecture behavioral of Controle
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/ULA.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/ULA.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ULA
+# -- Compiling architecture ULA_arch of ULA
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/Somador8bits.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/Somador8bits.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Somador8bits
+# -- Compiling architecture Behavioral of Somador8bits
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vcom -93 -work work {D:/projects/Pipeline/PIPELINE_TB.vhd}
+# vcom -93 -work work {D:/projects/Pipeline_RISCV/PIPELINE_TB.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:23:32 on Jul 27,2023
-# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline/PIPELINE_TB.vhd 
+# Start time: 09:10:27 on Jul 27,2023
+# vcom -reportprogress 300 -93 -work work D:/projects/Pipeline_RISCV/PIPELINE_TB.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity PIPELINE_TB
 # -- Compiling architecture behavior of PIPELINE_TB
-# ** Error (suppressible): D:/projects/Pipeline/PIPELINE_TB.vhd(32): (vcom-1272) Length of formal "RS1" is 32; length of actual is 5.
-# ** Error (suppressible): D:/projects/Pipeline/PIPELINE_TB.vhd(33): (vcom-1272) Length of formal "RS2" is 32; length of actual is 5.
-# ** Error: D:/projects/Pipeline/PIPELINE_TB.vhd(63): VHDL Compiler exiting
-# End time: 01:23:32 on Jul 27,2023, Elapsed time: 0:00:00
-# Errors: 3, Warnings: 0
-# ** Error: D:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./PIPELINE_run_msim_rtl_vhdl.do line 27
-# D:/intelFPGA_lite/18.0/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {D:/projects/Pipeline/PIPELINE_TB.vhd}"
+# End time: 09:10:27 on Jul 27,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs="+acc"  PIPELINE_TB
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cyclonev -L rtl_work -L work -voptargs=""+acc"" PIPELINE_TB 
+# Start time: 09:10:27 on Jul 27,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.pipeline_tb(behavior)
+# Loading ieee.std_logic_textio(body)
+# Loading work.pipeline(behavioral)
+# Loading work.controle(behavioral)
+# Loading work.pc(behavioral)
+# Loading work.mi(rtl)
+# Loading work.somador8bits(behavioral)
+# Loading work.mux21(behavioral)
+# Loading work.ula(ula_arch)
+# Loading work.genimm32(a)
+# Loading work.x_reg(main)
+# Loading work.md(rtl)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/X_REG_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /pipeline_tb/U1/MI_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 10 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 0
+#    Time: 10 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 10 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 10 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 30 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 30 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 0
+#    Time: 30 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 30 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 30 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in0
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 4
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 50 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode0
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2096366 is not in bounds of subtype NATURAL.
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-2096365
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 12
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 70 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1/MD_inst
+# ** Note: ULA0
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in3146643
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 20
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 90 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1/MD_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in1050003
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 28
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 110 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 110 ns  Iteration: 2  Instance: /pipeline_tb/U1/MI_inst
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in33424995
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 130 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8388719
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 40
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 150 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2096366 is not in bounds of subtype NATURAL.
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-2096365
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 48
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 170 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -2147286254 is not in bounds of subtype NATURAL.
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-2147286253
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 56
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 190 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -74 is not in bounds of subtype NATURAL.
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-73
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 64
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 210 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA-83955216
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode6
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in32704099
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 72
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 230 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8388719
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 80
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 250 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in938476307
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 88
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 270 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in7568947
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 96
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 290 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode6
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in640683923
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 104
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 310 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in897581295
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 112
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 330 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in826278127
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 120
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 350 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in1480815379
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 128
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 370 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in272633747
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 136
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 390 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in864026863
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 144
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 410 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in792723695
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 152
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 430 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in919
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 160
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 450 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in5244307
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 168
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 470 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in32704099
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 176
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 490 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8388719
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 184
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 510 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -104856942 is not in bounds of subtype NATURAL.
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-104856941
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 192
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 530 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in6456931
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 200
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 550 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -6295442 is not in bounds of subtype NATURAL.
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-6295441
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 208
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 570 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in6462051
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 216
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 590 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -10489746 is not in bounds of subtype NATURAL.
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-10489745
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 224
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 610 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8388719
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 232
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 630 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -104856942 is not in bounds of subtype NATURAL.
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-104856941
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 240
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 650 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in7341459
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 248
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 670 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in314770195
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 256
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 690 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in5469795
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 264
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 710 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -6295442 is not in bounds of subtype NATURAL.
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-6295441
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 272
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 730 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8388719
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 280
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 750 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -104856942 is not in bounds of subtype NATURAL.
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-104856941
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 288
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 770 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8390035
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 296
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 790 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in314770195
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 304
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 810 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data1
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in6481507
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 312
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 830 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA1
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode12
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -56627090 is not in bounds of subtype NATURAL.
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in-56627089
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 320
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 850 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data655369
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in8388719
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 328
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 870 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -83955216 is not in bounds of subtype NATURAL.
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data-83955216
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode13
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in264307351
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 336
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 890 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in172803
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 344
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 910 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in520323987
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 352
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 930 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: data0
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: ULA0
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: opcode2
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: instruction_mi_in7538275
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out0
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: pc_out_D 360
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
+# ** Note: fetch_soma0
+#    Time: 950 ns  Iteration: 1  Instance: /pipeline_tb/U1
