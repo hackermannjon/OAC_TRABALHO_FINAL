@@ -10,8 +10,8 @@ architecture behavior of PIPELINE_TB is
     signal reset_tb : STD_LOGIC := '1';
 
     -- Sinais para acompanhar os valores dos registradores
-    signal ENDERECO_tb, INSTRUCAO_tb : STD_LOGIC_VECTOR(31 downto 0);
-    signal RS1_tb, RS2_tb, RD_tb : STD_LOGIC_VECTOR(11 downto 7);
+    signal RS1_tb, RS2_tb, ENDERECO_tb, INSTRUCAO_tb : STD_LOGIC_VECTOR(31 downto 0);
+    signal  RD_tb : STD_LOGIC_VECTOR(11 downto 7);
 
     -- Component declaration for PIPELINE
     component PIPELINE is
